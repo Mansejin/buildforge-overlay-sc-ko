@@ -35,6 +35,10 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+## [2.0.1] - 2026-05-02
+
 ### Fixed
 
 - **Renderer no longer crashes on launch with `Missing #app in index.html`.** v2.0.0 shipped a stale `byId("app")` lookup in `src/renderer/dom.ts` that referenced an element that does not exist in `index.html`. Because it was the first DOM lookup at module load, it threw before any event listeners were wired up — so the window rendered but every click was a no-op. Removed the unused `app` field from both the `Dom` interface and the initializer.
