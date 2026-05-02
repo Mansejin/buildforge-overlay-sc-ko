@@ -73,6 +73,19 @@ static REGEX_INFOBOX_NAME: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"(?i)^Infobox\s*strategy$").unwrap());
 static REGEX_BUILD_TEMPLATE_NAME: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"(?i)^build$").unwrap());
+// Column / variant separator templates we strip and use as variant boundaries
+// inside a {{build|...}} body. The Forge FE page (and many others) lays out
+// 2-4 variants side by side using these MediaWiki layout helpers.
+static REGEX_COL_TEMPLATE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)^\{\{\s*(col-?begin|col-?break|col-?end|colend)\b[^}]*\}\}\s*$").unwrap()
+});
+// `;<text>` is a wikitext "definition list term", routinely used inside a
+// {{build}} body as a sub-heading like `; [[9 Pool (vs. Protoss)|9 Pool]]`.
+// The term may live on the same line as the `;` or on the next non-empty line.
+static REGEX_DEFINITION_TERM_INLINE: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"^\s*;\s*(.*\S)\s*$").unwrap());
+static REGEX_DEFINITION_TERM_BARE: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"^\s*;\s*$").unwrap());
 
 #[derive(Debug, Clone)]
 #[allow(dead_code)]
@@ -243,29 +256,168 @@ fn parse_template_params(body: &str) -> TemplateParams {
 }
 
 pub fn parse_build_body(body: &str) -> Vec<String> {
+    let inner = build_body_inner_text(body);
     let mut steps = Vec::new();
-    for part in split_template_body(body) {
-        let trimmed = part.trim();
-        if trimmed.contains('=') && REGEX_NAMED_PARAM_KEY.is_match(&trimmed.to_lowercase()) {
+    for raw in inner.split('\n') {
+        let line = raw.trim_end_matches('\r').trim();
+        if line.is_empty() || !REGEX_BULLET_PREFIX.is_match(line) {
             continue;
         }
-        for raw in part.split('\n') {
-            let raw = raw.trim_end_matches('\r');
-            let line = raw.trim();
-            if line.is_empty() {
-                continue;
-            }
-            if !REGEX_BULLET_PREFIX.is_match(line) {
-                continue;
-            }
-            let stripped = REGEX_BULLET_PREFIX.replace(line, "");
-            let cleaned = strip_wiki_markup(&stripped);
-            if !cleaned.is_empty() {
-                steps.push(cleaned);
-            }
+        let stripped = REGEX_BULLET_PREFIX.replace(line, "");
+        let cleaned = strip_wiki_markup(&stripped);
+        if !cleaned.is_empty() {
+            steps.push(cleaned);
         }
     }
     steps
+}
+
+/// Strips the named-parameter portion of a `{{build|name=...|race=...|...|<bullets>}}`
+/// body and returns just the bullet-bearing text. Splits on top-level `|` so
+/// nested `[[piped|links]]` and `{{templates|with=args}}` inside the bullets
+/// remain intact.
+fn build_body_inner_text(body: &str) -> String {
+    let parts = split_template_body(body);
+    let mut keep: Vec<String> = Vec::new();
+    for part in parts {
+        let trimmed = part.trim_start();
+        if trimmed.contains('=') && REGEX_NAMED_PARAM_KEY.is_match(&trimmed.to_lowercase()) {
+            continue;
+        }
+        keep.push(part);
+    }
+    keep.join("|")
+}
+
+/// Holds an in-progress variant while we walk the build body. We separate
+/// "shared" prelude bullets (anything above the first variant marker) from
+/// the per-variant bullets so the caller can prepend the prelude to each
+/// variant — e.g. on Forge FE the "8 Pylon / 8 Scout / 11 Forge" prelude
+/// belongs to all four variants (9 Pool / 12 Pool / 12 Hatch / Overpool).
+#[derive(Debug, Default)]
+struct InlineVariantBuf {
+    name: String,
+    steps: Vec<String>,
+}
+
+/// Splits a single `{{build|...}}` body into one variant per `;` heading or
+/// `{{colbreak}}` boundary. Returns `None` if the body has no inline
+/// variants — callers should fall back to the flat `parse_build_body` shape
+/// in that case so single-variant pages stay backwards compatible.
+pub fn parse_build_body_variants(body: &str) -> Option<Vec<ParsedVariant>> {
+    let inner = build_body_inner_text(body);
+    let lines: Vec<&str> = inner.split('\n').collect();
+
+    let mut shared: Vec<String> = Vec::new();
+    let mut variants: Vec<InlineVariantBuf> = Vec::new();
+    let mut current: Option<InlineVariantBuf> = None;
+    let mut pending_name_for_marker = false;
+    let mut saw_inline_marker = false;
+
+    let push_current = |variants: &mut Vec<InlineVariantBuf>,
+                        cur: &mut Option<InlineVariantBuf>| {
+        if let Some(buf) = cur.take() {
+            if !buf.steps.is_empty() || !buf.name.is_empty() {
+                variants.push(buf);
+            }
+        }
+    };
+
+    for raw in lines {
+        let line = raw.trim_end_matches('\r').trim();
+        if line.is_empty() {
+            continue;
+        }
+
+        if REGEX_COL_TEMPLATE.is_match(line) {
+            saw_inline_marker = true;
+            push_current(&mut variants, &mut current);
+            current = Some(InlineVariantBuf::default());
+            pending_name_for_marker = true;
+            continue;
+        }
+
+        if let Some(caps) = REGEX_DEFINITION_TERM_INLINE.captures(line) {
+            saw_inline_marker = true;
+            push_current(&mut variants, &mut current);
+            let name = strip_wiki_markup(caps.get(1).map(|m| m.as_str()).unwrap_or(""));
+            current = Some(InlineVariantBuf {
+                name,
+                steps: Vec::new(),
+            });
+            pending_name_for_marker = false;
+            continue;
+        }
+
+        if REGEX_DEFINITION_TERM_BARE.is_match(line) {
+            saw_inline_marker = true;
+            push_current(&mut variants, &mut current);
+            current = Some(InlineVariantBuf::default());
+            pending_name_for_marker = true;
+            continue;
+        }
+
+        if pending_name_for_marker {
+            if REGEX_BULLET_PREFIX.is_match(line) {
+                pending_name_for_marker = false;
+            } else {
+                let cleaned = strip_wiki_markup(line);
+                if !cleaned.is_empty() {
+                    if let Some(buf) = current.as_mut() {
+                        buf.name = cleaned;
+                    }
+                }
+                pending_name_for_marker = false;
+                continue;
+            }
+        }
+
+        if !REGEX_BULLET_PREFIX.is_match(line) {
+            continue;
+        }
+        let stripped = REGEX_BULLET_PREFIX.replace(line, "");
+        let cleaned = strip_wiki_markup(&stripped);
+        if cleaned.is_empty() {
+            continue;
+        }
+        if let Some(buf) = current.as_mut() {
+            buf.steps.push(cleaned);
+        } else {
+            shared.push(cleaned);
+        }
+    }
+    push_current(&mut variants, &mut current);
+
+    if !saw_inline_marker {
+        return None;
+    }
+
+    variants.retain(|v| !v.steps.is_empty());
+    // Trailing bullets after the last `{{col-end}}` (e.g. Forge FE's
+    // "Note that these build orders may slightly vary..." aside) end up as
+    // an unnamed buf because no `;` heading precedes them. Drop them when
+    // at least one named variant exists so the catalog stays clean.
+    if variants.iter().any(|v| !v.name.is_empty()) {
+        variants.retain(|v| !v.name.is_empty());
+    }
+    if variants.is_empty() {
+        return None;
+    }
+
+    let out: Vec<ParsedVariant> = variants
+        .into_iter()
+        .map(|buf| {
+            let mut full_steps: Vec<String> = Vec::with_capacity(shared.len() + buf.steps.len());
+            full_steps.extend(shared.iter().cloned());
+            full_steps.extend(buf.steps);
+            ParsedVariant {
+                variant_name: buf.name,
+                heading: None,
+                steps: full_steps,
+            }
+        })
+        .collect();
+    Some(out)
 }
 
 /// Returns (level, inner_text) when `line` is a wiki heading like `== Foo ==`.
@@ -538,11 +690,23 @@ pub fn parse_liquipedia_page(page_title: &str, wikitext: &str) -> ParsedLiquiped
     let mut variants: Vec<ParsedVariant> = Vec::new();
     for tmpl in templates {
         let params = parse_template_params(&tmpl.body);
+        let heading = find_preceding_heading(wikitext, tmpl.start);
+
+        if let Some(inline) = parse_build_body_variants(&tmpl.body) {
+            for v in inline {
+                let mut next = v;
+                if next.heading.is_none() {
+                    next.heading = heading.clone();
+                }
+                variants.push(next);
+            }
+            continue;
+        }
+
         let steps = parse_build_body(&tmpl.body);
         if steps.is_empty() {
             continue;
         }
-        let heading = find_preceding_heading(wikitext, tmpl.start);
         let raw_name = params
             .named
             .get("name")

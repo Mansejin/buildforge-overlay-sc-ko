@@ -36,6 +36,8 @@
     "format:check": "prettier --check .",
     "test": "cargo test --manifest-path src-tauri/Cargo.toml",
     "size": "node scripts/report-size.mjs",
+    "scrape": "node scripts/scrape-liquipedia.mjs",
+    "scrape:dry": "node scripts/scrape-liquipedia.mjs --max-pages=5",
     "release:patch": "node scripts/release.mjs patch",
     "release:minor": "node scripts/release.mjs minor",
     "release:major": "node scripts/release.mjs major"

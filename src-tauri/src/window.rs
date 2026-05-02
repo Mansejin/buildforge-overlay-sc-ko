@@ -5,8 +5,15 @@
 // toggle, and registers all Ctrl+Alt-* global shortcuts that the overlay
 // relies on. Mirrors src/main/window.ts.
 
-use crate::types::HotkeyAction;
-use tauri::{AppHandle, Emitter, Manager, WebviewWindow};
+use crate::types::{HotkeyAction, ViewMode, WindowSize};
+use std::sync::atomic::{AtomicBool, Ordering};
+use tauri::{AppHandle, Emitter, LogicalSize, Manager, WebviewWindow};
+
+/// Shared "should this window stay always-on-top?" flag. The focus-loss
+/// keeper consults this; `set_mode` flips it when the user toggles between
+/// Manager (false) and Overlay (true). Without this, focus changes in
+/// Manager mode kept yanking the window back on top of every other app.
+static OVERLAY_AOT_DESIRED: AtomicBool = AtomicBool::new(true);
 use tauri_plugin_global_shortcut::{
     Code, GlobalShortcutExt, Modifiers, Shortcut, ShortcutEvent, ShortcutState,
 };
@@ -71,6 +78,46 @@ pub fn set_opacity(window: &WebviewWindow, value: f64) {
     }
 }
 
+/// Apply the per-mode window chrome. Manager mode gets normal decorations,
+/// resizable, and the user's saved manager size. Overlay mode is frameless,
+/// always-on-top, fixed-size, and uses the saved overlay size. Both keep the
+/// existing visibility / opacity state.
+pub fn set_mode(window: &WebviewWindow, mode: ViewMode, sizes: ManagerSizes) {
+    let size = match mode {
+        ViewMode::Manager => sizes.manager,
+        ViewMode::Overlay => sizes.overlay,
+    };
+    let _ = window.set_size(LogicalSize::new(size.width as f64, size.height as f64));
+    match mode {
+        ViewMode::Manager => {
+            OVERLAY_AOT_DESIRED.store(false, Ordering::Relaxed);
+            let _ = window.set_decorations(true);
+            let _ = window.set_resizable(true);
+            let _ = window.set_always_on_top(false);
+            let _ = window.set_skip_taskbar(false);
+            // Manager is the "main program" surface; let the user pull it
+            // up like any other window.
+            let _ = window.center();
+        }
+        ViewMode::Overlay => {
+            OVERLAY_AOT_DESIRED.store(true, Ordering::Relaxed);
+            let _ = window.set_decorations(false);
+            let _ = window.set_resizable(false);
+            let _ = window.set_always_on_top(true);
+            // Keep the overlay in the taskbar so users can find it; setting
+            // skip_taskbar(true) here causes Windows to lose the window
+            // entirely if minimised.
+            let _ = window.set_skip_taskbar(false);
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy)]
+pub struct ManagerSizes {
+    pub manager: WindowSize,
+    pub overlay: WindowSize,
+}
+
 pub fn toggle_visible(window: &WebviewWindow) {
     let is_visible = window.is_visible().unwrap_or(true);
     if is_visible {
@@ -89,14 +136,15 @@ pub fn toggle_devtools(window: &WebviewWindow) {
     }
 }
 
-/// Re-apply always-on-top after the window loses focus. Works around a
-/// Tauri 2 / wry quirk on Windows where clicking the taskbar can drop the
-/// overlay below it even when alwaysOnTop is set in tauri.conf.json.
+/// Re-apply always-on-top after the window loses focus when the user has
+/// us in Overlay mode. Works around a Tauri 2 / wry quirk on Windows where
+/// clicking the taskbar can drop the overlay below it. Manager mode opts
+/// out via OVERLAY_AOT_DESIRED so it behaves like a normal app window.
 pub fn install_always_on_top_keeper(window: &WebviewWindow) {
     let cloned = window.clone();
     window.on_window_event(move |event| {
         if let tauri::WindowEvent::Focused(focused) = event {
-            if !focused {
+            if !focused && OVERLAY_AOT_DESIRED.load(Ordering::Relaxed) {
                 let _ = cloned.set_always_on_top(true);
             }
         }
@@ -151,6 +199,9 @@ fn shortcut_to_action(shortcut: &Shortcut) -> Option<HotkeyAction> {
     if shortcut.matches(ctrl_alt, Code::KeyH) {
         return Some(HotkeyAction::ToggleWindow);
     }
+    if shortcut.matches(ctrl_alt, Code::KeyM) {
+        return Some(HotkeyAction::ToggleMode);
+    }
     None
 }
 
@@ -173,6 +224,7 @@ fn all_shortcuts() -> Vec<Shortcut> {
         Shortcut::new(Some(ctrl_alt), Code::KeyF),
         Shortcut::new(Some(ctrl_alt), Code::KeyC),
         Shortcut::new(Some(ctrl_alt), Code::KeyH),
+        Shortcut::new(Some(ctrl_alt), Code::KeyM),
     ]
 }
 

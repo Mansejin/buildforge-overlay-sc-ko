@@ -1,0 +1,121 @@
+{{Infobox strategy
+|name=Protoss Fast Expand
+|race=P
+|image=longinus3.jpg
+|caption=
+|matchups=PvZ
+|creator=Unknown
+|popularized=[[Nal_rA]],[[Bisu]]
+}}
+
+==Overview==
+In the modern Protoss vs Zerg matchup, Protoss players nearly always opt for a fast expansion opening in order to quickly secure a second vespene geyser to support necessary Protoss tech.  The Forge Fast Expand is a safe, defensive opening that allows the Protoss to enter a strong [[mid game]].
+
+==Build Order==
+
+{{build|width=400px|race=p|
+*8 - Pylon at [[Natural Expansion]] <ref name=SimCity>Building placement should be done carefully. More information is available in the  [[Protoss Fast Expand Forge Walling]] article</ref>
+*8 - Scout with the same Probe that built that Pylon
+*11 - Forge <ref name=Scouting>On 4 player maps, scout with the Probe which built the Forge if you cannot find Zerg at the first spawn location</ref>
+*Continue with the information the Probe gathers. 
+*Since the two probes will reach the last 2 spawn locations simultaneously, you will essentially always either scout Zerg first or second.
+{{col-begin|width=95%|pad=10}}
+{{colbreak|width=50%}}
+;
+[[9 Pool (vs. Protoss)|9 Pool]]
+
+*13 - 2x Cannons
+*15 – Nexus <ref name=probecut>Pause Probe production</ref> 
+
+*15 – Gateway   <ref name=proberesume>Resume Probe production</ref>
+*16 – Pylon
+*17 – Assimilator
+*18 – Cybernetics Core
+*20 - Zealot
+{{colbreak|width=50%}}
+;
+[[12 Pool (vs. Protoss)|12 Pool]]
+
+*15 – Nexus <ref name=probecut>Pause Probe production</ref>
+*15 – Cannon
+*15 – Gateway <ref name=proberesume>Resume Probe production</ref>
+*16 – Pylon
+*17 – Assimilator
+*18 – Cybernetics Core
+*19 - Zealot
+{{col-end}}
+
+{{col-begin|width=95%|pad=10}}
+{{colbreak|width=50%}}
+;
+[[Zerg_vs._Protoss_Guide#Branch_III:_12_hatchery|12 Hatch]]
+
+*15 - Nexus <ref name=CannonRush>On certain maps it may be possible to delay the nexus and attempt to cannon rush against 12 hatch instead.</ref>
+*16 - Pylon 
+*17 – Gateway
+*18 – Cannon
+*19 – Assimilator
+*20 – Cybernetics Core
+*22 - Zealot
+{{colbreak|width=50%}}
+;
+[[Overpool (vs. Protoss)|Overpool]]
+*13 - Nexus <ref name=probecut>Pause Probe production</ref> <ref name=nexus>Certain maps with short rush distances may require a 12 Nexus / 12 Cannon response.</ref>
+*13 - Cannon <ref name=proberesume>Resume Probe production</ref> <ref name=cannon> A second cannon may be required if Zerg makes 6 or more zerglings when the Spawning Pool finishes. </ref>
+*15 – Gateway
+* 16 – Pylon
+*17 – Assimilator
+*18 – Cybernetics Core
+*20 - Zealot
+{{col-end}}
+
+*Note that these build orders may slightly vary based on if you scout Zerg first or second.
+}}
+
+==Execution==
+
+The Fast Expansion build order is the most common opening in the Protoss vs. Zerg Match Up. The information obtained by the initial scouting probes is crucial. Protoss has to do a trade off between being safe against aggressive openings in the early game and boosting his economy as fast as possible. Depending on the gathered intel, the Natural Buildings (Nexus, Forge, Gateway and Photon Cannons) are placed down by the logic described in the Build Order table above. It is extremely important to position the buildings in such a way that Zergling runbys are denied. Most maps are covered in the [[Protoss Fast Expand Forge Walling]] article. 
+
+The number of Cannons needed to be safe from early aggression depends on several factors, such as the number of Zerglings built by Zerg, whether or not Zergling speed is upgraded early, and a possible early Hydralisk Den. A general rule of thumb is to build as many Cannons as needed to be safe, but as few as possible. Any beginner might need a higher number of matches to gain more experience. It is recommended to keep the initial scouting Probe alive as long as possible. If needed, another one might be sacrificed to replace the initial Probe.
+
+==Transition==
+
+This opening frequently transitions into a Stargate Build. The first Corsair fulfills the role of the scouting unit, since it should finish around the time the Probe will be killed by Zerg; in the meantime one or two Overlords might be killed. 
+
+However, Protoss can follow different strategies based on his overall game plan. A great variety of timed attacks can be prepared. Two examples of follow-up strategies are [[+1 Sair/Speedlot (vs. Zerg)|+1 Sair/Speedlot]] and [[+1 SpeedZeal (vs Zerg)|+1 SpeedZeal]].
+
+==Counters==
+
+In general several all-in rushes can destroy a Fast Expansion. Examples would be [[9 Pool Speed (vs. Protoss)|Speedling rush]]es, [[Zerg_vs._Protoss_Guide#All-in_Hydralisks|Hydralisk busts]] or [[Zerg_vs._Protoss_Guide#All-in_Mutalisks|two Hatch Mutalisk]] builds. These can be defended by adapting the Build Order with the information obtained by the scouting Probe. As such, is imperative that the scouting Probe stays alive long enough to react to these builds.
+
+The Fast Expansions can be soft countered by two Hatchery before Spawning Pool openings. These exploit the lack of Zealots in the first minutes of the game. Protoss can counter with an even faster Tech or a massive attack in between the early game and the mid game. 
+
+==Notable Maps==
+
+The Fast Expansion Build Orders can be used on almost any map. However, some outdated maps have relatively wide choke points, making a good wall-in nearly impossible, thus offering more options to Zerg to successfully perform a strong early-on attack. Prime examples would be [[Luna]]'s 11 o'clock Position, or the 12 o'clock spawning points on [[Lost Temple]] and [[Python]]. 
+
+==Notable Games==
+{{ReplayBox
+|map=antiga
+|1=Mondragon |flag1=de |race1=z
+|2=Reach |flag2=kr |race2=p
+|description=Reach opening with a Fast Expansion and transitions into Corsair/Reaver
+|patch=1.09
+|date= 
+|replay=
+|vod=https://www.youtube.com/watch?v=OICghpXHHrQ
+|type=Strategy Example Game
+}}
+{{ReplayBox
+|map=longinus
+|1=sAviOr |flag1=kr |race1=z
+|2=Bisu |flag2=kr |race2=p
+|description=Finals of the MSL, [[Bisu]] introduces the famous [[Bisu Build]]
+|patch=1.15.3
+|date=2007-03-03
+|replay=
+|vod=https://www.youtube.com/watch?v=qCB-0twl77M
+|type=Strategy Example Game
+}}
+[[Category:Strategies]]
+[[Category:Protoss Beginner Strategy]]

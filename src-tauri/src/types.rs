@@ -134,6 +134,29 @@ pub struct BuildsData {
     pub builds: Vec<Build>,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum ViewMode {
+    Manager,
+    Overlay,
+}
+
+impl ViewMode {
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            ViewMode::Manager => "manager",
+            ViewMode::Overlay => "overlay",
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct WindowSize {
+    pub width: u32,
+    pub height: u32,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Settings {
     #[serde(default = "default_settings_version")]
@@ -152,23 +175,74 @@ pub struct Settings {
     pub page_size: u32,
     #[serde(rename = "defaultRace")]
     pub default_race: Race,
+    /// v2.0+: which mode the app boots into. Manager is the default; the
+    /// overlay is launched on demand from the Manager header.
+    #[serde(default = "default_view_mode", rename = "lastView")]
+    pub last_view: ViewMode,
+    /// v2.0+: remembered window dimensions for each mode so toggling between
+    /// them doesn't lose the user's resize.
+    #[serde(default = "default_manager_size", rename = "managerWindowSize")]
+    pub manager_window_size: WindowSize,
+    #[serde(default = "default_overlay_size", rename = "overlayWindowSize")]
+    pub overlay_window_size: WindowSize,
+    /// v2.0+: minimum hours between automatic Liquipedia scans on launch.
+    /// Caps the network footprint for users who launch the app multiple
+    /// times a day. Range 1-168 (1 hour to 1 week).
+    #[serde(default = "default_scan_interval_hours", rename = "scanIntervalHours")]
+    pub scan_interval_hours: u32,
+    /// v2.0+: ISO8601 timestamp of the last successful update check.
+    /// Renderer reads this on boot to decide whether the throttled
+    /// silent scan should run; written by save_settings after every
+    /// successful check_for_updates.
+    #[serde(default, rename = "lastUpdateCheckAt")]
+    pub last_update_check_at: Option<String>,
 }
 
 fn default_settings_version() -> u32 {
-    1
+    crate::storage::SETTINGS_VERSION
+}
+
+fn default_view_mode() -> ViewMode {
+    ViewMode::Manager
+}
+
+fn default_manager_size() -> WindowSize {
+    WindowSize {
+        width: 1080,
+        height: 760,
+    }
+}
+
+fn default_overlay_size() -> WindowSize {
+    WindowSize {
+        width: 420,
+        height: 640,
+    }
+}
+
+fn default_scan_interval_hours() -> u32 {
+    24
 }
 
 impl Default for Settings {
     fn default() -> Self {
         Settings {
-            version: 1,
+            version: crate::storage::SETTINGS_VERSION,
             liquipedia_user_agent: crate::storage::DEFAULT_USER_AGENT.to_string(),
             rate_limit_ms: crate::storage::DEFAULT_RATE_LIMIT_MS,
             compact_overlay: false,
             overlay_opacity: 1.0,
-            auto_check_updates_on_launch: false,
+            // v2.0: silent on-launch scan is default-on. Liquipedia builds
+            // change rarely so the throttle (scan_interval_hours) keeps the
+            // network noise low; users who don't want it can opt out.
+            auto_check_updates_on_launch: true,
             page_size: 25,
             default_race: Race::Protoss,
+            last_view: ViewMode::Manager,
+            manager_window_size: default_manager_size(),
+            overlay_window_size: default_overlay_size(),
+            scan_interval_hours: 24,
+            last_update_check_at: None,
         }
     }
 }
@@ -314,7 +388,14 @@ pub struct UpdateInfo {
 #[serde(rename_all = "camelCase")]
 pub struct CheckUpdatesResult {
     pub checked: usize,
+    /// Builds whose stored `revisionId` is older than the latest revision on
+    /// Liquipedia. The overlay's update badge counts only this set.
     pub outdated: Vec<UpdateInfo>,
+    /// Builds with no stored `revisionId` at all (imported before revision
+    /// tracking, or hand-edited builds the user marked as Liquipedia source).
+    /// Surfaced in the Manager's Updates tab so the user can fix them with a
+    /// single refresh, but never lights up the badge.
+    pub unknown: Vec<UpdateInfo>,
     pub all: Vec<UpdateInfo>,
 }
 
@@ -360,4 +441,7 @@ pub enum HotkeyAction {
     ToggleFavorite,
     ToggleCompact,
     ToggleWindow,
+    /// v2.0+: Ctrl+Alt+M cycles between Manager and Overlay view modes
+    /// without relying on the Manager being visible.
+    ToggleMode,
 }

@@ -43,6 +43,13 @@ export interface BuildsData {
   builds: Build[];
 }
 
+export type ViewMode = "manager" | "overlay";
+
+export interface WindowSize {
+  width: number;
+  height: number;
+}
+
 export interface Settings {
   version?: number;
   liquipediaUserAgent: string;
@@ -52,6 +59,17 @@ export interface Settings {
   autoCheckUpdatesOnLaunch: boolean;
   pageSize: number;
   defaultRace: Race;
+  /** v2.0+: which view the app booted into / should re-open with. */
+  lastView: ViewMode;
+  /** v2.0+: remembered window dimensions per mode. */
+  managerWindowSize: WindowSize;
+  overlayWindowSize: WindowSize;
+  /** v2.0+: minimum hours between automatic on-launch Liquipedia scans. */
+  scanIntervalHours: number;
+  /** v2.0+: ISO timestamp of the last successful update check. The throttle
+   * compares this against scanIntervalHours on boot to decide whether to
+   * actually hit Liquipedia. */
+  lastUpdateCheckAt?: string | null;
 }
 
 export interface ImportOptions {
@@ -106,6 +124,10 @@ export interface UpdateInfo {
 export interface CheckUpdatesResult {
   checked: number;
   outdated: UpdateInfo[];
+  /** Builds with no stored revisionId (imported before tracking landed). The
+   * Manager surfaces these so the user can refresh once to enable diffing,
+   * but they NEVER light up the overlay's update-available badge. */
+  unknown: UpdateInfo[];
   all: UpdateInfo[];
 }
 
@@ -145,7 +167,8 @@ export type HotkeyAction =
   | "first-page"
   | "toggle-favorite"
   | "toggle-compact"
-  | "toggle-window";
+  | "toggle-window"
+  | "toggle-mode";
 
 export interface ParsedVariant {
   variantName: string;

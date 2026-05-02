@@ -12,6 +12,7 @@ use crate::storage::{self, UserPaths};
 use crate::types::{
     Build, BuildsData, BulkImportOptions, CheckUpdatesResult, ImportOptions,
     ImportSinglePageResult, RefreshBuildsOptions, RefreshBuildsResult, Settings, UserDataPaths,
+    ViewMode,
 };
 use crate::{liquipedia, window as winmod};
 use serde_json::Value;
@@ -196,6 +197,31 @@ pub fn window_set_opacity(window: WebviewWindow, value: f64) {
 #[tauri::command]
 pub fn window_toggle_devtools(window: WebviewWindow) {
     winmod::toggle_devtools(&window);
+}
+
+/// Switch the single window between Manager and Overlay modes. Reads the
+/// per-mode dimensions from settings.json so the user's resize survives
+/// the toggle. Persists `lastView` so the next launch boots into the
+/// chosen mode.
+#[tauri::command]
+pub async fn window_set_mode(
+    window: WebviewWindow,
+    paths: State<'_, UserPaths>,
+    mode: ViewMode,
+) -> Result<Settings, String> {
+    let mut settings = storage::read_settings(paths.inner())
+        .await
+        .map_err(err_string)?;
+    let sizes = winmod::ManagerSizes {
+        manager: settings.manager_window_size,
+        overlay: settings.overlay_window_size,
+    };
+    winmod::set_mode(&window, mode, sizes);
+    settings.last_view = mode;
+    let payload = serde_json::json!({ "lastView": mode });
+    storage::save_settings(paths.inner(), payload)
+        .await
+        .map_err(err_string)
 }
 
 #[tauri::command]

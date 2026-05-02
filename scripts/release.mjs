@@ -5,10 +5,13 @@ const args = process.argv.slice(2);
 const bumpType = args[0];
 const dryRun = args.includes("--dry-run");
 const allowDirty = args.includes("--allow-dirty");
+const skipScrape = args.includes("--skip-scrape");
 
 const VALID_BUMPS = new Set(["patch", "minor", "major"]);
 if (!VALID_BUMPS.has(bumpType)) {
-  console.error("Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty]");
+  console.error(
+    "Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty] [--skip-scrape]"
+  );
   process.exit(1);
 }
 
@@ -78,6 +81,28 @@ if (dryRun) {
   process.exit(0);
 }
 
+if (!skipScrape) {
+  console.log("");
+  console.log(
+    "Refreshing data/builds.json from Liquipedia. This takes a few minutes (rate-limited)."
+  );
+  console.log("Pass --skip-scrape to bypass for emergency releases that don't touch the catalog.");
+  console.log("");
+  const scrape = spawnSync(
+    process.platform === "win32" ? "npm.cmd" : "npm",
+    ["run", "scrape", "--silent"],
+    {
+      stdio: "inherit"
+    }
+  );
+  if (scrape.status !== 0) {
+    console.error(
+      "Scrape failed. Aborting release. Re-run with --skip-scrape if the catalog should stay as-is."
+    );
+    process.exit(1);
+  }
+}
+
 pkg.version = newVersion;
 await writeFile(pkgPath, JSON.stringify(pkg, null, 2) + "\n", "utf8");
 await writeFile(changelogPath, updatedChangelog, "utf8");
@@ -107,7 +132,11 @@ if (cargoCheck.status !== 0) {
   console.warn("cargo update failed; you'll need to refresh src-tauri/Cargo.lock manually.");
 }
 
-git(`add ${pkgPath} ${changelogPath} ${tauriConfPath} ${cargoTomlPath} src-tauri/Cargo.lock`);
+const releaseFiles = [pkgPath, changelogPath, tauriConfPath, cargoTomlPath, "src-tauri/Cargo.lock"];
+if (!skipScrape) {
+  releaseFiles.push("data/builds.json", "data/scrape-coverage.json");
+}
+git(`add ${releaseFiles.join(" ")}`);
 git(`commit -m "chore(release): v${newVersion}"`);
 git(`tag -a v${newVersion} -m "v${newVersion}"`);
 

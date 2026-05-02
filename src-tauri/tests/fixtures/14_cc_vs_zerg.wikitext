@@ -1,0 +1,71 @@
+{{Infobox strategy
+|name=14 CC
+|race=T
+|image=14 CC.png
+|caption=14 CC Fast Expansion
+|matchups=TvZ
+|creator=Unknown
+|popularized=SKT T1 Terrans, Flash
+}}
+'''14 CC''' is similar to 1 Rax CC, but takes a greater risk in hopes of having a larger economic gain. Flash swept Jaedong 3-0 in the Hana Daetoo MSL finals with this build. However, if the opponents ops for a 9 pool or any earlier pool, it will most likely result in a GG for the Terran player.
+
+==Build Order==
+*9/10 - Supply Depot (preferably where you can wall outside of your natural)
+*14/18 - Command Center (at natural)
+*15/28 - Barracks
+*15/28 - Supply Depot
+**DO NOT build 2nd supply depot if you can wall in with just a supply depot and barracks.
+*17/36 - Barracks
+*18/36 - Refinery
+*22/36 - Academy
+*30/36 - Supply Depot
+*36/44 - Supply Depot
+*40/52 - Barracks
+*42/52 - Engineering Bay
+**If you are not confident you will be able to fend off early muta harass, you may make your ebay earlier to set up turrets.
+*46/52 - Supply Depot
+*50/60 - Factory
+
+-This build order will vary depending on what your opponent is doing. For example, if your wall isn't ling proof then you will need to lay down a bunker and/or block/repair with SCVs. (If marines can fit through your wall, zerglings can, too.)
+
+-After this point, supply counts might not be the same because it really depends on what the Zerg player is doing and how many units you've lost in beginning encounters. After the Factory, continue building a Starport then a Science Facility at roughly at these supply counts.
+
+*62 - Starport
+*72 - Science Facility
+*72 - Engineering bay
+*80 - Barracks
+Get Marine Range directly after Stim Packs, and Comsat Stations when Range finishes. If he does any sort of 2hatch build, you must add Comsat Stations sooner, preferably when range is almost halfway finished. You can still tech towards Science Vessels if the Zerg player is going 2-Hatch Mutalisk by skipping making tanks and adding another Barracks and Missile Turrets. Get the second Infantry Attack and first Infantry Armor upgrades when second Engineering Bay is finished, then add two more Barracks.
+
+When the Academy finishes, make 2 Medics, then 2 Firebats. Move out to pressure the Zerg with 6 Marines, 2 Medics, 2 Firebats and 1 scouting SCV, moving either to take him out or to take down his third base, if it's built. 
+
+When Zerg chooses a 2-hatch build its preferable that you stay inside your own base, only moving out a little bit to pressure the Zerg into making sunken or two. You can move out if you scout a Lurker opening to buy yourself some time and slow his push, while making a bunker at your natural ASAP to prevent a counter-attack. Continue making tanks and upgrade Siege Mode and Irradiate while watching for any kind of drops.
+When Vessels are out, scan his base and adapt the same way as if you had executed a timing push when the Zerg gets hive tech.
+
+==Countered By==
+===Hard Counters===
+*[[4 Pool|4-7 Pool]]
+*[[9 Pool (vs. Terran)|9 Pool]]
+
+===Soft Counters===
+*12 pool
+*[[3 Hatch Before Pool (vs. Terran)|3 hatch before pool]]: 3 hatch before pool does not put a zerg ahead economically of a 14 cc but negates some of the econ advantage of a 14cc through a faster third hatchery to get drones earlier.
+
+==Counter To==
+===Hard Counters===
+===Soft Counters===
+*12 hatch
+
+==Notable Maps==
+===Strong===
+It is less risky on larger maps, especially 4 player maps, as there is a larger distance for early units to travel. Also, maps that allow you to easily wall in your natural are a good for this build.
+===Weak===
+It is quite risky on 2 player maps, as the Zerg will be able to scout you quite quickly, and exploit the lack of early units. However, because you know your opponent's position, you can scout your opponent early and decide if you are able to 14 CC or not, assuming you will be able to fend off early pressure.
+
+==Mentality==
+14 CC allows the Terran to gain a fast economy, however, it is vulnerable to early rushing builds, and sometimes results in a loss due strictly to build order. If the Terran can successfully defend his natural expansion from early harassment, his economy will be superior in the midgame, assuming the other player does not FE.
+
+==Scouting==
+Because you must wall in and must make your barracks later, you opponent will have map control. It is VERY important you scout early and KEEP YOUR SCOUT ALIVE so you know what your opponent is doing. By seeing what your opponent is doing, you will be able to counter his build with your superior economy. If your opponent tries to counter your build by getting his 3rd & 4th gas early, it is recommended that you quickly add barracks and use the small  timing window to attack your opponent.
+
+[[Category:Strategies]]
+{{Missing-games}}

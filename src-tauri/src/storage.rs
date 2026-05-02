@@ -3,7 +3,7 @@
 // backups. Seeds builds.json from a bundled resource on first launch and
 // runs forward-only schema migrations driven by SCHEMA_VERSION.
 
-use crate::types::{Build, BuildsData, Race, Settings, UserDataPaths};
+use crate::types::{Build, BuildsData, Settings, UserDataPaths};
 use crate::utils;
 use serde_json::Value;
 use std::path::{Path, PathBuf};
@@ -11,6 +11,11 @@ use thiserror::Error;
 use tokio::fs;
 
 pub const SCHEMA_VERSION: u32 = 4;
+/// Settings file format version. Bumped to 2 in v2.0 with the addition of
+/// last_view, manager_window_size, overlay_window_size, scan_interval_hours.
+/// `read_settings` rewrites older settings files in place by re-serialising
+/// through the typed Settings (defaults fill in missing fields).
+pub const SETTINGS_VERSION: u32 = 2;
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 2300;
 pub const DEFAULT_USER_AGENT: &str = concat!(
     "BWBuildOverlay/",
@@ -226,17 +231,22 @@ pub async fn ensure_user_files(paths: &UserPaths) -> StorageResult<()> {
     }
 
     if !file_exists(&paths.settings_path).await {
-        let defaults = Settings {
-            version: 1,
-            liquipedia_user_agent: DEFAULT_USER_AGENT.to_string(),
-            rate_limit_ms: DEFAULT_RATE_LIMIT_MS,
-            compact_overlay: false,
-            overlay_opacity: 1.0,
-            auto_check_updates_on_launch: false,
-            page_size: 25,
-            default_race: Race::Protoss,
-        };
+        let defaults = Settings::default();
         write_json_pretty(&paths.settings_path, &defaults).await?;
+    } else {
+        // v2.0+: forward-only migration. Re-deserialise through the typed
+        // Settings (serde defaults backfill missing fields) and write back so
+        // the on-disk shape is up to date with SETTINGS_VERSION.
+        let raw = fs::read(&paths.settings_path).await?;
+        if let Ok(parsed) = serde_json::from_slice::<Value>(&raw) {
+            let stored_version = parsed.get("version").and_then(|v| v.as_u64()).unwrap_or(0) as u32;
+            if stored_version < SETTINGS_VERSION {
+                if let Ok(mut settings) = serde_json::from_value::<Settings>(parsed) {
+                    settings.version = SETTINGS_VERSION;
+                    write_json_pretty(&paths.settings_path, &settings).await?;
+                }
+            }
+        }
     }
 
     let raw = read_json_value(&paths.user_builds_path).await?;
@@ -277,7 +287,7 @@ pub async fn save_settings(paths: &UserPaths, partial: Value) -> StorageResult<S
         for (k, v) in source {
             target.insert(k, v);
         }
-        target.insert("version".to_string(), Value::from(1u32));
+        target.insert("version".to_string(), Value::from(SETTINGS_VERSION));
     }
     let next: Settings = serde_json::from_value(merged)?;
     write_json_pretty(&paths.settings_path, &next).await?;

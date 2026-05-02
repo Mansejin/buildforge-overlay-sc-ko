@@ -51,11 +51,126 @@ function syncMatchupFilter(): void {
   dom.managerMatchupFilter.value = current;
 }
 
+/**
+ * Render a single build entry in the sidebar. Pulled out of
+ * renderManagerList so the same row markup is shared between
+ * top-level standalone builds and child variants.
+ */
+function renderBuildRow(build: Build, pendingIds: Set<string>): HTMLButtonElement {
+  const wrapper = document.createElement("button");
+  wrapper.className = `build-list-item ${
+    build.id === store.selectedManagerBuildId ? "active" : ""
+  }`;
+  const titleRow = document.createElement("div");
+  titleRow.className = "item-title-row";
+
+  const title = document.createElement("div");
+  title.className = "item-title";
+  title.textContent = build.name;
+  titleRow.appendChild(title);
+
+  if (build.favorite) {
+    const star = document.createElement("span");
+    star.textContent = "\u2605";
+    star.style.color = "var(--update)";
+    titleRow.appendChild(star);
+  }
+  if (pendingIds.has(build.id)) {
+    const upd = document.createElement("span");
+    upd.textContent = "\u21bb";
+    upd.style.color = "var(--update)";
+    upd.title = "Update available on Liquipedia";
+    titleRow.appendChild(upd);
+  }
+  if (build.customEdited) {
+    const ce = document.createElement("span");
+    ce.textContent = "\u270e";
+    ce.style.color = "var(--muted)";
+    ce.title = "Custom edited - protected from refresh";
+    titleRow.appendChild(ce);
+  }
+
+  const subtitle = document.createElement("div");
+  subtitle.className = "item-subtitle";
+  const matchup = document.createElement("span");
+  matchup.className = "chip";
+  matchup.textContent = build.matchup || deriveMatchup(build.race, build.opponent);
+  matchup.style.borderColor = "var(--border)";
+  matchup.style.background = "transparent";
+  matchup.style.color = "var(--accent)";
+  subtitle.appendChild(matchup);
+  if (build.difficulty) {
+    const diff = document.createElement("span");
+    diff.className = "chip subtle";
+    diff.textContent = build.difficulty;
+    subtitle.appendChild(diff);
+  }
+  if (build.sourceName === "Liquipedia") {
+    const src = document.createElement("span");
+    src.className = "chip subtle";
+    src.textContent = "Liquipedia";
+    subtitle.appendChild(src);
+  }
+
+  wrapper.append(titleRow, subtitle);
+  wrapper.addEventListener("click", () => {
+    store.selectedManagerBuildId = build.id;
+    loadBuildIntoForm(build);
+    setTab("edit");
+    renderManagerList();
+  });
+  return wrapper;
+}
+
+interface VariantCluster {
+  parent: Build;
+  variants: Build[];
+}
+
+function clusterByVariantOf(builds: Build[]): {
+  standalone: Build[];
+  clusters: VariantCluster[];
+} {
+  const buildById = new Map(builds.map((b) => [b.id, b]));
+  const childrenByParent = new Map<string, Build[]>();
+  for (const b of builds) {
+    if (!b.variantOf) continue;
+    const list = childrenByParent.get(b.variantOf) || [];
+    list.push(b);
+    childrenByParent.set(b.variantOf, list);
+  }
+  const standalone: Build[] = [];
+  const clusters: VariantCluster[] = [];
+  const visited = new Set<string>();
+  for (const b of builds) {
+    if (visited.has(b.id)) continue;
+    if (b.variantOf) {
+      // Child whose parent isn't in the filtered list - promote to standalone.
+      if (!buildById.has(b.variantOf)) {
+        standalone.push(b);
+        visited.add(b.id);
+      }
+      continue;
+    }
+    const variants = childrenByParent.get(b.id) || [];
+    if (variants.length === 0) {
+      standalone.push(b);
+      visited.add(b.id);
+    } else {
+      clusters.push({ parent: b, variants });
+      visited.add(b.id);
+      for (const v of variants) visited.add(v.id);
+    }
+  }
+  return { standalone, clusters };
+}
+
 export function renderManagerList(): void {
   syncMatchupFilter();
   const raceFilter = dom.managerRaceFilter.value;
   const matchupFilter = dom.managerMatchupFilter.value;
   const search = dom.managerSearch.value;
+  const hasSearch = search.trim().length > 0;
 
   const builds = store.data.builds
     .filter((b) => raceFilter === "All" || b.race === raceFilter)
@@ -80,68 +195,38 @@ export function renderManagerList(): void {
   dom.managerEmptyState.hidden = builds.length > 0;
   const pendingIds = new Set(store.pendingUpdates.outdated.map((u) => u.buildId));
 
-  for (const build of builds) {
-    const wrapper = document.createElement("button");
-    wrapper.className = `build-list-item ${build.id === store.selectedManagerBuildId ? "active" : ""}`;
-    const titleRow = document.createElement("div");
-    titleRow.className = "item-title-row";
+  const { standalone, clusters } = clusterByVariantOf(builds);
 
-    const title = document.createElement("div");
-    title.className = "item-title";
-    title.textContent = build.name;
-    titleRow.appendChild(title);
+  for (const b of standalone) {
+    dom.managerBuildList.appendChild(renderBuildRow(b, pendingIds));
+  }
 
-    if (build.favorite) {
-      const star = document.createElement("span");
-      star.textContent = "\u2605";
-      star.style.color = "var(--update)";
-      titleRow.appendChild(star);
+  for (const cluster of clusters) {
+    const details = document.createElement("details");
+    details.className = "variant-cluster";
+    // Auto-expand when there's a search query (the user is hunting); also
+    // expand when the selected build is inside this cluster.
+    const containsSelected = cluster.variants.some((v) => v.id === store.selectedManagerBuildId);
+    const containsPending = cluster.variants.some((v) => pendingIds.has(v.id));
+    details.open = hasSearch || containsSelected || containsPending;
+    const summary = document.createElement("summary");
+    summary.className = "variant-cluster-summary";
+    const name = document.createElement("span");
+    name.className = "variant-cluster-name";
+    name.textContent = cluster.parent.name;
+    const count = document.createElement("span");
+    count.className = "variant-cluster-count chip subtle";
+    count.textContent = `${cluster.variants.length + 1} variants`;
+    summary.append(name, count);
+    details.appendChild(summary);
+    const list = document.createElement("div");
+    list.className = "variant-cluster-list";
+    list.appendChild(renderBuildRow(cluster.parent, pendingIds));
+    for (const v of cluster.variants) {
+      list.appendChild(renderBuildRow(v, pendingIds));
     }
-    if (pendingIds.has(build.id)) {
-      const upd = document.createElement("span");
-      upd.textContent = "\u21bb";
-      upd.style.color = "var(--update)";
-      upd.title = "Update available on Liquipedia";
-      titleRow.appendChild(upd);
-    }
-    if (build.customEdited) {
-      const ce = document.createElement("span");
-      ce.textContent = "\u270e";
-      ce.style.color = "var(--muted)";
-      ce.title = "Custom edited - protected from refresh";
-      titleRow.appendChild(ce);
-    }
-
-    const subtitle = document.createElement("div");
-    subtitle.className = "item-subtitle";
-    const matchup = document.createElement("span");
-    matchup.className = "chip";
-    matchup.textContent = build.matchup || deriveMatchup(build.race, build.opponent);
-    matchup.style.borderColor = "var(--border)";
-    matchup.style.background = "transparent";
-    matchup.style.color = "var(--accent)";
-    subtitle.appendChild(matchup);
-    if (build.difficulty) {
-      const diff = document.createElement("span");
-      diff.className = "chip subtle";
-      diff.textContent = build.difficulty;
-      subtitle.appendChild(diff);
-    }
-    if (build.sourceName === "Liquipedia") {
-      const src = document.createElement("span");
-      src.className = "chip subtle";
-      src.textContent = "Liquipedia";
-      subtitle.appendChild(src);
-    }
-
-    wrapper.append(titleRow, subtitle);
-    wrapper.addEventListener("click", () => {
-      store.selectedManagerBuildId = build.id;
-      loadBuildIntoForm(build);
-      setTab("edit");
-      renderManagerList();
-    });
-    dom.managerBuildList.appendChild(wrapper);
+    details.appendChild(list);
+    dom.managerBuildList.appendChild(details);
   }
 }
 
@@ -243,5 +328,7 @@ export function bindManagerListEvents(saveData: SaveDataFn): void {
   dom.importTabButton.addEventListener("click", () => setTab("import"));
   dom.updatesTabButton.addEventListener("click", () => setTab("updates"));
   dom.settingsTabButton.addEventListener("click", () => setTab("settings"));
-  dom.managerCloseButton.addEventListener("click", () => dom.managerDialog.close());
+  // The pre-2.0 manager close button lived on a <dialog>; the v2.0 layout
+  // dismisses the manager by switching to overlay mode via the header
+  // mode-toggle, so no close binding is needed here.
 }

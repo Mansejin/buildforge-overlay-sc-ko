@@ -35,13 +35,29 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+### Added
+
+- **Single-window Manager / Overlay mode toggle.** The same window now switches between a decorated, full-UI **Manager** (build editing, importing, updates, settings) and a frameless, always-on-top **Overlay** (in-game build display). Toggle via the segmented control in the header or the new global `Ctrl+Alt+M` hotkey. The OS-level chrome (decorations, AOT, frame size) is reshaped per-mode and the chosen mode is persisted in `settings.json` so the next launch boots into the same view.
+- **Catalog-stale banner on Manager boot.** When the bundled catalog snapshot is older than 30 days, or no automatic check has run within `scanIntervalHours`, the Manager view shows a banner with a one-click **Re-sync from Liquipedia** button.
+- **Variant grouping in pickers.** Liquipedia builds with multiple variants (e.g. Forge FE → 9 Pool / 12 Pool / 12 Hatch / Overpool) now group together: collapsible `<details>` clusters in the Manager sidebar (auto-expanded on search match or when a child has a pending update), `<optgroup>`s in the Overlay build picker.
+- **Throttled silent on-launch update scan.** `autoCheckUpdatesOnLaunch` now defaults to **on**, but a new `scanIntervalHours` setting (default 24, range 1–168) caps the frequency. The throttle uses persisted `lastUpdateCheckAt`, survives restarts, and stays quiet on success — only toasts when Liquipedia actually has newer revisions.
+- **Release-time Liquipedia scrape pipeline.** New `src-tauri/src/bin/scrape.rs` Rust CLI reuses the runtime parser; `scripts/scrape-liquipedia.mjs` walks every per-race / per-matchup / per-difficulty Liquipedia category, unions with the new `data/known-build-pages.txt` safety net, then streams page titles through the Rust binary. Outputs the bundled `data/builds.json` plus a per-page `data/scrape-coverage.json` audit. `scripts/release.mjs` runs the scrape automatically before the version bump (skip with `--skip-scrape`).
+- **Per-page wikitext fixture tests.** `src-tauri/tests/parser_fixtures.rs` pins the parser against checked-in Liquipedia snapshots (Forge FE, 1 Gate Core, 14 CC) so future edits cannot silently regress variant detection.
+
 ### Changed
 
-- When a Liquipedia import yields no parsed `{{build}}` steps, the placeholder overlay step is now plain-language guidance instead of developer-style wording.
+- **Bundled `data/builds.json` regenerated from Liquipedia at release time.** Replaces the 25 hand-typed builds with the full Liquipedia catalog. Every shipped build now carries a real `revisionId` so the update-available badge starts dark on first install.
+- **Settings file format bumped to v2.** Adds `lastView`, `managerWindowSize`, `overlayWindowSize`, `scanIntervalHours`, `lastUpdateCheckAt`. Forward-only migration: existing `settings.json` is re-deserialised through the typed `Settings` (serde defaults backfill missing fields) and written back on launch.
+- **Manager UI restructured into a 2-column layout.** Sidebar (filters + scrollable build list + actions) on the left, tab nav + scrolling tab content on the right. Every flex/grid child in the chain has `min-height: 0`, scroll containers live one level above the content, and tabs sit outside the scroll region — fixing the cutoff/scroll bugs from v1.
+- **Update result includes a separate `unknown` bucket.** `CheckUpdatesResult` now distinguishes truly outdated builds (newer revision on Liquipedia) from builds with no stored `revisionId` (imported before tracking, informational only). The Updates tab surfaces both; the overlay badge counts only the `outdated` bucket.
 
 ### Fixed
 
-- Removed a stale `src/main/` path mention from the Liquipedia API module header comment (no behavior change).
+- **Inline-variant Liquipedia pages are now parsed correctly.** Pages like Forge FE (vs. Zerg) lay out 2-4 variants side by side using `{{col-begin}} / {{colbreak}} / {{col-end}}` plus `;` sub-headings inside a single `{{build}}` template. The parser previously flattened all of that into a single 28-step build; it now walks the build body line-by-line, flushes the in-progress variant on every column marker or definition term, and prepends the shared prelude bullets (e.g. 8/8/11 lead-in) to each variant so every output build is complete.
+- **The "update available" badge no longer stays permanently lit.** Builds with `revisionId == null` are no longer treated as outdated; the badge counts only builds where Liquipedia actually has a newer revision than the locally stored one. NoStoredRev builds still show in the Updates tab so users can refresh once to enable diffing.
+- **Always-on-top focus-keeper is mode-aware.** In Manager mode the window no longer yanks itself above other apps every time you click the taskbar. The Windows AOT workaround stays intact for Overlay mode.
+- **When a Liquipedia import yields no parsed `{{build}}` steps, the placeholder overlay step is now plain-language guidance instead of developer-style wording.**
+- **Removed a stale `src/main/` path mention from the Liquipedia API module header comment** (no behavior change).
 
 ## [1.0.0] - 2026-05-01
 

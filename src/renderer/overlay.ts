@@ -70,20 +70,90 @@ function populateRaceTabs(): void {
   }
 }
 
+/**
+ * Builds for a single matchup are now usually variant clusters - e.g.
+ * Forge FE has 4 variants (9 Pool / 12 Pool / 12 Hatch / Overpool) all
+ * pointing back to a parent build via `variantOf`. Group them under
+ * <optgroup> so the in-game picker matches Liquipedia's mental model:
+ * pick the strategy first, then the variant for the scout you saw.
+ */
 function populateBuildSelect(): void {
   const builds = buildsForCurrentMatchupFiltered();
   dom.buildSelect.innerHTML = "";
+  const buildById = new Map(builds.map((b) => [b.id, b]));
+  const groups = new Map<string, Build[]>();
+  const standalone: Build[] = [];
   for (const b of builds) {
-    const option = document.createElement("option");
-    option.value = b.id;
-    const star = b.favorite ? "\u2605 " : "";
-    option.textContent = `${star}${b.name}`;
-    dom.buildSelect.appendChild(option);
+    const parentId = b.variantOf || (buildHasChildren(b.id, builds) ? b.id : null);
+    if (!parentId) {
+      standalone.push(b);
+      continue;
+    }
+    const list = groups.get(parentId) || [];
+    list.push(b);
+    groups.set(parentId, list);
+  }
+  // Render standalone builds first, then each variant cluster as an
+  // <optgroup>. Within a cluster the parent (variantOf == null) sorts
+  // first, then variants alphabetically by display name.
+  for (const b of standalone) dom.buildSelect.appendChild(renderBuildOption(b));
+  const sortedGroupIds = [...groups.keys()].sort((a, b) => {
+    const an = buildById.get(a)?.name || "";
+    const bn = buildById.get(b)?.name || "";
+    return an.localeCompare(bn);
+  });
+  for (const parentId of sortedGroupIds) {
+    const cluster = (groups.get(parentId) || []).slice().sort((a, b) => {
+      const aIsParent = a.id === parentId ? 0 : 1;
+      const bIsParent = b.id === parentId ? 0 : 1;
+      if (aIsParent !== bIsParent) return aIsParent - bIsParent;
+      return a.name.localeCompare(b.name);
+    });
+    const groupName = displayGroupName(parentId, cluster, buildById);
+    const og = document.createElement("optgroup");
+    og.label = groupName;
+    for (const b of cluster) {
+      const option = renderBuildOption(b, { trimPrefix: groupName });
+      og.appendChild(option);
+    }
+    dom.buildSelect.appendChild(og);
   }
   if (!builds.some((b) => b.id === store.state.buildId)) {
     if (builds.length && builds[0]) setBuildId(builds[0].id);
   }
   dom.buildSelect.value = store.state.buildId || "";
+}
+
+function buildHasChildren(id: string, builds: Build[]): boolean {
+  return builds.some((b) => b.variantOf === id);
+}
+
+function displayGroupName(parentId: string, cluster: Build[], byId: Map<string, Build>): string {
+  const parent = byId.get(parentId);
+  if (parent) return parent.name.replace(/\s*-\s*[^-]+$/, "").trim() || parent.name;
+  // Parent missing from the filtered set (e.g. filtered out by search) -
+  // synthesize a name from the longest common prefix of the variants.
+  const names = cluster.map((b) => b.name);
+  let prefix = names[0] || "";
+  for (const n of names.slice(1)) {
+    while (n.indexOf(prefix) !== 0 && prefix.length > 0) {
+      prefix = prefix.slice(0, -1);
+    }
+  }
+  return prefix.replace(/\s*-\s*$/, "").trim() || "Variants";
+}
+
+function renderBuildOption(b: Build, opts?: { trimPrefix?: string }): HTMLOptionElement {
+  const option = document.createElement("option");
+  option.value = b.id;
+  const star = b.favorite ? "\u2605 " : "";
+  let label = b.name;
+  if (opts?.trimPrefix && label.startsWith(opts.trimPrefix)) {
+    const tail = label.slice(opts.trimPrefix.length).replace(/^\s*[-:]\s*/, "");
+    if (tail.length > 0) label = tail;
+  }
+  option.textContent = `${star}${label}`;
+  return option;
 }
 
 function renderBuildHead(build: Build): void {

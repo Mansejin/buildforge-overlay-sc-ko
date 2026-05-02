@@ -9,6 +9,7 @@ import { dom } from "./dom.js";
 import { store } from "./state.js";
 import { renderManagerList, setTab } from "./manager.js";
 import { renderOverlay } from "./overlay.js";
+import { setMode } from "./mode.js";
 import { toast, toastError, toastOk } from "./toast.js";
 import { formatRelative } from "../shared/utils.js";
 import type { UpdateInfo } from "../shared/types.js";
@@ -61,13 +62,33 @@ export function renderUpdatesList(): void {
     return;
   }
   const outdated = all.filter((u) => u.outdated);
-  dom.updatesSummary.textContent =
-    `${outdated.length} of ${all.length} imported builds need a refresh.` +
-    (store.pendingUpdates.lastChecked
-      ? ` Last checked ${formatRelative(store.pendingUpdates.lastChecked)}.`
-      : "");
-  const sorted = [...all].sort((a, b) => Number(b.outdated) - Number(a.outdated));
+  const unknown = all.filter((u) => u.reason === "no-stored-rev");
+  const lastCheckedSuffix = store.pendingUpdates.lastChecked
+    ? ` Last checked ${formatRelative(store.pendingUpdates.lastChecked)}.`
+    : "";
+  if (outdated.length === 0 && unknown.length === 0) {
+    dom.updatesSummary.textContent = `Catalog up to date - ${all.length} builds tracked.${lastCheckedSuffix}`;
+  } else {
+    const parts: string[] = [];
+    if (outdated.length > 0) {
+      parts.push(`${outdated.length} of ${all.length} builds have updates available`);
+    }
+    if (unknown.length > 0) {
+      parts.push(
+        `${unknown.length} imported before revision tracking - refresh once to enable diffing`
+      );
+    }
+    dom.updatesSummary.textContent = `${parts.join(". ")}.${lastCheckedSuffix}`;
+  }
+  const sorted = [...all].sort((a, b) => {
+    if (a.outdated !== b.outdated) return Number(b.outdated) - Number(a.outdated);
+    const aUnknown = a.reason === "no-stored-rev" ? 1 : 0;
+    const bUnknown = b.reason === "no-stored-rev" ? 1 : 0;
+    return bUnknown - aUnknown;
+  });
   for (const u of sorted) dom.updatesList.appendChild(buildRow(u));
+  // Badge ONLY counts truly outdated builds (newer revision on Liquipedia).
+  // no-stored-rev is informational and surfaces in the summary text only.
   dom.updatesBadgeButton.hidden = outdated.length === 0;
   dom.updatesBadgeButton.title = outdated.length
     ? `${outdated.length} update(s) available - click to open Manager`
@@ -92,9 +113,18 @@ async function reloadAndRecheck(): Promise<void> {
       if (!b) return u;
       const outdated =
         u.latestRevId != null && b.revisionId != null && u.latestRevId !== b.revisionId;
-      return { ...u, currentRevId: b.revisionId, outdated };
+      const reason: typeof u.reason =
+        b.revisionId == null && u.latestRevId != null
+          ? "no-stored-rev"
+          : outdated
+            ? "newer-revision"
+            : "up-to-date";
+      return { ...u, currentRevId: b.revisionId, outdated, reason };
     });
     store.pendingUpdates.outdated = store.pendingUpdates.all.filter((u) => u.outdated);
+    store.pendingUpdates.unknown = store.pendingUpdates.all.filter(
+      (u) => u.reason === "no-stored-rev"
+    );
   }
   renderUpdatesList();
   renderManagerList();
@@ -108,7 +138,17 @@ export function bindUpdatesTabEvents(): void {
       const result = await api.checkForUpdates();
       store.pendingUpdates.all = result.all;
       store.pendingUpdates.outdated = result.outdated;
-      store.pendingUpdates.lastChecked = new Date().toISOString();
+      store.pendingUpdates.unknown = result.unknown ?? [];
+      const now = new Date().toISOString();
+      store.pendingUpdates.lastChecked = now;
+      try {
+        store.settings = await api.saveSettings({
+          ...store.settings,
+          lastUpdateCheckAt: now
+        });
+      } catch (saveErr) {
+        console.warn("Could not persist lastUpdateCheckAt:", saveErr);
+      }
       renderUpdatesList();
       renderManagerList();
       renderOverlay();
@@ -169,7 +209,7 @@ export function bindUpdatesTabEvents(): void {
   });
 
   dom.updatesBadgeButton.addEventListener("click", () => {
-    dom.managerDialog.showModal();
+    void setMode("manager");
     setTab("updates");
   });
 }

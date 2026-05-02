@@ -1,0 +1,44 @@
+# data/known-build-pages.txt
+# Manual safety net for the release-time Liquipedia scraper. One page title
+# per line. Comments start with `#`. The scraper unions this file with its
+# automatic category discovery so any build page Liquipedia leaves
+# miscategorized still ends up in the bundled catalog.
+#
+# Anyone can append to this file in any PR - no code change required.
+# Use spaces, not underscores. The "(vs. X)" suffix matters: it's part of
+# the canonical page title.
+
+# Protoss
+1 Gate Core (vs. Terran)
+10/15 Gates (vs. Terran)
+12 Nexus (vs. Terran)
+21 Nexus (vs. Terran)
+2 Gate (vs. Zerg)
+2 Gate Reaver (vs. Protoss)
+2 Gate DT (vs. Protoss)
+3 Gate Robo (vs. Protoss)
+Bisu Build (vs. Zerg)
+Corsair Reaver (vs. Zerg)
+Forge FE (vs. Zerg)
+
+# Terran
+14 CC (vs. Zerg)
+1 Fac FE (vs. Protoss)
+1 Rax FE (vs. Zerg)
+2 Fac Vulture (vs. Protoss)
+2 Port Wraith (vs. Terran)
+2 Port Wraith (vs. Zerg)
+2 Rax (vs. Zerg)
+Siege Expand (vs. Terran)
+SK Terran (vs. Zerg)
+
+# Zerg
+12 Hatch (vs. Terran)
+2 Hatch Muta (vs. Protoss)
+3 Hatch Hydra (vs. Protoss)
+3 Hatch Muta (vs. Terran)
+9 Pool (vs. Protoss)
+9 Pool (vs. Terran)
+9 Pool (vs. Zerg)
+Overpool (vs. Protoss)
+Overpool (vs. Zerg)

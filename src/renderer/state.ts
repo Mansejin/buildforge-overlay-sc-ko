@@ -20,6 +20,7 @@ interface UIState {
 
 interface PendingUpdates {
   outdated: UpdateInfo[];
+  unknown: UpdateInfo[];
   all: UpdateInfo[];
   lastChecked: string | null;
 }
@@ -39,13 +40,17 @@ export const store: Store = {
     rateLimitMs: 2300,
     compactOverlay: false,
     overlayOpacity: 1,
-    autoCheckUpdatesOnLaunch: false,
+    autoCheckUpdatesOnLaunch: true,
     pageSize: 25,
-    defaultRace: "Protoss"
+    defaultRace: "Protoss",
+    lastView: "manager",
+    managerWindowSize: { width: 1080, height: 760 },
+    overlayWindowSize: { width: 420, height: 640 },
+    scanIntervalHours: 24
   },
   state: { race: "Protoss", opponent: "Terran", buildId: null, page: 0, search: "" },
   selectedManagerBuildId: null,
-  pendingUpdates: { outdated: [], all: [], lastChecked: null }
+  pendingUpdates: { outdated: [], unknown: [], all: [], lastChecked: null }
 };
 
 function isRace(value: unknown): value is Race {

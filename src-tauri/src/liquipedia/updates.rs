@@ -55,6 +55,7 @@ pub async fn check_for_updates(
         return Ok(CheckUpdatesResult {
             checked: 0,
             outdated: vec![],
+            unknown: vec![],
             all: vec![],
         });
     }
@@ -79,13 +80,16 @@ pub async fn check_for_updates(
         let rev = revs_by_title.get(&title);
         let latest_rev_id = rev.and_then(|r| r.revision_id);
         let latest_timestamp = rev.and_then(|r| r.revision_timestamp.clone());
-        let outdated = matches!((latest_rev_id, b.revision_id), (Some(latest), Some(stored)) if latest != stored);
-        let unknown = b.revision_id.is_none() && latest_rev_id.is_some();
+        let newer_rev_available = matches!(
+            (latest_rev_id, b.revision_id),
+            (Some(latest), Some(stored)) if latest != stored
+        );
+        let no_stored_rev = b.revision_id.is_none() && latest_rev_id.is_some();
         let reason = if rev.is_none() {
             UpdateReason::MissingOnServer
-        } else if outdated {
+        } else if newer_rev_available {
             UpdateReason::NewerRevision
-        } else if unknown {
+        } else if no_stored_rev {
             UpdateReason::NoStoredRev
         } else {
             UpdateReason::UpToDate
@@ -103,7 +107,11 @@ pub async fn check_for_updates(
             current_rev_id: b.revision_id,
             latest_rev_id,
             latest_timestamp,
-            outdated: outdated || unknown,
+            // Only NewerRevision lights up the overlay badge. NoStoredRev
+            // (imported before revision tracking) is informational - the
+            // app surfaces it in the Updates tab so the user can refresh
+            // once to enable real diff tracking, but it shouldn't nag.
+            outdated: newer_rev_available,
             reason,
             custom_edited: b.custom_edited,
         });
@@ -119,9 +127,15 @@ pub async fn check_for_updates(
     storage::save_builds(paths, data).await?;
 
     let outdated: Vec<UpdateInfo> = all.iter().filter(|u| u.outdated).cloned().collect();
+    let unknown: Vec<UpdateInfo> = all
+        .iter()
+        .filter(|u| matches!(u.reason, UpdateReason::NoStoredRev))
+        .cloned()
+        .collect();
     Ok(CheckUpdatesResult {
         checked: total_liquipedia,
         outdated,
+        unknown,
         all,
     })
 }

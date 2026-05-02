@@ -16,6 +16,7 @@ import {
   toggleFavoriteOnCurrent
 } from "./state.js";
 import { cycleBuild, renderOverlay } from "./overlay.js";
+import { toggleMode } from "./mode.js";
 import type { Build, HotkeyAction, Settings } from "../shared/types.js";
 
 export interface HotkeyDeps {
@@ -90,6 +91,9 @@ export function makeHotkeyHandler({
         break;
       case "toggle-window":
         api.toggleWindow();
+        break;
+      case "toggle-mode":
+        await toggleMode();
         break;
       default: {
         const exhaustive: never = action;

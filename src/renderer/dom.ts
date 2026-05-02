@@ -49,6 +49,11 @@ export interface Dom {
   pageIndicator: HTMLElement;
   nextPageButton: HTMLButtonElement;
   toasts: HTMLElement;
+  modeManagerButton: HTMLButtonElement;
+  modeOverlayButton: HTMLButtonElement;
+  catalogStatusBanner: HTMLElement;
+  catalogStatusText: HTMLElement;
+  catalogResyncButton: HTMLButtonElement;
   managerDialog: HTMLDialogElement;
   managerCloseButton: HTMLButtonElement;
   managerRaceFilter: HTMLSelectElement;
@@ -101,6 +106,7 @@ export interface Dom {
   settingsUserAgent: HTMLInputElement;
   settingsRateLimit: HTMLInputElement;
   settingsAutoCheck: HTMLInputElement;
+  settingsScanInterval: HTMLInputElement;
   settingsCompactOverlay: HTMLInputElement;
   settingsOpacity: HTMLInputElement;
   settingsPageSize: HTMLInputElement;
@@ -140,6 +146,11 @@ export const dom: Dom = {
   pageIndicator: byId("pageIndicator"),
   nextPageButton: byId<HTMLButtonElement>("nextPageButton"),
   toasts: byId("toasts"),
+  modeManagerButton: byId<HTMLButtonElement>("modeManagerButton"),
+  modeOverlayButton: byId<HTMLButtonElement>("modeOverlayButton"),
+  catalogStatusBanner: byId("catalogStatusBanner"),
+  catalogStatusText: byId("catalogStatusText"),
+  catalogResyncButton: byId<HTMLButtonElement>("catalogResyncButton"),
   managerDialog: byId<HTMLDialogElement>("managerDialog"),
   managerCloseButton: byId<HTMLButtonElement>("managerCloseButton"),
   managerRaceFilter: byId<HTMLSelectElement>("managerRaceFilter"),
@@ -192,6 +203,7 @@ export const dom: Dom = {
   settingsUserAgent: byId<HTMLInputElement>("settingsUserAgent"),
   settingsRateLimit: byId<HTMLInputElement>("settingsRateLimit"),
   settingsAutoCheck: byId<HTMLInputElement>("settingsAutoCheck"),
+  settingsScanInterval: byId<HTMLInputElement>("settingsScanInterval"),
   settingsCompactOverlay: byId<HTMLInputElement>("settingsCompactOverlay"),
   settingsOpacity: byId<HTMLInputElement>("settingsOpacity"),
   settingsPageSize: byId<HTMLInputElement>("settingsPageSize"),

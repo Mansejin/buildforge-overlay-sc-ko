@@ -72,7 +72,14 @@ pub fn run() {
                 };
                 if let Some(window) = crate::window::main_window(&app_handle) {
                     crate::window::set_opacity(&window, settings.overlay_opacity);
-                    let _ = window.set_always_on_top(true);
+                    // v2.0: boot into the user's last view mode (default
+                    // Manager) instead of unconditionally treating the
+                    // window like an overlay.
+                    let sizes = crate::window::ManagerSizes {
+                        manager: settings.manager_window_size,
+                        overlay: settings.overlay_window_size,
+                    };
+                    crate::window::set_mode(&window, settings.last_view, sizes);
                     let _ = window.show();
                     let _ = window.set_focus();
                     if should_open_devtools_on_launch() {
@@ -109,6 +116,7 @@ pub fn run() {
             commands::window_toggle,
             commands::window_set_opacity,
             commands::window_toggle_devtools,
+            commands::window_set_mode,
             commands::external_open,
         ])
         .build(tauri::generate_context!())

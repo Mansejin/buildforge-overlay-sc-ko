@@ -6,142 +6,71 @@
     <title>BW Build Overlay</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-race="Protoss">
-    <main id="app" class="overlay">
-      <header class="topbar">
-        <div class="brand">
-          <div class="brand-mark" aria-hidden="true">
-            <img src="./assets/icon.png" alt="" />
-          </div>
-          <div>
-            <div class="eyebrow">BW Build Overlay</div>
-            <div id="overlayStatus" class="status-line">Always on top</div>
-          </div>
+  <!--
+    v2.0 single-window two-view shell:
+      data-mode="manager" - main program view (decorated, resizable, full UI)
+      data-mode="overlay" - in-game view (frameless, AOT, compact)
+    The Tauri side flips window chrome via window_set_mode; CSS hides the
+    inactive view via body[data-mode] selectors. Both views live as siblings
+    so the existing dom.ts id lookups still work.
+  -->
+  <body data-mode="manager" data-race="Protoss">
+    <header id="appHeader" class="app-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="./assets/icon.png" alt="" />
         </div>
-        <div class="topbar-actions">
-          <button
-            id="updatesBadgeButton"
-            class="icon-button"
-            title="Pending Liquipedia updates"
-            hidden
-          >
-            <span class="dot"></span>
-          </button>
-          <button id="favoriteButton" class="icon-button" title="Toggle favorite (Ctrl+Alt+F)">
-            &#9734;
-          </button>
-          <button id="compactButton" class="icon-button" title="Toggle compact mode (Ctrl+Alt+C)">
-            &#9633;
-          </button>
-          <button id="manageButton" class="small-button">Manage</button>
+        <div>
+          <div class="eyebrow">BW Build Overlay</div>
+          <div id="overlayStatus" class="status-line">Manager</div>
         </div>
-      </header>
+      </div>
 
-      <section class="race-tabs" role="tablist" aria-label="Player race">
-        <button class="race-tab" data-race="Terran" role="tab">Terran</button>
-        <button class="race-tab" data-race="Protoss" role="tab">Protoss</button>
-        <button class="race-tab" data-race="Zerg" role="tab">Zerg</button>
-      </section>
+      <div class="mode-toggle" role="tablist" aria-label="View">
+        <button id="modeManagerButton" class="mode-tab" data-target-mode="manager" role="tab">
+          Manager
+        </button>
+        <button id="modeOverlayButton" class="mode-tab" data-target-mode="overlay" role="tab">
+          Overlay
+        </button>
+      </div>
 
-      <section class="opponent-chips" role="tablist" aria-label="Opponent">
-        <button class="opp-chip" data-opp="Terran" role="tab">vT</button>
-        <button class="opp-chip" data-opp="Zerg" role="tab">vZ</button>
-        <button class="opp-chip" data-opp="Protoss" role="tab">vP</button>
-        <button class="opp-chip" data-opp="Random" role="tab">vR</button>
-      </section>
+      <div class="topbar-actions">
+        <button
+          id="updatesBadgeButton"
+          class="icon-button"
+          title="Pending Liquipedia updates"
+          hidden
+        >
+          <span class="dot"></span>
+        </button>
+        <button id="favoriteButton" class="icon-button" title="Toggle favorite (Ctrl+Alt+F)">
+          &#9734;
+        </button>
+        <button id="compactButton" class="icon-button" title="Toggle compact mode (Ctrl+Alt+C)">
+          &#9633;
+        </button>
+        <button id="manageButton" class="small-button" hidden>Manage</button>
+      </div>
+    </header>
 
-      <section class="build-picker">
-        <div class="search-row">
-          <input id="buildSearch" type="search" placeholder="Search builds (press / to focus)" />
-        </div>
-        <div class="build-row">
-          <select id="buildSelect"></select>
-          <button
-            id="prevBuildButton"
-            class="icon-button"
-            title="Previous build (Ctrl+Alt+Shift+B)"
-          >
-            &#8592;
-          </button>
-          <button id="nextBuildButton" class="icon-button" title="Next build (Ctrl+Alt+B)">
-            &#8594;
-          </button>
-        </div>
-      </section>
+    <!-- =========================================================
+         Manager view - full UI for adding/editing/importing builds.
+         Two-column grid; both columns own their own scroll.
+         Every flex/grid child in the chain has min-height: 0 so the
+         scrollable regions actually scroll instead of pushing content
+         off the bottom.
+         ========================================================= -->
+    <main id="viewManager" class="view view-manager">
+      <div id="catalogStatusBanner" class="catalog-banner" hidden>
+        <span id="catalogStatusText"></span>
+        <button id="catalogResyncButton" class="small-button">Re-sync from Liquipedia</button>
+      </div>
 
-      <section class="build-card" id="buildCard">
-        <div class="build-head">
-          <div class="build-head-text">
-            <h1 id="buildName">Loading...</h1>
-            <div class="meta-row">
-              <span id="matchupChip" class="chip"></span>
-              <span id="difficultyChip" class="chip subtle" hidden></span>
-              <span id="favoritedChip" class="chip subtle" hidden>&#9733; Favorite</span>
-              <span id="updateChip" class="chip subtle update-chip" hidden>Update available</span>
-            </div>
-            <div id="buildTags" class="tags"></div>
-          </div>
-          <div class="head-actions">
-            <button id="sourceButton" class="small-button">Source</button>
-          </div>
-        </div>
-
-        <p id="buildNotes" class="notes" hidden></p>
-        <p id="buildUserNotes" class="notes user-notes" hidden></p>
-
-        <ol id="steps" class="steps"></ol>
-
-        <div class="counters" id="countersBlock" hidden>
-          <div class="counter-row">
-            <span class="counter-label">Counters:</span>
-            <span id="countersList"></span>
-          </div>
-          <div class="counter-row">
-            <span class="counter-label">Countered by:</span>
-            <span id="counteredByList"></span>
-          </div>
-        </div>
-
-        <div class="footer">
-          <button id="prevPageButton" class="icon-button" title="Previous page (Ctrl+Alt+PgUp)">
-            &#8592;
-          </button>
-          <span id="pageIndicator" class="page-indicator">Page 1 / 1</span>
-          <button id="nextPageButton" class="icon-button" title="Next page (Ctrl+Alt+PgDn)">
-            &#8594;
-          </button>
-        </div>
-      </section>
-
-      <section class="hotkeys" id="hotkeysHelp">
-        <div class="hk-grid">
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> race</div>
-          <div>
-            <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Q</kbd>/<kbd>W</kbd>/<kbd>E</kbd>/<kbd>R</kbd>
-            opponent
-          </div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> next build</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PgDn</kbd>/<kbd>PgUp</kbd> page</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> favorite</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hide</div>
-        </div>
-      </section>
-    </main>
-
-    <div id="toasts" class="toast-stack" aria-live="polite"></div>
-
-    <dialog id="managerDialog" class="manager-dialog">
-      <div class="manager-shell">
-        <header class="manager-header">
-          <div>
-            <h2>Build Manager</h2>
-            <p>Add, edit, import, update, and back up your build orders.</p>
-          </div>
-          <button id="managerCloseButton" class="icon-button">&times;</button>
-        </header>
-
-        <section class="manager-grid">
-          <aside class="build-list-panel">
+      <div class="manager-grid">
+        <aside class="manager-side">
+          <div class="manager-side-head">
+            <h2>Builds</h2>
             <div class="filter-row">
               <select id="managerRaceFilter" title="Player race">
                 <option value="All">All races</option>
@@ -154,29 +83,32 @@
               </select>
             </div>
             <input id="managerSearch" type="search" placeholder="Search by name, tag" />
+          </div>
 
-            <div id="managerBuildList" class="manager-build-list"></div>
-            <div id="managerEmptyState" class="empty-state" hidden>
-              No builds match these filters.
-            </div>
+          <div id="managerBuildList" class="manager-build-list"></div>
+          <div id="managerEmptyState" class="empty-state" hidden>
+            No builds match these filters.
+          </div>
 
-            <div class="stack">
-              <button id="newBuildButton">New manual build</button>
-              <button id="duplicateBuildButton">Duplicate selected</button>
-              <button id="deleteBuildButton" class="danger-button">Delete selected</button>
-              <button id="backupButton">Backup builds.json</button>
-              <button id="openDataFolderButton">Open data folder</button>
-            </div>
-          </aside>
+          <div class="manager-side-actions stack">
+            <button id="newBuildButton">New manual build</button>
+            <button id="duplicateBuildButton">Duplicate selected</button>
+            <button id="deleteBuildButton" class="danger-button">Delete selected</button>
+            <div class="action-divider"></div>
+            <button id="backupButton">Backup builds.json</button>
+            <button id="openDataFolderButton">Open data folder</button>
+          </div>
+        </aside>
 
-          <section class="editor-panel">
-            <div class="tabs">
-              <button id="editTabButton" class="tab active">Edit</button>
-              <button id="importTabButton" class="tab">Import</button>
-              <button id="updatesTabButton" class="tab">Updates</button>
-              <button id="settingsTabButton" class="tab">Settings</button>
-            </div>
+        <section class="manager-main">
+          <div class="tabs">
+            <button id="editTabButton" class="tab active">Edit</button>
+            <button id="importTabButton" class="tab">Import</button>
+            <button id="updatesTabButton" class="tab">Updates</button>
+            <button id="settingsTabButton" class="tab">Settings</button>
+          </div>
 
+          <div class="tab-scroll">
             <div id="editTab" class="tab-panel active">
               <div class="form-grid two">
                 <label>
@@ -320,7 +252,10 @@
             <div id="updatesTab" class="tab-panel">
               <div class="import-card">
                 <h3>Check Liquipedia for updates</h3>
-                <p>Compare your imported builds against the latest revisions on Liquipedia.</p>
+                <p>
+                  Compare your imported builds against the latest revisions on Liquipedia. The app
+                  also runs a silent check on launch (configurable in Settings).
+                </p>
                 <div class="button-row">
                   <button id="checkUpdatesButton">Check for updates now</button>
                   <button id="refreshSelectedUpdatesButton">Refresh selected</button>
@@ -346,7 +281,11 @@
                 </label>
                 <label class="checkbox-row">
                   <input id="settingsAutoCheck" type="checkbox" />
-                  Auto-check for updates on launch
+                  Silently check for updates when the app launches
+                </label>
+                <label>
+                  Auto-scan throttle (hours; minimum gap between automatic launch checks)
+                  <input id="settingsScanInterval" type="number" min="1" max="168" step="1" />
                 </label>
               </div>
               <div class="import-card">
@@ -376,11 +315,12 @@
                 </div>
               </div>
               <div class="import-card">
-                <h3>Build & distribute</h3>
+                <h3>Build &amp; distribute</h3>
                 <p>
                   Run <code>npm run tauri:build</code> for a native installer (NSIS/MSI on Windows,
                   .dmg on macOS, .AppImage/.deb on Linux), or <code>npm run dev</code> to launch a
-                  dev build.
+                  dev build. Maintainers: <code>npm run scrape</code> regenerates
+                  <code>data/builds.json</code> from Liquipedia.
                 </p>
                 <p>
                   Data lives in your OS user-data folder. Use
@@ -388,9 +328,117 @@
                 </p>
               </div>
             </div>
-          </section>
+          </div>
         </section>
       </div>
+    </main>
+
+    <!-- =========================================================
+         Overlay view - in-game compact UI. Same vocabulary as the
+         pre-2.0 overlay; the structural difference is that this is
+         now ONE of two top-level views, not the only one.
+         ========================================================= -->
+    <main id="viewOverlay" class="view view-overlay">
+      <section class="race-tabs" role="tablist" aria-label="Player race">
+        <button class="race-tab" data-race="Terran" role="tab">Terran</button>
+        <button class="race-tab" data-race="Protoss" role="tab">Protoss</button>
+        <button class="race-tab" data-race="Zerg" role="tab">Zerg</button>
+      </section>
+
+      <section class="opponent-chips" role="tablist" aria-label="Opponent">
+        <button class="opp-chip" data-opp="Terran" role="tab">vT</button>
+        <button class="opp-chip" data-opp="Zerg" role="tab">vZ</button>
+        <button class="opp-chip" data-opp="Protoss" role="tab">vP</button>
+        <button class="opp-chip" data-opp="Random" role="tab">vR</button>
+      </section>
+
+      <section class="build-picker">
+        <div class="search-row">
+          <input id="buildSearch" type="search" placeholder="Search builds (press / to focus)" />
+        </div>
+        <div class="build-row">
+          <select id="buildSelect"></select>
+          <button
+            id="prevBuildButton"
+            class="icon-button"
+            title="Previous build (Ctrl+Alt+Shift+B)"
+          >
+            &#8592;
+          </button>
+          <button id="nextBuildButton" class="icon-button" title="Next build (Ctrl+Alt+B)">
+            &#8594;
+          </button>
+        </div>
+      </section>
+
+      <section class="build-card" id="buildCard">
+        <div class="build-head">
+          <div class="build-head-text">
+            <h1 id="buildName">Loading...</h1>
+            <div class="meta-row">
+              <span id="matchupChip" class="chip"></span>
+              <span id="difficultyChip" class="chip subtle" hidden></span>
+              <span id="favoritedChip" class="chip subtle" hidden>&#9733; Favorite</span>
+              <span id="updateChip" class="chip subtle update-chip" hidden>Update available</span>
+            </div>
+            <div id="buildTags" class="tags"></div>
+          </div>
+          <div class="head-actions">
+            <button id="sourceButton" class="small-button">Source</button>
+          </div>
+        </div>
+
+        <p id="buildNotes" class="notes" hidden></p>
+        <p id="buildUserNotes" class="notes user-notes" hidden></p>
+
+        <ol id="steps" class="steps"></ol>
+
+        <div class="counters" id="countersBlock" hidden>
+          <div class="counter-row">
+            <span class="counter-label">Counters:</span>
+            <span id="countersList"></span>
+          </div>
+          <div class="counter-row">
+            <span class="counter-label">Countered by:</span>
+            <span id="counteredByList"></span>
+          </div>
+        </div>
+
+        <div class="footer">
+          <button id="prevPageButton" class="icon-button" title="Previous page (Ctrl+Alt+PgUp)">
+            &#8592;
+          </button>
+          <span id="pageIndicator" class="page-indicator">Page 1 / 1</span>
+          <button id="nextPageButton" class="icon-button" title="Next page (Ctrl+Alt+PgDn)">
+            &#8594;
+          </button>
+        </div>
+      </section>
+
+      <section class="hotkeys" id="hotkeysHelp">
+        <div class="hk-grid">
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> race</div>
+          <div>
+            <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Q</kbd>/<kbd>W</kbd>/<kbd>E</kbd>/<kbd>R</kbd>
+            opponent
+          </div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> next build</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PgDn</kbd>/<kbd>PgUp</kbd> page</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> favorite</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd> mode</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hide</div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toasts" class="toast-stack" aria-live="polite"></div>
+
+    <!-- Legacy hidden dialog stub. The Manager UI lives inline above; this
+         exists only so dom.managerDialog still resolves for code that
+         hasn't migrated to the mode toggle yet. The mode toggle is
+         responsible for showing/hiding the manager view. -->
+    <dialog id="managerDialog" hidden style="display: none">
+      <button id="managerCloseButton" hidden></button>
     </dialog>
 
     <script type="module" src="./renderer.js"></script>

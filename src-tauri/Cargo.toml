@@ -12,6 +12,13 @@ rust-version = "1.85"
 name = "bw_build_overlay_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
+# Release-time scrape helper. Reuses the runtime parser/import modules so
+# the bundled catalog and the in-app importer are always parser-identical.
+# Driven by scripts/scrape-liquipedia.mjs.
+[[bin]]
+name = "scrape"
+path = "src/bin/scrape.rs"
+
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 

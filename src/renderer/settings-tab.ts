@@ -15,6 +15,7 @@ export function loadSettingsIntoForm(): void {
   dom.settingsUserAgent.value = store.settings.liquipediaUserAgent || "";
   dom.settingsRateLimit.value = String(store.settings.rateLimitMs || 2300);
   dom.settingsAutoCheck.checked = !!store.settings.autoCheckUpdatesOnLaunch;
+  dom.settingsScanInterval.value = String(store.settings.scanIntervalHours || 24);
   dom.settingsCompactOverlay.checked = !!store.settings.compactOverlay;
   dom.settingsOpacity.value = String(store.settings.overlayOpacity ?? 1);
   dom.settingsPageSize.value = String(store.settings.pageSize || 25);
@@ -28,6 +29,7 @@ export function bindSettingsTabEvents(): void {
         liquipediaUserAgent: dom.settingsUserAgent.value.trim(),
         rateLimitMs: Math.max(2000, Number(dom.settingsRateLimit.value) || 2300),
         autoCheckUpdatesOnLaunch: dom.settingsAutoCheck.checked,
+        scanIntervalHours: Math.max(1, Math.min(168, Number(dom.settingsScanInterval.value) || 24)),
         compactOverlay: dom.settingsCompactOverlay.checked,
         overlayOpacity: Number(dom.settingsOpacity.value) || 1,
         pageSize: Math.max(6, Math.min(60, Number(dom.settingsPageSize.value) || 25)),

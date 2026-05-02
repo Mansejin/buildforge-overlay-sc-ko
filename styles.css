@@ -103,20 +103,27 @@ button {
 }
 
 /* ============================================================
-   Overlay layout
+   Overlay-view layout
    - minmax(0, 1fr) on the build-card row so it shrinks instead
      of pushing the bottom hotkeys block off-screen.
-   - .overlay is the scroll fallback when the window is tiny.
+   - .overlay is the legacy alias kept for any code paths that
+     still target it; .view-overlay is the v2.0 container.
    ============================================================ */
 
-.overlay {
-  width: 100vw;
-  height: 100vh;
+.overlay,
+.view-overlay {
   padding: 8px 8px 6px;
   overflow: auto;
   display: grid;
-  grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   gap: 6px;
+}
+
+/* Compact-mode hides things; mirror those rules onto the new
+   view-overlay container so Ctrl+Alt+C keeps working. */
+body.compact .view-overlay {
+  padding: 4px;
+  gap: 4px;
 }
 
 /* Topbar */
@@ -729,56 +736,174 @@ body.compact .footer {
 }
 
 /* ============================================================
-   Manager dialog - same shrink-respecting rules as the overlay.
-   The .tabs row is sticky so it doesn't scroll out of the
-   editor panel on long forms.
+   v2.0 single-window two-view shell
+   - body is a 3-row grid: header, view, toasts (auto-positioned).
+   - body[data-mode] hides the inactive view entirely so it doesn't
+     contribute to layout / scroll.
+   - Every flex/grid child in the chain has `min-height: 0` so the
+     scrollable regions actually scroll instead of clipping content
+     off the bottom (was the Manager cutoff bug pre-2.0).
    ============================================================ */
 
-.manager-dialog {
-  width: min(1180px, calc(100vw - 24px));
-  height: min(840px, calc(100vh - 24px));
-  padding: 0;
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  background: rgba(var(--surface-rgb), 0.96);
-  color: var(--text);
-}
-
-.manager-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.manager-shell {
-  height: 100%;
+body {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
 }
 
-.manager-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 14px;
+.app-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
   border-bottom: 1px solid var(--border);
   background: var(--panel-strong);
-  border-radius: 14px 14px 0 0;
+  user-select: none;
 }
 
-.manager-header h2 {
-  font-size: 14px;
+.app-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
-.manager-header p,
-.import-card p {
+
+.app-header .topbar-actions {
+  justify-self: end;
+}
+
+.mode-toggle {
+  display: inline-flex;
+  background: rgba(var(--surface-rgb), 0.85);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.mode-tab {
+  border: 0;
+  background: transparent;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   color: var(--muted);
-  font-size: 11px;
-  margin: 4px 0 0;
+  cursor: pointer;
+}
+
+.mode-tab.active {
+  background: var(--accent-soft);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.view {
+  min-height: 0;
+  overflow: hidden;
+}
+
+body[data-mode="manager"] #viewOverlay,
+body[data-mode="overlay"] #viewManager,
+body[data-mode="overlay"] .catalog-banner {
+  display: none !important;
+}
+
+/* Overlay-mode header: drop the mode-toggle text down to a thin pill,
+   shrink the brand, and lose the legacy "Manage" button so the chrome
+   matches the lean overlay aesthetic. */
+body[data-mode="overlay"] .app-header {
+  padding: 2px 8px;
+  grid-template-columns: 1fr auto auto;
+}
+body[data-mode="overlay"] .app-header .brand .eyebrow,
+body[data-mode="overlay"] .app-header .brand .status-line {
+  display: none;
+}
+body[data-mode="overlay"] .mode-tab {
+  padding: 2px 8px;
+  font-size: 10px;
+}
+
+/* Optional catalog-stale banner shown on Manager boot. */
+.catalog-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 209, 102, 0.08);
+  border-bottom: 1px solid var(--update);
+  color: var(--text);
+  font-size: 12px;
+}
+
+/* ============================================================
+   Manager view layout
+   - 2-column grid; sidebar owns the build list scroll, main owns
+     the tab-content scroll. Both scrolls live one level above the
+     content so the sticky tabs / list filters never scroll.
+   ============================================================ */
+
+.view-manager {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: rgba(var(--bg-rgb), calc(var(--bg-alpha) - 0.04));
 }
 
 .manager-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
 }
 
+.manager-side {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(var(--surface-rgb), 0.5);
+  border-right: 1px solid var(--border);
+}
+
+.manager-side-head {
+  display: grid;
+  gap: 8px;
+}
+.manager-side-head h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.manager-side-actions {
+  display: grid;
+  gap: 5px;
+}
+
+.action-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2px 0;
+}
+
+.manager-main {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: transparent;
+}
+
+.tab-scroll {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px 16px 16px;
+}
+
+/* Legacy class kept for any code paths that still reference it. */
 .build-list-panel {
   min-height: 0;
   display: grid;
@@ -857,11 +982,67 @@ body.compact .footer {
   border-radius: 8px;
 }
 
+/* Variant clusters in the manager build list. <details>+<summary> drives
+   the expand/collapse natively so we don't have to track open state in JS. */
+.variant-cluster {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(var(--surface-rgb), 0.4);
+  overflow: hidden;
+}
+.variant-cluster-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  color: var(--muted);
+  user-select: none;
+}
+.variant-cluster-summary::-webkit-details-marker {
+  display: none;
+}
+.variant-cluster-summary::before {
+  content: "\25B8";
+  display: inline-block;
+  width: 10px;
+  font-size: 10px;
+  color: var(--muted-2);
+  transition: transform 120ms;
+}
+.variant-cluster[open] > .variant-cluster-summary::before {
+  transform: rotate(90deg);
+}
+.variant-cluster-name {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 12.5px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.variant-cluster-count {
+  flex: 0 0 auto;
+  font-size: 9.5px;
+}
+.variant-cluster-list {
+  display: grid;
+  gap: 3px;
+  padding: 4px 6px 6px 18px;
+  border-top: 1px solid var(--border);
+  background: rgba(var(--surface-rgb), 0.25);
+}
+
 .stack {
   display: grid;
   gap: 5px;
 }
 
+/* Legacy alias: pre-2.0 used .editor-panel as the scrolling container.
+   The new .manager-main + .tab-scroll pair owns the scroll instead. */
 .editor-panel {
   min-height: 0;
   overflow: auto;
@@ -869,18 +1050,14 @@ body.compact .footer {
   background: transparent;
 }
 
-/* Sticky tabs so they remain visible while scrolling a long form. */
+/* Tabs sit OUTSIDE the .tab-scroll so they don't scroll with the body.
+   No sticky tricks needed - the parent .manager-main grid handles it. */
 .tabs {
-  position: sticky;
-  top: -12px;
-  z-index: 2;
-  margin: -12px -12px 10px;
-  padding: 8px 12px;
   display: flex;
   gap: 4px;
-  background: rgba(var(--surface-rgb), 0.96);
+  padding: 10px 16px;
+  background: rgba(var(--surface-rgb), 0.92);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(2px);
 }
 
 .tab {

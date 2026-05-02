@@ -1,0 +1,78 @@
+{{Infobox strategy
+|name=1 Gate Cybernetics Core
+|race=P
+|image=
+|caption=
+|matchups=PvT
+|creator=Unknown
+|popularized=Unknown
+}}
+
+==Overview==
+
+The '''One Gate Cybernetics Core''' Build Order is one of the most popular openings in Protoss vs. Terran. It is a compromise between more risky openings and very safe Build Orders. It can be used to transition in any kind of mid game style.
+
+
+==Build Order==
+
+{{col}}
+
+===No Zealot before Cybernetics Core===
+{{build|name="One Gate Cybernetics Core"|width=400px|race=Protoss|
+*8 - Pylon
+*10 - Gateway
+*12 - Assimilator
+*13 - Cybernetics Core
+}}
+{{col-break}}
+
+===One Zealot before Cybernetics Core===
+{{build|name="One Gate Cybernetics Core"|width=400px|race=Protoss|
+*8 - Pylon
+*10 - Gate
+*12 - Assimilator
+*13 - Zealot
+*16 - Pylon
+*18 - Cybernetics Core
+}}
+{{col-break}}
+===Two Zealots before Cybernetics Core===
+
+{{build|name="One Gate Cybernetics Core"|width=400px|race=Protoss|
+*8 - Pylon
+*10 - Gate
+*12 - Assimilator
+*13 - Zealot
+*16 - Pylon
+*17 - Zealot
+*20 - Cybernetics Core
+}}
+
+{{EndCol}}
+
+==Execution==
+
+The Build Order can be used in three forms, depending on how aggressive the Protoss wants to start out. The more Zealots a Protoss trains before adding a Cybernetics Core, the stronger his harass can be. However, any Zealot harass depends on the building placement of the Terran. If Terran walls himself in, Zealot harass is futile. If Terran is able to micro and keep up his multitasking, a strong Zealot harass might turn into a disadvantage, as the Protoss will delay his Tech.
+
+Zealot harass can target different things. If the Terran did not build a wall-in, the Zealots can target the Marines, rendering any planned FD (Fake Double) attack relatively useless, as the Marine count will be too low to really threaten the Protoss Dragoons. If a two Zealot opening is used, Protoss usually suspects a strong all-in by Terran, such as a [[Barracks Barracks Supply (vs. Protoss)|BBS Rush]]. Two Zealots are most times only recommended if the initial Zealot does a lot of damage or the Terran really opens with a very aggressive Rush Build Order.
+
+The strength of the One Gate Core Build Order is the freedom it offers to the Protoss. He is able to defend his base against FD Pushes with Dragoons, or able to harass the bunker of a Fast Expansion with ranged Dragoons. The economy remains relatively strong. Any kind of fast Tech is possible, as well as a relatively early Fast Expansion. 
+
+However, the Protoss does lose the option to perform an attack like the [[Bulldog]] choke break. Furthermore, most strong two Factory Builds off one base will hard counter this opening if scouted too late. With openings like the 14 Command Center (14 CC Build) growing more popular, there's also the danger to lose an economic advantage over the Terran. This can still be compensated by expanding greedier than usual or trying to transition with a stronger and more committed harass by stronger Tech units. 
+
+
+
+
+==Countered By==
+*2 Factory Builds
+
+==Counter To==
+*Siege Expand
+
+
+
+==Notable Games==
+
+[[Category:Protoss Beginner Strategy]]
+[[Category:Strategies]]
+{{missing-games}}
