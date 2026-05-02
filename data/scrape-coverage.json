@@ -1,0 +1,2751 @@
+{
+  "scrapedAt": "2026-05-02T22:59:38.392Z",
+  "pagesDiscovered": 225,
+  "pagesScraped": 225,
+  "pagesOk": 156,
+  "pagesEmpty": 59,
+  "pagesFailed": 10,
+  "buildsEmitted": 267,
+  "pages": [
+    {
+      "title": "+1 Sair/Speedlot (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 492132,
+      "revisionTimestamp": "2025-01-22T19:42:51Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "+1 Speedzealot (vs Zerg)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 184394,
+      "revisionTimestamp": "2019-04-10T09:53:48Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Fac FE (vs. Protoss)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 1 Fac FE (vs. Protoss)"
+    },
+    {
+      "title": "1 Fact FE (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 530226,
+      "revisionTimestamp": "2026-04-26T20:53:19Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Factory Double Expand (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454872,
+      "revisionTimestamp": "2023-09-01T08:13:06Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Factory Starport (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 463514,
+      "revisionTimestamp": "2023-12-19T05:59:42Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Factory Tanks (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 463515,
+      "revisionTimestamp": "2023-12-19T06:05:30Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Gate Core (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 149424,
+      "revisionTimestamp": "2017-02-03T06:23:20Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Gate Core (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 149192,
+      "revisionTimestamp": "2017-01-21T06:19:00Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Gate Reaver",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 454867,
+      "revisionTimestamp": "2023-09-01T08:10:21Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Hatch Lurker",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 120026,
+      "revisionTimestamp": "2015-01-21T19:53:02Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Hatch Lurker (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 162044,
+      "revisionTimestamp": "2017-09-13T14:29:24Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Port Wraith (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 463519,
+      "revisionTimestamp": "2023-12-19T06:41:44Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Rax FE (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 184430,
+      "revisionTimestamp": "2019-04-10T09:55:55Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Rax FE (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 179988,
+      "revisionTimestamp": "2018-12-26T22:14:49Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Rax FE (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 523748,
+      "revisionTimestamp": "2026-04-02T11:39:29Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Rax Gas (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 446133,
+      "revisionTimestamp": "2023-05-16T21:26:42Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "1 Zealot Expand (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 130204,
+      "revisionTimestamp": "2015-07-22T12:04:59Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "10 Hatch",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 158370,
+      "revisionTimestamp": "2017-08-12T08:16:54Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "10 Hatch (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:Zerg_Builds",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 150345,
+      "revisionTimestamp": "2017-02-24T03:12:06Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "10-10-10 FD (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 503717,
+      "revisionTimestamp": "2025-07-03T04:00:35Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "10/15 Gates (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 130298,
+      "revisionTimestamp": "2015-07-23T12:45:18Z",
+      "variantsExtracted": 9,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "11 Gas 10 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 119795,
+      "revisionTimestamp": "2015-01-21T19:48:05Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Hatch (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 383971,
+      "revisionTimestamp": "2022-06-21T06:42:33Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Hatch (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 233114,
+      "revisionTimestamp": "2020-02-21T18:09:40Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Hatch (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 184401,
+      "revisionTimestamp": "2019-04-10T09:54:28Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Nexus (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 181141,
+      "revisionTimestamp": "2019-01-29T11:16:54Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Pool (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 119984,
+      "revisionTimestamp": "2015-01-21T19:52:10Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "12 Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 162046,
+      "revisionTimestamp": "2017-09-13T14:54:46Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "12 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 339993,
+      "revisionTimestamp": "2021-09-21T01:44:58Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "12 Pool in-base hatch (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 209198,
+      "revisionTimestamp": "2019-10-31T21:57:54Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "13 Pool Muta (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 454879,
+      "revisionTimestamp": "2023-09-01T08:15:21Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "14 CC (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 184405,
+      "revisionTimestamp": "2019-04-10T09:54:37Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "14 CC (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 184406,
+      "revisionTimestamp": "2019-04-10T09:54:38Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "14 CC (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 119864,
+      "revisionTimestamp": "2015-01-21T19:49:29Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "14 Nexus (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 164716,
+      "revisionTimestamp": "2017-10-30T00:08:54Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Base Arbiter (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 249588,
+      "revisionTimestamp": "2020-05-15T15:58:10Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Base Carrier (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 132133,
+      "revisionTimestamp": "2015-09-29T15:14:08Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Fac Vulture (vs. Protoss)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 2 Fac Vulture (vs. Protoss)"
+    },
+    {
+      "title": "2 Fact Goliath (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 524157,
+      "revisionTimestamp": "2026-04-06T09:05:30Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Fact Vult/Mines (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 160641,
+      "revisionTimestamp": "2017-08-27T23:35:05Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Fact Vulture (vs. Terran)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 524151,
+      "revisionTimestamp": "2026-04-06T05:38:54Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Factory (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 496552,
+      "revisionTimestamp": "2025-03-26T04:21:24Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 466132,
+      "revisionTimestamp": "2024-02-21T17:53:40Z",
+      "variantsExtracted": 7,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate (vs. Zerg)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 2 Gate (vs. Zerg)"
+    },
+    {
+      "title": "2 Gate DT",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 132140,
+      "revisionTimestamp": "2015-09-29T15:14:21Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate DT (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 486590,
+      "revisionTimestamp": "2024-11-06T00:31:10Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate Range Expand",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 132150,
+      "revisionTimestamp": "2015-09-29T15:14:32Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate Reaver (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 284356,
+      "revisionTimestamp": "2020-11-11T23:15:06Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gate Zealot (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 184769,
+      "revisionTimestamp": "2019-04-10T10:19:54Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gateway (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 239562,
+      "revisionTimestamp": "2020-04-04T18:36:56Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gateway Dark Templar (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 184771,
+      "revisionTimestamp": "2019-04-10T10:19:56Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Gateway Observer",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 120128,
+      "revisionTimestamp": "2015-01-21T19:54:57Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Hydra (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 132147,
+      "revisionTimestamp": "2015-09-29T15:14:29Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Lurker (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 120085,
+      "revisionTimestamp": "2015-01-21T19:54:05Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Lurker (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 184772,
+      "revisionTimestamp": "2019-04-10T10:19:57Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Lurker Drop (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 454876,
+      "revisionTimestamp": "2023-09-01T08:14:21Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Muta (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 153634,
+      "revisionTimestamp": "2017-05-06T15:49:12Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Hatch Muta (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 184773,
+      "revisionTimestamp": "2019-04-10T10:19:58Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Port Wraith (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 487741,
+      "revisionTimestamp": "2024-12-01T15:33:42Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "2 Port Wraith (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 454875,
+      "revisionTimestamp": "2023-09-01T08:14:06Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "2 Rax (vs. Zerg)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 2 Rax (vs. Zerg)"
+    },
+    {
+      "title": "2 Rax Academy (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 521865,
+      "revisionTimestamp": "2026-03-09T12:39:31Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "2 Rax SCV Allin (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 132149,
+      "revisionTimestamp": "2015-09-29T15:14:31Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "2 Rax Tech",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 120206,
+      "revisionTimestamp": "2015-01-21T19:56:16Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "21 Nexus",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 120215,
+      "revisionTimestamp": "2015-01-21T19:56:24Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "21 Nexus (vs. Terran)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 21 Nexus (vs. Terran)"
+    },
+    {
+      "title": "28 Nexus (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 284357,
+      "revisionTimestamp": "2020-11-11T23:15:59Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Base Spire into 5 Hatch Hydra (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 520050,
+      "revisionTimestamp": "2026-01-21T17:48:56Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Fact Vulture (vs. Terran)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 486594,
+      "revisionTimestamp": "2024-11-06T08:09:13Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Factory Goliaths (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 523172,
+      "revisionTimestamp": "2026-03-24T21:08:09Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Gate Robo (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 485850,
+      "revisionTimestamp": "2024-10-20T21:23:23Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Gate Speedzeal (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 205523,
+      "revisionTimestamp": "2019-10-04T18:35:08Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch before Pool",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 122339,
+      "revisionTimestamp": "2015-02-04T03:44:04Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "3 Hatch before Pool (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 178499,
+      "revisionTimestamp": "2018-11-07T07:30:40Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Before Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 508469,
+      "revisionTimestamp": "2025-09-02T14:24:10Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Hydra (vs. Protoss)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: 3 Hatch Hydra (vs. Protoss)"
+    },
+    {
+      "title": "3 Hatch Hydralisk (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 339992,
+      "revisionTimestamp": "2021-09-21T01:37:03Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Lurker (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 260493,
+      "revisionTimestamp": "2020-07-10T18:51:11Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Muta (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 488181,
+      "revisionTimestamp": "2024-12-11T06:11:45Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Spire (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 491845,
+      "revisionTimestamp": "2025-01-22T19:27:03Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Zergling",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 120024,
+      "revisionTimestamp": "2015-01-21T19:53:00Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatch Zergling (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 383980,
+      "revisionTimestamp": "2022-06-21T07:27:25Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "3 Hatchery Lurkers (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 383982,
+      "revisionTimestamp": "2022-06-21T07:37:20Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4 Barracks Sunken Break Build",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 152051,
+      "revisionTimestamp": "2017-04-06T23:56:36Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4 Gate 2 Archon",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 184792,
+      "revisionTimestamp": "2019-04-10T10:20:55Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4 Gate Goon (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 184793,
+      "revisionTimestamp": "2019-04-10T10:20:56Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4 Hatch before Gas (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 383974,
+      "revisionTimestamp": "2022-06-21T07:14:23Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4 Hatch Lair (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 184795,
+      "revisionTimestamp": "2019-04-10T10:20:58Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "4/5 Pool",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:Zerg_Builds",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 184779,
+      "revisionTimestamp": "2019-04-10T10:20:05Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "5 Factory Goliaths (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 486552,
+      "revisionTimestamp": "2024-11-05T09:09:39Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "5 Gate Ranged Goons (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 454877,
+      "revisionTimestamp": "2023-09-01T08:14:36Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "5 Hatch before Gas (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 454882,
+      "revisionTimestamp": "2023-09-01T08:16:21Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "5 Pool (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 184800,
+      "revisionTimestamp": "2019-04-10T10:21:01Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "5 Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 184801,
+      "revisionTimestamp": "2019-04-10T10:21:02Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "5 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 504427,
+      "revisionTimestamp": "2025-07-18T07:52:09Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "5 Rax (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 487743,
+      "revisionTimestamp": "2024-12-01T15:56:12Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "6 Fac Timing Push",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 119877,
+      "revisionTimestamp": "2015-01-21T19:49:44Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "6 hatch (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 184809,
+      "revisionTimestamp": "2019-04-10T10:21:13Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "7 Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 508737,
+      "revisionTimestamp": "2025-09-04T00:11:25Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "8 Rax (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 454861,
+      "revisionTimestamp": "2023-09-01T07:07:37Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Gas, 10 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 184850,
+      "revisionTimestamp": "2019-04-10T10:22:12Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Gas, 9 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 184852,
+      "revisionTimestamp": "2019-04-10T10:22:13Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Hatch (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 150296,
+      "revisionTimestamp": "2017-02-21T21:39:50Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Pool (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 454849,
+      "revisionTimestamp": "2023-09-01T07:02:26Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 259538,
+      "revisionTimestamp": "2020-07-04T19:06:42Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Pool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 146506,
+      "revisionTimestamp": "2016-10-29T07:56:21Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Pool Speed (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 120015,
+      "revisionTimestamp": "2015-01-21T19:52:50Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "9 Pool Speed into 1 Hatch Spire (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 184855,
+      "revisionTimestamp": "2019-04-10T10:22:15Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Army Positioning (PvP)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 186128,
+      "revisionTimestamp": "2019-04-10T11:11:35Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Ayumi Build",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 185025,
+      "revisionTimestamp": "2019-04-10T10:27:15Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Barracks Barracks Supply (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 185119,
+      "revisionTimestamp": "2019-04-10T10:31:01Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Barracks Barracks Supply (vs. Terran)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 185121,
+      "revisionTimestamp": "2019-04-10T10:31:02Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Barracks Barracks Supply (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 185122,
+      "revisionTimestamp": "2019-04-10T10:31:04Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Big Game Hunters/PP match ups",
+      "categories": [
+        "Category:Protoss_Build_Orders"
+      ],
+      "revisionId": 408835,
+      "revisionTimestamp": "2022-10-01T16:02:22Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Big Game Hunters/Protoss Guide",
+      "categories": [
+        "Category:Protoss_Build_Orders"
+      ],
+      "revisionId": 408827,
+      "revisionTimestamp": "2022-10-01T16:01:16Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Big Game Hunters/Zerg Guide",
+      "categories": [
+        "Category:Zerg_Build_Orders"
+      ],
+      "revisionId": 408831,
+      "revisionTimestamp": "2022-10-01T16:01:45Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Big Game Hunters/ZZ match ups",
+      "categories": [
+        "Category:Zerg_Build_Orders"
+      ],
+      "revisionId": 408839,
+      "revisionTimestamp": "2022-10-01T16:02:41Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Bionic Terran vs. Zerg Guide",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 135376,
+      "revisionTimestamp": "2015-11-29T18:31:47Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Bisu Build",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 454859,
+      "revisionTimestamp": "2023-09-01T07:07:19Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Bisu Build (vs. Zerg)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: Bisu Build (vs. Zerg)"
+    },
+    {
+      "title": "Bulldog (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 185212,
+      "revisionTimestamp": "2019-04-10T10:33:44Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Bunker Rush (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 119919,
+      "revisionTimestamp": "2015-01-21T19:50:35Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Bunker Rush (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 119892,
+      "revisionTimestamp": "2015-01-21T19:50:02Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Cannon Rush (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 181139,
+      "revisionTimestamp": "2019-01-29T11:14:30Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Corsair Reaver (vs. Zerg)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: Corsair Reaver (vs. Zerg)"
+    },
+    {
+      "title": "Corsair/Carrier (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 185350,
+      "revisionTimestamp": "2019-04-10T10:37:03Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Corsair/Dark Templar (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 119979,
+      "revisionTimestamp": "2015-01-21T19:52:02Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Corsair/Dragoon (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 185351,
+      "revisionTimestamp": "2019-04-10T10:37:05Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Corsair/Reaver (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 491634,
+      "revisionTimestamp": "2025-01-22T19:12:04Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Deep Six (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 197979,
+      "revisionTimestamp": "2019-07-30T22:36:03Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Double Armory (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454871,
+      "revisionTimestamp": "2023-09-01T08:12:51Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "DT Drop (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 194305,
+      "revisionTimestamp": "2019-06-21T22:29:30Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "DT Fast Expand (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 485837,
+      "revisionTimestamp": "2024-10-20T20:46:19Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Example Strategy",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 166387,
+      "revisionTimestamp": "2018-01-06T17:58:21Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Fact CC Fact (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 506389,
+      "revisionTimestamp": "2025-08-13T14:31:00Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Factory Expand (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 524340,
+      "revisionTimestamp": "2026-04-09T22:29:52Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Fake 2 Hatch Hydra (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 280278,
+      "revisionTimestamp": "2020-10-10T21:23:29Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Fake Fake Double (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 194245,
+      "revisionTimestamp": "2019-06-21T10:55:59Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Fantasy Build",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 454866,
+      "revisionTimestamp": "2023-09-01T08:09:51Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Fast Expand (vs. Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 185650,
+      "revisionTimestamp": "2019-04-10T10:46:17Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Fast Expand (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 463706,
+      "revisionTimestamp": "2023-12-23T02:47:59Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Fast Nuke",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 135107,
+      "revisionTimestamp": "2015-11-24T23:18:37Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "FD (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454860,
+      "revisionTimestamp": "2023-09-01T07:07:28Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Forge FE (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 475071,
+      "revisionTimestamp": "2024-06-11T22:50:23Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Gas Steal Elevator Rush (vs. Terran)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 454878,
+      "revisionTimestamp": "2023-09-01T08:14:51Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Gateway FE (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 261091,
+      "revisionTimestamp": "2020-07-13T15:49:26Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Gundam Rush",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454864,
+      "revisionTimestamp": "2023-09-01T08:08:51Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Hatch Gas Pool (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 258831,
+      "revisionTimestamp": "2020-06-29T15:05:10Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Hiya 4-Fac",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454881,
+      "revisionTimestamp": "2023-09-01T08:15:51Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Hoejja build",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 423115,
+      "revisionTimestamp": "2022-12-03T04:02:23Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Horror Gate",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 132294,
+      "revisionTimestamp": "2015-09-29T15:22:06Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Hydra/Lurker (vs. Terran)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 454870,
+      "revisionTimestamp": "2023-09-01T08:12:21Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Hydralisks (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 525809,
+      "revisionTimestamp": "2026-04-24T03:51:50Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Iloveoov Build",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454874,
+      "revisionTimestamp": "2023-09-01T08:13:51Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Iloveoov Fake Mech",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 463704,
+      "revisionTimestamp": "2023-12-23T02:31:47Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "JoyO Rush",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 484459,
+      "revisionTimestamp": "2024-09-26T20:06:54Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Larva Trick",
+      "categories": [
+        "Category:Zerg_Build_Orders"
+      ],
+      "revisionId": 504426,
+      "revisionTimestamp": "2025-07-18T07:51:54Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Late Game Ultralisk/Zergling",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 119994,
+      "revisionTimestamp": "2015-01-21T19:52:24Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Mech Switch (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 496573,
+      "revisionTimestamp": "2025-03-26T04:34:52Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Mine Dragging",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 186072,
+      "revisionTimestamp": "2019-04-10T10:57:21Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Mutalisk Harassment",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 491388,
+      "revisionTimestamp": "2025-01-22T18:41:34Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Nada 2 Fac",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 454868,
+      "revisionTimestamp": "2023-09-01T08:10:51Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "One Base Speedzeal (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 120111,
+      "revisionTimestamp": "2015-01-21T19:54:36Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Overgas (vs Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 120186,
+      "revisionTimestamp": "2015-01-21T19:55:56Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Overpool (vs. Protoss)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 166131,
+      "revisionTimestamp": "2017-12-17T19:27:03Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Overpool (vs. Zerg)",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds",
+        "known-build-pages.txt"
+      ],
+      "revisionId": 487189,
+      "revisionTimestamp": "2024-11-18T20:44:34Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Plus1 Zealot/Archon Timing Attack (vs. Zerg)",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 186173,
+      "revisionTimestamp": "2019-04-10T11:13:13Z",
+      "variantsExtracted": 6,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss BGH Build",
+      "categories": [
+        "Category:Protoss_Build_Orders"
+      ],
+      "revisionId": 135159,
+      "revisionTimestamp": "2015-11-24T23:20:16Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss Counter to Zerg All-ins",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 185713,
+      "revisionTimestamp": "2019-04-10T10:48:05Z",
+      "variantsExtracted": 7,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss Fast Expand Forge Walling",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 475066,
+      "revisionTimestamp": "2024-06-11T19:30:41Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Protoss Strategy",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "Category:PvT_Builds",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 503685,
+      "revisionTimestamp": "2025-07-02T07:57:16Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Protoss Guide",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 185719,
+      "revisionTimestamp": "2019-04-10T10:48:13Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Protoss Timings",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 119895,
+      "revisionTimestamp": "2015-01-21T19:50:05Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Terran Guide",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 135158,
+      "revisionTimestamp": "2015-11-24T23:20:15Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Terran Timings",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 119951,
+      "revisionTimestamp": "2015-01-21T19:51:11Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Zerg Guide",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 504424,
+      "revisionTimestamp": "2025-07-18T07:51:24Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Protoss vs. Zerg Timings",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 119954,
+      "revisionTimestamp": "2015-01-21T19:51:14Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Proxy 5 Rax",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 135160,
+      "revisionTimestamp": "2015-11-24T23:20:17Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Proxy Factory (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 504530,
+      "revisionTimestamp": "2025-07-18T09:53:18Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Push Breaking",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 185734,
+      "revisionTimestamp": "2019-04-10T10:48:29Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "PVPBuilds",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 503689,
+      "revisionTimestamp": "2025-07-02T07:59:31Z",
+      "variantsExtracted": 13,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "PVPGuide",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds"
+      ],
+      "revisionId": 503692,
+      "revisionTimestamp": "2025-07-02T08:00:00Z",
+      "variantsExtracted": 4,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "PVTBuilds",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 503690,
+      "revisionTimestamp": "2025-07-02T07:59:33Z",
+      "variantsExtracted": 19,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "PVTGuide",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 503693,
+      "revisionTimestamp": "2025-07-02T08:00:03Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "PVZBuilds",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 503691,
+      "revisionTimestamp": "2025-07-02T07:59:35Z",
+      "variantsExtracted": 9,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "PVZGuide",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy",
+        "Category:Protoss_Build_Orders",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 508742,
+      "revisionTimestamp": "2025-09-04T00:16:15Z",
+      "variantsExtracted": 8,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Pylon Prison",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvP_Builds",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 143906,
+      "revisionTimestamp": "2016-07-27T14:41:28Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Rax CC Rax (vs. Zerg)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 492194,
+      "revisionTimestamp": "2025-01-22T19:45:19Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Recall",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 508730,
+      "revisionTimestamp": "2025-09-03T23:36:29Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "SCV Rush",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 184884,
+      "revisionTimestamp": "2019-04-10T10:23:12Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Shallow Two (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 496562,
+      "revisionTimestamp": "2025-03-26T04:30:56Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Siege Expand (vs. Protoss)",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 184962,
+      "revisionTimestamp": "2019-04-10T10:25:46Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Siege Expand (vs. Terran)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: Siege Expand (vs. Terran)"
+    },
+    {
+      "title": "SK Terran",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 468061,
+      "revisionTimestamp": "2024-04-02T23:19:37Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "SK Terran (vs. Zerg)",
+      "categories": [
+        "known-build-pages.txt"
+      ],
+      "revisionId": null,
+      "revisionTimestamp": null,
+      "variantsExtracted": 0,
+      "outcome": "fetch-error",
+      "error": "Page not found: SK Terran (vs. Zerg)"
+    },
+    {
+      "title": "Sparks Terran",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 454850,
+      "revisionTimestamp": "2023-09-01T07:02:27Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Spirit Protoss",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds"
+      ],
+      "revisionId": 185015,
+      "revisionTimestamp": "2019-04-10T10:26:59Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Standard Pre-Hive Timing Attack",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 185030,
+      "revisionTimestamp": "2019-04-10T10:27:23Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Strategy (Protoss)",
+      "categories": [
+        "Category:Protoss_Build_Orders"
+      ],
+      "revisionId": 523947,
+      "revisionTimestamp": "2026-04-04T15:20:30Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Sunken Rush",
+      "categories": [
+        "Category:Zerg_Build_Orders"
+      ],
+      "revisionId": 286458,
+      "revisionTimestamp": "2020-11-20T23:40:42Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Terran BGH Build",
+      "categories": [
+        "Category:Terran_Build_Orders"
+      ],
+      "revisionId": 120074,
+      "revisionTimestamp": "2015-01-21T19:53:54Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Terran Counter to 4 Pool",
+      "categories": [
+        "Category:Terran_Beginner_Strategy"
+      ],
+      "revisionId": 185190,
+      "revisionTimestamp": "2019-04-10T10:33:02Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Terran Counter to Reaver Tech",
+      "categories": [
+        "Category:Terran_Beginner_Strategy"
+      ],
+      "revisionId": 119082,
+      "revisionTimestamp": "2015-01-21T19:30:50Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Terran One Base Play",
+      "categories": [
+        "Category:Terran_Build_Orders"
+      ],
+      "revisionId": 119900,
+      "revisionTimestamp": "2015-01-21T19:50:11Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Terran Strategy",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds",
+        "Category:TvT_Builds",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 503686,
+      "revisionTimestamp": "2025-07-02T07:57:19Z",
+      "variantsExtracted": 3,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Terran vs. Protoss Guide",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 135377,
+      "revisionTimestamp": "2015-11-29T18:32:11Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Terran vs. Protoss Timing",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 119932,
+      "revisionTimestamp": "2015-01-21T19:50:50Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Terran vs. Terran Guide",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 158304,
+      "revisionTimestamp": "2017-08-09T20:55:18Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Terran vs. Terran Timing",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvT_Builds"
+      ],
+      "revisionId": 162052,
+      "revisionTimestamp": "2017-09-14T04:14:45Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "The Stove",
+      "categories": [
+        "Category:Protoss_Build_Orders",
+        "Category:PvT_Builds",
+        "Category:PvZ_Builds"
+      ],
+      "revisionId": 185215,
+      "revisionTimestamp": "2019-04-10T10:33:47Z",
+      "variantsExtracted": 2,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "The Terran Ball in Late Game Zerg",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 119986,
+      "revisionTimestamp": "2015-01-21T19:52:12Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "TVPBuilds",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 503695,
+      "revisionTimestamp": "2025-07-02T08:00:13Z",
+      "variantsExtracted": 7,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "TVPGuide",
+      "categories": [
+        "Category:Terran_Beginner_Strategy",
+        "Category:Terran_Build_Orders",
+        "Category:TvP_Builds"
+      ],
+      "revisionId": 503694,
+      "revisionTimestamp": "2025-07-02T08:00:10Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "TvZ 9 Minute Push",
+      "categories": [
+        "Category:Terran_Build_Orders",
+        "Category:TvZ_Builds"
+      ],
+      "revisionId": 120084,
+      "revisionTimestamp": "2015-01-21T19:54:04Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Zealot Bombing",
+      "categories": [
+        "Category:Protoss_Beginner_Strategy"
+      ],
+      "revisionId": 170193,
+      "revisionTimestamp": "2018-04-20T10:52:34Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Zerg BGH Build",
+      "categories": [
+        "Category:Zerg_Build_Orders"
+      ],
+      "revisionId": 120080,
+      "revisionTimestamp": "2015-01-21T19:54:00Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Zerg Strategy",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds",
+        "Category:ZvT_Builds",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 503687,
+      "revisionTimestamp": "2025-07-02T07:57:23Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Bionic Terran Guide",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 135378,
+      "revisionTimestamp": "2015-11-29T18:32:15Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Mech Terran Guide",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 120008,
+      "revisionTimestamp": "2015-01-21T19:52:43Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Protoss Guide",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 123274,
+      "revisionTimestamp": "2015-02-13T01:32:28Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Protoss Timings",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvP_Builds"
+      ],
+      "revisionId": 119971,
+      "revisionTimestamp": "2015-01-21T19:51:44Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Terran Timings",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvT_Builds"
+      ],
+      "revisionId": 119962,
+      "revisionTimestamp": "2015-01-21T19:51:23Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Zerg Guide",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 371306,
+      "revisionTimestamp": "2022-04-16T23:45:00Z",
+      "variantsExtracted": 1,
+      "outcome": "ok",
+      "error": null
+    },
+    {
+      "title": "Zerg vs. Zerg Timings",
+      "categories": [
+        "Category:Zerg_Build_Orders",
+        "Category:ZvZ_Builds"
+      ],
+      "revisionId": 119921,
+      "revisionTimestamp": "2015-01-21T19:50:38Z",
+      "variantsExtracted": 0,
+      "outcome": "no-template-no-fallback",
+      "error": null
+    }
+  ]
+}
