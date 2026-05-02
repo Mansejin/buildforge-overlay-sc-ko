@@ -1,4 +1,4 @@
-// src-tauri/src/bin/scrape.rs
+// src-tauri/examples/scrape.rs
 // Tiny CLI that reuses the runtime parser and import pipeline so the
 // release-time scrape script (scripts/scrape-liquipedia.mjs) and the
 // in-app importer share exactly one source of truth. Reads page titles
@@ -6,6 +6,12 @@
 // the existing rate-limited Liquipedia client, and emits a JSON stream
 // on stdout: one record per page, one record per line ("ndjson") so the
 // caller can stream-aggregate without buffering a giant array.
+//
+// Lives in examples/ rather than src/bin/ on purpose: Tauri's bundler
+// enumerates every `[[bin]]` target of the package and copies each into
+// the .app / .msi / .deb / .AppImage. As an example it stays buildable
+// with `cargo build --release --example scrape` but never gets shipped
+// to end users (and never trips the universal-darwin bundler step).
 
 use bw_build_overlay_lib::liquipedia::{api, import, parser};
 use bw_build_overlay_lib::storage::DEFAULT_USER_AGENT;

@@ -2,8 +2,8 @@
 // Release-time catalog scraper. Walks the full Liquipedia strategy graph
 // (per-race + per-matchup + per-difficulty categories), unions with the
 // checked-in safety net at data/known-build-pages.txt, then streams every
-// discovered page through the Rust `scrape` binary so the parser used at
-// release time is byte-identical to the parser the app ships.
+// discovered page through the Rust `scrape` example binary so the parser
+// used at release time is byte-identical to the parser the app ships.
 //
 // Outputs:
 //   data/builds.json          - canonical catalog, ready to ship as Tauri resource
@@ -119,11 +119,13 @@ function loadKnownPages() {
 
 function locateScrapeBin() {
   if (scrapeBinOverride) return resolve(ROOT, scrapeBinOverride);
+  // The scrape helper builds as a Cargo example so Tauri's bundler doesn't
+  // copy it into the installer. Examples land in target/<profile>/examples/.
   const candidates = [
-    join(ROOT, "src-tauri", "target", "release", "scrape.exe"),
-    join(ROOT, "src-tauri", "target", "release", "scrape"),
-    join(ROOT, "src-tauri", "target", "debug", "scrape.exe"),
-    join(ROOT, "src-tauri", "target", "debug", "scrape")
+    join(ROOT, "src-tauri", "target", "release", "examples", "scrape.exe"),
+    join(ROOT, "src-tauri", "target", "release", "examples", "scrape"),
+    join(ROOT, "src-tauri", "target", "debug", "examples", "scrape.exe"),
+    join(ROOT, "src-tauri", "target", "debug", "examples", "scrape")
   ];
   for (const c of candidates) {
     if (existsSync(c)) return c;
@@ -135,8 +137,8 @@ function locateScrapeBin() {
 
 function buildScrapeBin() {
   if (skipBuild) return;
-  console.log("[scrape] building Rust scrape binary (release)...");
-  execSync("cargo build --release --manifest-path src-tauri/Cargo.toml --bin scrape", {
+  console.log("[scrape] building Rust scrape example (release)...");
+  execSync("cargo build --release --manifest-path src-tauri/Cargo.toml --example scrape", {
     cwd: ROOT,
     stdio: "inherit"
   });
