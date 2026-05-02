@@ -7,6 +7,11 @@ license = "MIT"
 repository = "https://github.com/Etra-0/starcraft-build-overlay"
 edition = "2021"
 rust-version = "1.85"
+# Multiple [[bin]] targets exist (the Tauri app + the release-time scrape
+# helper). Without default-run, `tauri build` errors with
+# "failed to find main binary". Pin the app as the default so tauri-action,
+# `cargo run`, and `cargo install` all pick the right binary.
+default-run = "bw-build-overlay"
 
 [lib]
 name = "bw_build_overlay_lib"
