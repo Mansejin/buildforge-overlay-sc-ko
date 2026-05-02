@@ -19,7 +19,6 @@ function queryAll<T extends HTMLElement = HTMLElement>(selector: string): T[] {
 
 export interface Dom {
   body: HTMLElement;
-  app: HTMLElement;
   overlayStatus: HTMLElement;
   manageButton: HTMLButtonElement;
   favoriteButton: HTMLButtonElement;
@@ -116,7 +115,6 @@ export interface Dom {
 
 export const dom: Dom = {
   body: document.body,
-  app: byId("app"),
   overlayStatus: byId("overlayStatus"),
   manageButton: byId<HTMLButtonElement>("manageButton"),
   favoriteButton: byId<HTMLButtonElement>("favoriteButton"),
