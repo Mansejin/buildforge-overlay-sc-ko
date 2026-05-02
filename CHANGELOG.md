@@ -35,6 +35,9 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+## [2.0.0] - 2026-05-02
 ### Added
 
 - **Single-window Manager / Overlay mode toggle.** The same window now switches between a decorated, full-UI **Manager** (build editing, importing, updates, settings) and a frameless, always-on-top **Overlay** (in-game build display). Toggle via the segmented control in the header or the new global `Ctrl+Alt+M` hotkey. The OS-level chrome (decorations, AOT, frame size) is reshaped per-mode and the chosen mode is persisted in `settings.json` so the next launch boots into the same view.
