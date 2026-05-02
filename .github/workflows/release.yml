@@ -60,7 +60,14 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: "BW Build Overlay ${{ github.ref_name }}"
+          # When generateReleaseNotes is true, GitHub's Release Notes API
+          # appends a "What's Changed" section (PRs merged since the prior
+          # tag, with PR numbers and authors) and a "Full Changelog" diff
+          # link. releaseBody below is pre-pended to that auto-generated
+          # body, so the static CHANGELOG.md pointer still appears at the
+          # top followed by the per-PR list underneath.
           releaseBody: "See CHANGELOG.md for full release notes."
+          generateReleaseNotes: true
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
