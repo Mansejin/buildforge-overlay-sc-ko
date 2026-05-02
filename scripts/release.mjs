@@ -136,6 +136,25 @@ const releaseFiles = [pkgPath, changelogPath, tauriConfPath, cargoTomlPath, "src
 if (!skipScrape) {
   releaseFiles.push("data/builds.json", "data/scrape-coverage.json");
 }
+
+// Run prettier on every file we touched so the release commit stays
+// format:check-clean. Without this, JSON / Markdown writes above can
+// re-introduce trailing whitespace, key ordering, or 2-vs-4 indent
+// drift that Prettier catches in CI and the release commit fails the
+// required Quality check.
+const prettierTargets = releaseFiles.filter((p) => /\.(json|md)$/i.test(p));
+if (prettierTargets.length > 0) {
+  const prettier = spawnSync(
+    process.platform === "win32" ? "npx.cmd" : "npx",
+    ["prettier", "--write", ...prettierTargets],
+    { stdio: "inherit" }
+  );
+  if (prettier.status !== 0) {
+    console.error("prettier --write failed on release-modified files. Aborting release.");
+    process.exit(1);
+  }
+}
+
 git(`add ${releaseFiles.join(" ")}`);
 git(`commit -m "chore(release): v${newVersion}"`);
 git(`tag -a v${newVersion} -m "v${newVersion}"`);

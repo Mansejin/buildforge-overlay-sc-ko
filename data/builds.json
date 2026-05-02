@@ -9,11 +9,7 @@
       "matchup": "PvP",
       "name": "1 Gate Core - 2 Zealot First",
       "variantOf": "liquipedia-protoss-protoss-1-gate-core-dragoon-first",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Protoss%29",
@@ -46,11 +42,7 @@
       "matchup": "PvP",
       "name": "1 Gate Core - Dragoon First",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Protoss%29",
@@ -81,11 +73,7 @@
       "matchup": "PvP",
       "name": "1 Gate Core - Zealot Core Zealot",
       "variantOf": "liquipedia-protoss-protoss-1-gate-core-dragoon-first",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Protoss%29",
@@ -118,11 +106,7 @@
       "matchup": "PvP",
       "name": "1 Gate Core - Zealot First",
       "variantOf": "liquipedia-protoss-protoss-1-gate-core-dragoon-first",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Protoss%29",
@@ -154,10 +138,7 @@
       "matchup": "PvP",
       "name": "1 Zealot Expand - 1 Zealot Expand Basic",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Zealot_Expand_%28vs._Protoss%29",
@@ -172,14 +153,7 @@
       "lastCheckedAt": "2026-05-02T22:49:56.202Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 Pylon",
-        "10 Gateway",
-        "12 Pylon",
-        "13 Zealot",
-        "18 Nexus",
-        "19 Zealot"
-      ]
+      "steps": ["8 Pylon", "10 Gateway", "12 Pylon", "13 Zealot", "18 Nexus", "19 Zealot"]
     },
     {
       "id": "liquipedia-protoss-protoss-1-zealot-expand-2-zealot-expand-variation",
@@ -188,10 +162,7 @@
       "matchup": "PvP",
       "name": "1 Zealot Expand - 2 Zealot Expand Variation",
       "variantOf": "liquipedia-protoss-protoss-1-zealot-expand-1-zealot-expand-basic",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Zealot_Expand_%28vs._Protoss%29",
@@ -206,14 +177,7 @@
       "lastCheckedAt": "2026-05-02T22:49:56.202Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 Pylon",
-        "10 Gateway",
-        "12 Pylon",
-        "13 Zealot",
-        "17 Zealot",
-        "21 Nexus"
-      ]
+      "steps": ["8 Pylon", "10 Gateway", "12 Pylon", "13 Zealot", "17 Zealot", "21 Nexus"]
     },
     {
       "id": "liquipedia-protoss-protoss-2-gate-10-12-gateway",
@@ -222,10 +186,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 10/12 Gateway",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -260,10 +221,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 10/12 Gateway Core",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -303,10 +261,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 10/12 Gateway Expand",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -344,10 +299,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 9/10 Gateways",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -381,10 +333,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 9/9 Gateways",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -418,10 +367,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 9/9 Horror Gateways",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -457,10 +403,7 @@
       "matchup": "PvP",
       "name": "2 Gate - 9/9 Proxy Gateways",
       "variantOf": "liquipedia-protoss-protoss-2-gate-9-9-horror-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_%28vs._Protoss%29",
@@ -496,10 +439,7 @@
       "matchup": "PvP",
       "name": "2 Gate DT - 2 Gate DT Vs. Protoss",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_DT_%28vs._Protoss%29",
@@ -512,13 +452,8 @@
       "revisionId": 486590,
       "lastImportedAt": "2026-05-02T22:51:18.190Z",
       "lastCheckedAt": "2026-05-02T22:51:18.190Z",
-      "counters": [
-        "2 or more Gate Dragoons",
-        "expanding after 1 Gate Dragoon"
-      ],
-      "counteredBy": [
-        "1 Gate into Robotics Facility into Observer."
-      ],
+      "counters": ["2 or more Gate Dragoons", "expanding after 1 Gate Dragoon"],
+      "counteredBy": ["1 Gate into Robotics Facility into Observer."],
       "steps": [
         "8 - Pylon",
         "10 - Gateway",
@@ -540,11 +475,7 @@
       "matchup": "PvP",
       "name": "2 Gate Reaver - Gate Robo Gate",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Reaver_%28vs._Protoss%29",
@@ -593,11 +524,7 @@
       "matchup": "PvP",
       "name": "2 Gate Reaver - Observer First",
       "variantOf": "liquipedia-protoss-protoss-2-gate-reaver-gate-robo-gate",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Reaver_%28vs._Protoss%29",
@@ -648,11 +575,7 @@
       "matchup": "PvP",
       "name": "2 Gate Reaver - Robotics before Range",
       "variantOf": "liquipedia-protoss-protoss-2-gate-reaver-gate-robo-gate",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Reaver_%28vs._Protoss%29",
@@ -697,11 +620,7 @@
       "matchup": "PvP",
       "name": "2 Gate Reaver - Shuttle First",
       "variantOf": "liquipedia-protoss-protoss-2-gate-reaver-gate-robo-gate",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Reaver_%28vs._Protoss%29",
@@ -749,10 +668,7 @@
       "matchup": "PvP",
       "name": "2 Gateway Dark Templar - Dark Templar into Expansion",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_Dark_Templar_%28vs._Protoss%29",
@@ -798,10 +714,7 @@
       "matchup": "PvP",
       "name": "3 Gate Robo - 3 Gate Robo",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Gate_Robo_%28vs._Protoss%29",
@@ -840,10 +753,7 @@
       "matchup": "PvP",
       "name": "3 Gate Robo - 3 Gate Robo, Sn0w's version",
       "variantOf": "liquipedia-protoss-protoss-3-gate-robo-3-gate-robo",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Gate_Robo_%28vs._Protoss%29",
@@ -884,10 +794,7 @@
       "matchup": "PvP",
       "name": "3 Gate Speedzeal - Three Gateway Speedzealots",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Gate_Speedzeal_%28vs._Protoss%29",
@@ -926,11 +833,7 @@
       "matchup": "PvP",
       "name": "4 Gate Goon - Four Gateway Dragoon",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Gate_Goon_%28vs._Protoss%29",
@@ -972,10 +875,7 @@
       "matchup": "PvP",
       "name": "Fast Expand - 12 Nexus 5 Zealot Fast Expansion",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Fast_Expand_%28vs._Protoss%29",
@@ -1010,10 +910,7 @@
       "matchup": "PvP",
       "name": "Protoss vs. Protoss Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_vs._Protoss_Guide",
@@ -1042,11 +939,7 @@
       "matchup": "PvT",
       "name": "1 Gate Core - No Zealot before Cybernetics Core",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Terran%29",
@@ -1059,18 +952,9 @@
       "revisionId": 149192,
       "lastImportedAt": "2026-05-02T22:49:30.668Z",
       "lastCheckedAt": "2026-05-02T22:49:30.668Z",
-      "counters": [
-        "Siege Expand"
-      ],
-      "counteredBy": [
-        "2 Factory Builds"
-      ],
-      "steps": [
-        "8 - Pylon",
-        "10 - Gateway",
-        "12 - Assimilator",
-        "13 - Cybernetics Core"
-      ]
+      "counters": ["Siege Expand"],
+      "counteredBy": ["2 Factory Builds"],
+      "steps": ["8 - Pylon", "10 - Gateway", "12 - Assimilator", "13 - Cybernetics Core"]
     },
     {
       "id": "liquipedia-protoss-terran-1-gate-core-one-zealot-before-cybernetics-core",
@@ -1079,11 +963,7 @@
       "matchup": "PvT",
       "name": "1 Gate Core - One Zealot before Cybernetics Core",
       "variantOf": "liquipedia-protoss-terran-1-gate-core-no-zealot-before-cybernetics-core",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Terran%29",
@@ -1096,12 +976,8 @@
       "revisionId": 149192,
       "lastImportedAt": "2026-05-02T22:49:30.668Z",
       "lastCheckedAt": "2026-05-02T22:49:30.668Z",
-      "counters": [
-        "Siege Expand"
-      ],
-      "counteredBy": [
-        "2 Factory Builds"
-      ],
+      "counters": ["Siege Expand"],
+      "counteredBy": ["2 Factory Builds"],
       "steps": [
         "8 - Pylon",
         "10 - Gate",
@@ -1118,11 +994,7 @@
       "matchup": "PvT",
       "name": "1 Gate Core - Two Zealots before Cybernetics Core",
       "variantOf": "liquipedia-protoss-terran-1-gate-core-no-zealot-before-cybernetics-core",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Core_%28vs._Terran%29",
@@ -1135,12 +1007,8 @@
       "revisionId": 149192,
       "lastImportedAt": "2026-05-02T22:49:30.668Z",
       "lastCheckedAt": "2026-05-02T22:49:30.668Z",
-      "counters": [
-        "Siege Expand"
-      ],
-      "counteredBy": [
-        "2 Factory Builds"
-      ],
+      "counters": ["Siege Expand"],
+      "counteredBy": ["2 Factory Builds"],
       "steps": [
         "8 - Pylon",
         "10 - Gate",
@@ -1158,11 +1026,7 @@
       "matchup": "PvT",
       "name": "1 Gate Reaver - One Gateway Reaver",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Gate_Reaver",
@@ -1199,11 +1063,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Basic Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1236,11 +1096,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Compromise Variation",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1273,11 +1129,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Faster Dragoon Variation",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1310,11 +1162,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 1 - Dark Templar Tech",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1343,11 +1191,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 2 - Reaver Tech",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1378,11 +1222,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 3 - More Pressure",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1411,11 +1251,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 4 - Bulldog",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1430,10 +1266,7 @@
       "lastCheckedAt": "2026-05-02T22:50:07.662Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "21/25 — Pylon",
-        "see also: Bulldog article"
-      ]
+      "steps": ["21/25 — Pylon", "see also: Bulldog article"]
     },
     {
       "id": "liquipedia-protoss-terran-10-15-gates-option-5-expansion",
@@ -1442,11 +1275,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 5 - Expansion",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1461,11 +1290,7 @@
       "lastCheckedAt": "2026-05-02T22:50:07.662Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "21/25 — Pylon",
-        "21/25 - 2 Dragoons",
-        "25/32 - Nexus at Natural Expansion"
-      ]
+      "steps": ["21/25 — Pylon", "21/25 - 2 Dragoons", "25/32 - Nexus at Natural Expansion"]
     },
     {
       "id": "liquipedia-protoss-terran-10-15-gates-option-6-greedy-expanding",
@@ -1474,11 +1299,7 @@
       "matchup": "PvT",
       "name": "10/15 Gates - Option 6 - Greedy Expanding",
       "variantOf": "liquipedia-protoss-terran-10-15-gates-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10/15_Gates_%28vs._Terran%29",
@@ -1510,10 +1331,7 @@
       "matchup": "PvT",
       "name": "12 Nexus - Dragoon First",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Nexus_%28vs._Terran%29",
@@ -1526,15 +1344,8 @@
       "revisionId": 181141,
       "lastImportedAt": "2026-05-02T22:50:21.729Z",
       "lastCheckedAt": "2026-05-02T22:50:21.729Z",
-      "counters": [
-        "Siege Expand",
-        "FD Pushes"
-      ],
-      "counteredBy": [
-        "Barracks first",
-        "14 CC",
-        "Proxy 5 Rax"
-      ],
+      "counters": ["Siege Expand", "FD Pushes"],
+      "counteredBy": ["Barracks first", "14 CC", "Proxy 5 Rax"],
       "steps": [
         "8 - Pylon",
         "12 - Nexus",
@@ -1551,10 +1362,7 @@
       "matchup": "PvT",
       "name": "12 Nexus - Zealot First",
       "variantOf": "liquipedia-protoss-terran-12-nexus-dragoon-first",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Nexus_%28vs._Terran%29",
@@ -1567,15 +1375,8 @@
       "revisionId": 181141,
       "lastImportedAt": "2026-05-02T22:50:21.729Z",
       "lastCheckedAt": "2026-05-02T22:50:21.729Z",
-      "counters": [
-        "Siege Expand",
-        "FD Pushes"
-      ],
-      "counteredBy": [
-        "Barracks first",
-        "14 CC",
-        "Proxy 5 Rax"
-      ],
+      "counters": ["Siege Expand", "FD Pushes"],
+      "counteredBy": ["Barracks first", "14 CC", "Proxy 5 Rax"],
       "steps": [
         "8 - Pylon",
         "12 - Nexus",
@@ -1593,10 +1394,7 @@
       "matchup": "PvT",
       "name": "14 Nexus - Basic Build order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/14_Nexus_%28vs._Terran%29",
@@ -1635,10 +1433,7 @@
       "matchup": "PvT",
       "name": "14 Nexus - Bisu Transition",
       "variantOf": "liquipedia-protoss-terran-14-nexus-basic-build-order",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/14_Nexus_%28vs._Terran%29",
@@ -1678,10 +1473,7 @@
       "matchup": "PvT",
       "name": "2 Base Arbiter - 2 Base Arbiter with DT Drop",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Base_Arbiter_%28vs._Terran%29",
@@ -1723,10 +1515,7 @@
       "matchup": "PvT",
       "name": "2 Base Carrier - Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Base_Carrier_%28vs._Terran%29",
@@ -1760,11 +1549,7 @@
       "matchup": "PvT",
       "name": "2 Gate DT - Possible Modifications",
       "variantOf": "liquipedia-protoss-terran-2-gate-dt-two-gateway-dark-templar",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_DT",
@@ -1801,11 +1586,7 @@
       "matchup": "PvT",
       "name": "2 Gate DT - Two Gateway Dark Templar",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_DT",
@@ -1841,10 +1622,7 @@
       "matchup": "PvT",
       "name": "2 Gate Range Expand - Two Gateway Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Range_Expand",
@@ -1882,10 +1660,7 @@
       "matchup": "PvT",
       "name": "2 Gate Zealot - slight economical disadvantage",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Zealot_%28vs._Terran%29",
@@ -1900,11 +1675,7 @@
       "lastCheckedAt": "2026-05-02T22:51:26.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 - Pylon",
-        "9 -Gateway",
-        "10 - Gateway"
-      ]
+      "steps": ["8 - Pylon", "9 -Gateway", "10 - Gateway"]
     },
     {
       "id": "liquipedia-protoss-terran-2-gate-zealot-solid-economy",
@@ -1913,10 +1684,7 @@
       "matchup": "PvT",
       "name": "2 Gate Zealot - solid economy",
       "variantOf": "liquipedia-protoss-terran-2-gate-zealot-slight-economical-disadvantage",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Zealot_%28vs._Terran%29",
@@ -1931,11 +1699,7 @@
       "lastCheckedAt": "2026-05-02T22:51:26.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 - Pylon",
-        "10 - Gateway",
-        "12 - Gateway"
-      ]
+      "steps": ["8 - Pylon", "10 - Gateway", "12 - Gateway"]
     },
     {
       "id": "liquipedia-protoss-terran-2-gate-zealot-strong-economical-commitment",
@@ -1944,10 +1708,7 @@
       "matchup": "PvT",
       "name": "2 Gate Zealot - strong economical commitment",
       "variantOf": "liquipedia-protoss-terran-2-gate-zealot-slight-economical-disadvantage",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Zealot_%28vs._Terran%29",
@@ -1962,10 +1723,7 @@
       "lastCheckedAt": "2026-05-02T22:51:26.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 - Pylon",
-        "9 - 2 Gateways"
-      ]
+      "steps": ["8 - Pylon", "9 - 2 Gateways"]
     },
     {
       "id": "liquipedia-protoss-terran-2-gate-zealot-strongest-economical-commitment",
@@ -1974,10 +1732,7 @@
       "matchup": "PvT",
       "name": "2 Gate Zealot - strongest economical commitment",
       "variantOf": "liquipedia-protoss-terran-2-gate-zealot-slight-economical-disadvantage",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gate_Zealot_%28vs._Terran%29",
@@ -1992,11 +1747,7 @@
       "lastCheckedAt": "2026-05-02T22:51:26.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "6 - Probe sent to middle of the map",
-        "8 - Pylon",
-        "9 - 2 Gateways"
-      ]
+      "steps": ["6 - Probe sent to middle of the map", "8 - Pylon", "9 - 2 Gateways"]
     },
     {
       "id": "liquipedia-protoss-terran-2-gateway-observer-two-gateway-observer",
@@ -2005,11 +1756,7 @@
       "matchup": "PvT",
       "name": "2 Gateway Observer - Two Gateway Observer",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_Observer",
@@ -2044,10 +1791,7 @@
       "matchup": "PvT",
       "name": "21 Nexus - Basic Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/21_Nexus",
@@ -2086,11 +1830,7 @@
       "matchup": "PvT",
       "name": "28 Nexus - Basic Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/28_Nexus_%28vs._Terran%29",
@@ -2126,11 +1866,7 @@
       "matchup": "PvT",
       "name": "28 Nexus - Build Extension",
       "variantOf": "liquipedia-protoss-terran-28-nexus-basic-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/28_Nexus_%28vs._Terran%29",
@@ -2160,10 +1896,7 @@
       "matchup": "PvT",
       "name": "Bulldog - Bulldog",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bulldog_%28vs._Terran%29",
@@ -2206,10 +1939,7 @@
       "matchup": "PvT",
       "name": "DT Drop - Basic Build for Faster Dark Templar Drop",
       "variantOf": "liquipedia-protoss-terran-dt-drop-vs-siege-expand",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/DT_Drop_%28vs._Terran%29",
@@ -2244,10 +1974,7 @@
       "matchup": "PvT",
       "name": "DT Drop - vs. Siege Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/DT_Drop_%28vs._Terran%29",
@@ -2289,10 +2016,7 @@
       "matchup": "PvT",
       "name": "DT Fast Expand - Basic Build Variations",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/DT_Fast_Expand_%28vs._Terran%29",
@@ -2329,10 +2053,7 @@
       "matchup": "PvT",
       "name": "Fast Expand - FE Vs. Terran",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Fast_Expand_%28vs._Terran%29",
@@ -2373,10 +2094,7 @@
       "matchup": "PvT",
       "name": "Gas Steal Elevator Rush - Basic Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Gas_Steal_Elevator_Rush_%28vs._Terran%29",
@@ -2419,11 +2137,7 @@
       "matchup": "PvT",
       "name": "Protoss Strategy - Build Orders",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Strategy",
@@ -2438,11 +2152,7 @@
       "lastCheckedAt": "2026-05-02T22:57:26.014Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Protoss vs. Terran",
-        "Protoss vs. Zerg",
-        "Protoss vs. Protoss"
-      ]
+      "steps": ["Protoss vs. Terran", "Protoss vs. Zerg", "Protoss vs. Protoss"]
     },
     {
       "id": "liquipedia-protoss-terran-protoss-strategy-general-information",
@@ -2451,11 +2161,7 @@
       "matchup": "PvT",
       "name": "Protoss Strategy - General Information",
       "variantOf": "liquipedia-protoss-terran-protoss-strategy-build-orders",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Strategy",
@@ -2470,11 +2176,7 @@
       "lastCheckedAt": "2026-05-02T22:57:26.014Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Protoss Units",
-        "Protoss Buildings",
-        "Protoss Spells"
-      ]
+      "steps": ["Protoss Units", "Protoss Buildings", "Protoss Spells"]
     },
     {
       "id": "liquipedia-protoss-terran-protoss-strategy-guides",
@@ -2483,11 +2185,7 @@
       "matchup": "PvT",
       "name": "Protoss Strategy - Guides",
       "variantOf": "liquipedia-protoss-terran-protoss-strategy-build-orders",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Strategy",
@@ -2502,11 +2200,7 @@
       "lastCheckedAt": "2026-05-02T22:57:26.014Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Protoss vs. Terran",
-        "Protoss vs. Zerg",
-        "Protoss vs. Protoss"
-      ]
+      "steps": ["Protoss vs. Terran", "Protoss vs. Zerg", "Protoss vs. Protoss"]
     },
     {
       "id": "liquipedia-protoss-terran-protoss-vs-terran-guide",
@@ -2515,10 +2209,7 @@
       "matchup": "PvT",
       "name": "Protoss vs. Terran Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_vs._Terran_Guide",
@@ -2559,10 +2250,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - aggressive Rush Builds",
       "variantOf": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2577,10 +2265,7 @@
       "lastCheckedAt": "2026-05-02T22:56:57.899Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9/9 Gateway",
-        "9/10 Proxy Gateway"
-      ]
+      "steps": ["9/9 Gateway", "9/10 Proxy Gateway"]
     },
     {
       "id": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
@@ -2589,10 +2274,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - common Rush Builds",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2607,9 +2289,7 @@
       "lastCheckedAt": "2026-05-02T22:56:57.899Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "10/12 Gateways"
-      ]
+      "steps": ["10/12 Gateways"]
     },
     {
       "id": "liquipedia-protoss-terran-pvpbuilds-exotic-builds",
@@ -2618,10 +2298,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - Exotic Builds",
       "variantOf": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2650,10 +2327,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - Fast Expansion Build Tree",
       "variantOf": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2681,10 +2355,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - Tech Builds",
       "variantOf": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2713,10 +2384,7 @@
       "matchup": "PvT",
       "name": "PVPBuilds - Techniques",
       "variantOf": "liquipedia-protoss-terran-pvpbuilds-common-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPBuilds",
@@ -2731,9 +2399,7 @@
       "lastCheckedAt": "2026-05-02T22:56:57.899Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Basics of army control"
-      ]
+      "steps": ["Basics of army control"]
     },
     {
       "id": "liquipedia-protoss-terran-pvpguide-early-game",
@@ -2742,11 +2408,7 @@
       "matchup": "PvT",
       "name": "PVPGuide - Early Game",
       "variantOf": "liquipedia-protoss-terran-pvpguide-early-game",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPGuide",
@@ -2777,11 +2439,7 @@
       "matchup": "PvT",
       "name": "PVPGuide - Mid Game",
       "variantOf": "liquipedia-protoss-terran-pvpguide-early-game",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVPGuide",
@@ -2814,10 +2472,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Delayed Fast Expansions",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2832,12 +2487,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "21 Nexus",
-        "28 Nexus",
-        "Two Gateway Range Expand",
-        "Dark Templar Fast Expand"
-      ]
+      "steps": ["21 Nexus", "28 Nexus", "Two Gateway Range Expand", "Dark Templar Fast Expand"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-exotic-or-design-builds",
@@ -2846,10 +2496,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Exotic or Design Builds",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2864,10 +2511,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Gas Steal Elevator Rush",
-        "The Stove"
-      ]
+      "steps": ["Gas Steal Elevator Rush", "The Stove"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-general-openings",
@@ -2876,10 +2520,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - General Openings",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2894,10 +2535,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "One Gateway Dragoon",
-        "Two Gateway Observer"
-      ]
+      "steps": ["One Gateway Dragoon", "Two Gateway Observer"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-higher-tech-harassment",
@@ -2906,10 +2544,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Higher Tech Harassment",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2924,11 +2559,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Dark Templar Drop",
-        "Two Gateway Dark Templar",
-        "One Gateway Reaver"
-      ]
+      "steps": ["Dark Templar Drop", "Two Gateway Dark Templar", "One Gateway Reaver"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-mid-game-strategies",
@@ -2937,10 +2568,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Mid Game Strategies",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2955,10 +2583,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Two Base Arbiters",
-        "Two Base Carriers"
-      ]
+      "steps": ["Two Base Arbiters", "Two Base Carriers"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
@@ -2967,10 +2592,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Nexus Fast Expansions",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -2985,10 +2607,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "12 Nexus",
-        "14 Nexus"
-      ]
+      "steps": ["12 Nexus", "14 Nexus"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-techniques",
@@ -2997,10 +2616,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Techniques",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -3015,9 +2631,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Explanation of Reaver Drop micromanagement"
-      ]
+      "steps": ["Explanation of Reaver Drop micromanagement"]
     },
     {
       "id": "liquipedia-protoss-terran-pvtbuilds-two-gateway-pressure",
@@ -3026,10 +2640,7 @@
       "matchup": "PvT",
       "name": "PVTBuilds - Two Gateway Pressure",
       "variantOf": "liquipedia-protoss-terran-pvtbuilds-nexus-fast-expansions",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVTBuilds",
@@ -3044,11 +2655,7 @@
       "lastCheckedAt": "2026-05-02T22:57:03.487Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "10/15 Gateways",
-        "Bulldog Attack",
-        "Two Gateway Zealot Rush"
-      ]
+      "steps": ["10/15 Gateways", "Bulldog Attack", "Two Gateway Zealot Rush"]
     },
     {
       "id": "liquipedia-protoss-terran-pvzbuilds-other-builds",
@@ -3057,10 +2664,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Other Builds",
       "variantOf": "liquipedia-protoss-terran-pvzbuilds-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3075,12 +2679,7 @@
       "lastCheckedAt": "2026-05-02T22:57:09.105Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "4 Gate 2 Archon",
-        "Corsair Dragoon",
-        "Corsair/Reaver",
-        "5 Gateway Ranged Dragoons"
-      ]
+      "steps": ["4 Gate 2 Archon", "Corsair Dragoon", "Corsair/Reaver", "5 Gateway Ranged Dragoons"]
     },
     {
       "id": "liquipedia-protoss-terran-pvzbuilds-reactionary-builds",
@@ -3089,10 +2688,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Reactionary Builds",
       "variantOf": "liquipedia-protoss-terran-pvzbuilds-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3120,10 +2716,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Rush Builds",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3138,12 +2731,7 @@
       "lastCheckedAt": "2026-05-02T22:57:09.105Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9/9 Gateway",
-        "9/9 Proxy Gateway",
-        "9/10 Gateway",
-        "10/12 Gateway"
-      ]
+      "steps": ["9/9 Gateway", "9/9 Proxy Gateway", "9/10 Gateway", "10/12 Gateway"]
     },
     {
       "id": "liquipedia-protoss-terran-pvzbuilds-standard-builds",
@@ -3152,10 +2740,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Standard Builds",
       "variantOf": "liquipedia-protoss-terran-pvzbuilds-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3170,10 +2755,7 @@
       "lastCheckedAt": "2026-05-02T22:57:09.105Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Corsair / Dark Templar (late game)",
-        "Corsair / Carrier (late game)"
-      ]
+      "steps": ["Corsair / Dark Templar (late game)", "Corsair / Carrier (late game)"]
     },
     {
       "id": "liquipedia-protoss-terran-pvzbuilds-tech-builds",
@@ -3182,10 +2764,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Tech Builds",
       "variantOf": "liquipedia-protoss-terran-pvzbuilds-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3200,11 +2779,7 @@
       "lastCheckedAt": "2026-05-02T22:57:09.105Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Speedzealot Timing Attack",
-        "Corsair / Reaver",
-        "Corsair / Dark Templar"
-      ]
+      "steps": ["Speedzealot Timing Attack", "Corsair / Reaver", "Corsair / Dark Templar"]
     },
     {
       "id": "liquipedia-protoss-terran-pvzbuilds-techniques",
@@ -3213,10 +2788,7 @@
       "matchup": "PvT",
       "name": "PVZBuilds - Techniques",
       "variantOf": "liquipedia-protoss-terran-pvzbuilds-rush-builds",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZBuilds",
@@ -3242,11 +2814,7 @@
       "matchup": "PvT",
       "name": "PVZGuide - Early Game",
       "variantOf": "liquipedia-protoss-terran-pvzguide-early-game",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZGuide",
@@ -3277,11 +2845,7 @@
       "matchup": "PvT",
       "name": "PVZGuide - End Game",
       "variantOf": "liquipedia-protoss-terran-pvzguide-early-game",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZGuide",
@@ -3311,11 +2875,7 @@
       "matchup": "PvT",
       "name": "PVZGuide - Mid Game",
       "variantOf": "liquipedia-protoss-terran-pvzguide-early-game",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/PVZGuide",
@@ -3345,10 +2905,7 @@
       "matchup": "PvT",
       "name": "The Stove - The Royal Stove",
       "variantOf": "liquipedia-protoss-terran-the-stove-the-stove",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/The_Stove",
@@ -3386,10 +2943,7 @@
       "matchup": "PvT",
       "name": "The Stove - The Stove",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/The_Stove",
@@ -3425,11 +2979,7 @@
       "matchup": "PvZ",
       "name": "+1 Sair/Speedlot - +1 Corsair/Speedzealot",
       "variantOf": "liquipedia-protoss-zerg-1-sair-speedlot-forge-fe",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Sair/Speedlot_%28vs._Zerg%29",
@@ -3469,11 +3019,7 @@
       "matchup": "PvZ",
       "name": "+1 Sair/Speedlot - Forge FE (vs. Overpool)",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Sair/Speedlot_%28vs._Zerg%29",
@@ -3502,11 +3048,7 @@
       "matchup": "PvZ",
       "name": "+1 Speedzealot - 14 Nexus FE & +1 Speedzealot",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Speedzealot_%28vs_Zerg%29",
@@ -3549,11 +3091,7 @@
       "matchup": "PvZ",
       "name": "+1 Speedzealot - Lurkers are out",
       "variantOf": "liquipedia-protoss-zerg-1-speedzealot-14-nexus-fe-and-1-speedzealot",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Speedzealot_%28vs_Zerg%29",
@@ -3589,11 +3127,7 @@
       "matchup": "PvZ",
       "name": "+1 Speedzealot - No Lurkers are out",
       "variantOf": "liquipedia-protoss-zerg-1-speedzealot-14-nexus-fe-and-1-speedzealot",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Speedzealot_%28vs_Zerg%29",
@@ -3629,11 +3163,7 @@
       "matchup": "PvZ",
       "name": "+1 Speedzealot - Option 2: Air Superiority",
       "variantOf": "liquipedia-protoss-zerg-1-speedzealot-14-nexus-fe-and-1-speedzealot",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/%2B1_Speedzealot_%28vs_Zerg%29",
@@ -3663,10 +3193,7 @@
       "matchup": "PvZ",
       "name": "2 Gateway - 10/12 Gateways",
       "variantOf": "liquipedia-protoss-zerg-2-gateway-9-9-proxy-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_%28vs._Zerg%29",
@@ -3699,10 +3226,7 @@
       "matchup": "PvZ",
       "name": "2 Gateway - 9/10 Gateways",
       "variantOf": "liquipedia-protoss-zerg-2-gateway-9-9-proxy-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_%28vs._Zerg%29",
@@ -3736,10 +3260,7 @@
       "matchup": "PvZ",
       "name": "2 Gateway - 9/9 Gateways",
       "variantOf": "liquipedia-protoss-zerg-2-gateway-9-9-proxy-gateways",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_%28vs._Zerg%29",
@@ -3773,10 +3294,7 @@
       "matchup": "PvZ",
       "name": "2 Gateway - 9/9 Proxy Gateways",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Gateway_%28vs._Zerg%29",
@@ -3812,11 +3330,7 @@
       "matchup": "PvZ",
       "name": "4 Gate 2 Archon - 18 Nexus FE",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Gate_2_Archon",
@@ -3860,10 +3374,7 @@
       "matchup": "PvZ",
       "name": "5 Gate Ranged Goons - Exemplary Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Gate_Ranged_Goons_%28vs._Zerg%29",
@@ -3901,11 +3412,7 @@
       "matchup": "PvZ",
       "name": "Bisu Build - Bisu Build",
       "variantOf": "liquipedia-protoss-zerg-bisu-build-exemplary-forge-first-expansion-build",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bisu_Build",
@@ -3937,11 +3444,7 @@
       "matchup": "PvZ",
       "name": "Bisu Build - Exemplary Forge First Expansion Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bisu_Build",
@@ -3976,10 +3479,7 @@
       "matchup": "PvZ",
       "name": "Corsair/Carrier - Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Corsair/Carrier_%28vs._Zerg%29",
@@ -4010,10 +3510,7 @@
       "matchup": "PvZ",
       "name": "Corsair/Dark Templar - General Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Corsair/Dark_Templar_%28vs._Zerg%29",
@@ -4052,10 +3549,7 @@
       "matchup": "PvZ",
       "name": "Corsair/Dark Templar - Requirements",
       "variantOf": "liquipedia-protoss-zerg-corsair-dark-templar-general-build-order",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Corsair/Dark_Templar_%28vs._Zerg%29",
@@ -4084,10 +3578,7 @@
       "matchup": "PvZ",
       "name": "Corsair/Dragoon - 18 Nexus Opening",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Corsair/Dragoon_%28vs._Zerg%29",
@@ -4128,10 +3619,7 @@
       "matchup": "PvZ",
       "name": "Corsair/Reaver - General Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Corsair/Reaver_%28vs._Zerg%29",
@@ -4166,11 +3654,7 @@
       "matchup": "PvZ",
       "name": "Forge FE - 12 Hatch",
       "variantOf": "liquipedia-protoss-zerg-forge-fe-9-pool",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Forge_FE_%28vs._Zerg%29",
@@ -4207,11 +3691,7 @@
       "matchup": "PvZ",
       "name": "Forge FE - 12 Pool",
       "variantOf": "liquipedia-protoss-zerg-forge-fe-9-pool",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Forge_FE_%28vs._Zerg%29",
@@ -4248,11 +3728,7 @@
       "matchup": "PvZ",
       "name": "Forge FE - 9 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Forge_FE_%28vs._Zerg%29",
@@ -4289,11 +3765,7 @@
       "matchup": "PvZ",
       "name": "Forge FE - Overpool",
       "variantOf": "liquipedia-protoss-zerg-forge-fe-9-pool",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Forge_FE_%28vs._Zerg%29",
@@ -4330,11 +3802,7 @@
       "matchup": "PvZ",
       "name": "Gateway FE - Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Gateway_FE_%28vs._Zerg%29",
@@ -4365,10 +3833,7 @@
       "matchup": "PvZ",
       "name": "One Base Speedzeal - One Base Speed Zealot",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/One_Base_Speedzeal_%28vs._Zerg%29",
@@ -4413,10 +3878,7 @@
       "matchup": "PvZ",
       "name": "Plus1 Zealot/Archon Timing Attack - After Forge first FE",
       "variantOf": "liquipedia-protoss-zerg-plus1-zealot-archon-timing-attack-overview",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Plus1_Zealot/Archon_Timing_Attack_%28vs._Zerg%29",
@@ -4448,10 +3910,7 @@
       "matchup": "PvZ",
       "name": "Plus1 Zealot/Archon Timing Attack - After One Gate Tech",
       "variantOf": "liquipedia-protoss-zerg-plus1-zealot-archon-timing-attack-overview",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Plus1_Zealot/Archon_Timing_Attack_%28vs._Zerg%29",
@@ -4485,10 +3944,7 @@
       "matchup": "PvZ",
       "name": "Plus1 Zealot/Archon Timing Attack - Build Order",
       "variantOf": "liquipedia-protoss-zerg-plus1-zealot-archon-timing-attack-overview",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Plus1_Zealot/Archon_Timing_Attack_%28vs._Zerg%29",
@@ -4519,10 +3975,7 @@
       "matchup": "PvZ",
       "name": "Plus1 Zealot/Archon Timing Attack - Faster Tech",
       "variantOf": "liquipedia-protoss-zerg-plus1-zealot-archon-timing-attack-overview",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Plus1_Zealot/Archon_Timing_Attack_%28vs._Zerg%29",
@@ -4554,10 +4007,7 @@
       "matchup": "PvZ",
       "name": "Plus1 Zealot/Archon Timing Attack - Overview",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Plus1_Zealot/Archon_Timing_Attack_%28vs._Zerg%29",
@@ -4593,10 +4043,7 @@
       "matchup": "PvZ",
       "name": "Protoss BGH Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_BGH_Build",
@@ -4642,11 +4089,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - 2 or 3 Hatchery Zerglings",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4676,11 +4119,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - 9 Pool Speed Zerglings",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4708,11 +4147,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - Forge Fast Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4727,10 +4162,7 @@
       "lastCheckedAt": "2026-05-02T22:57:20.372Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8 - Pylon at Natural Expansion",
-        "10 - Forge"
-      ]
+      "steps": ["8 - Pylon at Natural Expansion", "10 - Forge"]
     },
     {
       "id": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-signs-hyralisk-busts",
@@ -4739,11 +4171,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - Signs: Hyralisk Busts",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4772,11 +4200,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - Signs: Lurker Busts",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4807,11 +4231,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - Signs: Mutalisk Bust",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4840,11 +4260,7 @@
       "matchup": "PvZ",
       "name": "Protoss Counter to Zerg All-ins - Signs: Slow Drops",
       "variantOf": "liquipedia-protoss-zerg-protoss-counter-to-zerg-all-ins-forge-fast-expand",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_Counter_to_Zerg_All-ins",
@@ -4873,10 +4289,7 @@
       "matchup": "PvZ",
       "name": "Protoss vs. Zerg Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Protoss_vs._Zerg_Guide",
@@ -4920,10 +4333,7 @@
       "matchup": "TvP",
       "name": "1 Factory Double Expand - One Factory Double Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Factory_Double_Expand_%28vs._Protoss%29",
@@ -4959,10 +4369,7 @@
       "matchup": "TvP",
       "name": "1 Rax FE - Conservative Opening (vs. Zealot Pressure)",
       "variantOf": "liquipedia-terran-protoss-1-rax-fe-fastest-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Protoss%29",
@@ -4994,10 +4401,7 @@
       "matchup": "TvP",
       "name": "1 Rax FE - Fastest Variation",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Protoss%29",
@@ -5028,10 +4432,7 @@
       "matchup": "TvP",
       "name": "1 Rax FE - Safe Variation",
       "variantOf": "liquipedia-terran-protoss-1-rax-fe-fastest-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Protoss%29",
@@ -5060,10 +4461,7 @@
       "matchup": "TvP",
       "name": "1 Rax FE - Standard Variation",
       "variantOf": "liquipedia-terran-protoss-1-rax-fe-fastest-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Protoss%29",
@@ -5096,10 +4494,7 @@
       "matchup": "TvP",
       "name": "10-10-10 FD - Flash 10-10-10 FD",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10-10-10_FD_%28vs._Protoss%29",
@@ -5144,10 +4539,7 @@
       "matchup": "TvP",
       "name": "14 CC",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/14_CC_%28vs._Protoss%29",
@@ -5162,10 +4554,7 @@
       "lastCheckedAt": "2026-05-02T22:50:38.584Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9/10 - Supply Depot",
-        "14/18 - Command Center (at natural)"
-      ]
+      "steps": ["9/10 - Supply Depot", "14/18 - Command Center (at natural)"]
     },
     {
       "id": "liquipedia-terran-protoss-2-fact-vult-mines-two-factory-vulture-mine",
@@ -5174,10 +4563,7 @@
       "matchup": "TvP",
       "name": "2 Fact Vult/Mines - Two Factory Vulture / Mine",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Fact_Vult/Mines_%28vs._Protoss%29",
@@ -5213,10 +4599,7 @@
       "matchup": "TvP",
       "name": "2 Factory",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Factory_%28vs._Protoss%29",
@@ -5253,10 +4636,7 @@
       "matchup": "TvP",
       "name": "Bunker Rush",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bunker_Rush_%28vs._Protoss%29",
@@ -5269,9 +4649,7 @@
       "revisionId": 119919,
       "lastImportedAt": "2026-05-02T22:54:51.612Z",
       "lastCheckedAt": "2026-05-02T22:54:51.612Z",
-      "counters": [
-        "Standard Play"
-      ],
+      "counters": ["Standard Play"],
       "counteredBy": [],
       "steps": [
         "8 - Barracks",
@@ -5288,10 +4666,7 @@
       "matchup": "TvP",
       "name": "Deep Six - Deep Six Transition",
       "variantOf": "liquipedia-terran-protoss-deep-six-one-barracks-opening",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Deep_Six_%28vs._Protoss%29",
@@ -5324,10 +4699,7 @@
       "matchup": "TvP",
       "name": "Deep Six - One Barracks Opening",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Deep_Six_%28vs._Protoss%29",
@@ -5360,10 +4732,7 @@
       "matchup": "TvP",
       "name": "Deep Six - Siege Expand Opening",
       "variantOf": "liquipedia-terran-protoss-deep-six-one-barracks-opening",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Deep_Six_%28vs._Protoss%29",
@@ -5398,11 +4767,7 @@
       "matchup": "TvP",
       "name": "Double Armory",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Double_Armory_%28vs._Protoss%29",
@@ -5444,10 +4809,7 @@
       "matchup": "TvP",
       "name": "Fact CC Fact - Fact CC Fact",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Fact_CC_Fact_%28vs._Protoss%29",
@@ -5487,10 +4849,7 @@
       "matchup": "TvP",
       "name": "Factory Expand - Factory Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Factory_Expand_%28vs._Protoss%29",
@@ -5529,10 +4888,7 @@
       "matchup": "TvP",
       "name": "FD - Flash Variation",
       "variantOf": "liquipedia-terran-protoss-fd-original-timing",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/FD_%28vs._Protoss%29",
@@ -5573,10 +4929,7 @@
       "matchup": "TvP",
       "name": "FD - Hwasin Opening",
       "variantOf": "liquipedia-terran-protoss-fd-original-timing",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/FD_%28vs._Protoss%29",
@@ -5613,10 +4966,7 @@
       "matchup": "TvP",
       "name": "FD - Original Timing",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/FD_%28vs._Protoss%29",
@@ -5631,11 +4981,7 @@
       "lastCheckedAt": "2026-05-02T22:55:28.110Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9/10 - Supply Depot",
-        "11/18 - Barracks and Refinery",
-        "13/18 - Scout"
-      ]
+      "steps": ["9/10 - Supply Depot", "11/18 - Barracks and Refinery", "13/18 - Scout"]
     },
     {
       "id": "liquipedia-terran-protoss-fd-strong-fd",
@@ -5644,10 +4990,7 @@
       "matchup": "TvP",
       "name": "FD - Strong FD",
       "variantOf": "liquipedia-terran-protoss-fd-original-timing",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/FD_%28vs._Protoss%29",
@@ -5686,10 +5029,7 @@
       "matchup": "TvP",
       "name": "Gundam Rush - Gundam Rush",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Gundam_Rush",
@@ -5728,10 +5068,7 @@
       "matchup": "TvP",
       "name": "Hiya 4-Fac - First Economy Cut",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hiya_4-Fac",
@@ -5766,10 +5103,7 @@
       "matchup": "TvP",
       "name": "Hiya 4-Fac - Second Economy Cut",
       "variantOf": "liquipedia-terran-protoss-hiya-4-fac-first-economy-cut",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hiya_4-Fac",
@@ -5811,11 +5145,7 @@
       "matchup": "TvP",
       "name": "JoyO Rush - Basic Build Order",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/JoyO_Rush",
@@ -5856,10 +5186,7 @@
       "matchup": "TvP",
       "name": "Nada 2 Fac - NaDa Two Factory",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Nada_2_Fac",
@@ -5892,11 +5219,7 @@
       "matchup": "TvP",
       "name": "Terran vs. Protoss Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_vs._Protoss_Guide",
@@ -5931,10 +5254,7 @@
       "matchup": "TvT",
       "name": "1 Fact FE - 1 Fact FE",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Fact_FE_%28vs._Terran%29",
@@ -5968,10 +5288,7 @@
       "matchup": "TvT",
       "name": "1 Factory Tanks - Open with the 2 Rax FE (vs. Zerg)",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Factory_Tanks_%28vs._Zerg%29",
@@ -6004,10 +5321,7 @@
       "matchup": "TvT",
       "name": "1 Port Wraith - Machine Shop Variation",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Port_Wraith_%28vs._Terran%29",
@@ -6020,16 +5334,8 @@
       "revisionId": 463519,
       "lastImportedAt": "2026-05-02T22:49:42.162Z",
       "lastCheckedAt": "2026-05-02T22:49:42.162Z",
-      "counters": [
-        "None",
-        "Faster One Factory FE",
-        "14 CC"
-      ],
-      "counteredBy": [
-        "One or Two Port Wraith",
-        "Two Factory Vultures",
-        "Three Factory Vultures"
-      ],
+      "counters": ["None", "Faster One Factory FE", "14 CC"],
+      "counteredBy": ["One or Two Port Wraith", "Two Factory Vultures", "Three Factory Vultures"],
       "steps": [
         "9/10 - Supply Depot",
         "12/18 - Barracks",
@@ -6050,10 +5356,7 @@
       "matchup": "TvT",
       "name": "1 Rax FE - 2 Port Wraith Transition",
       "variantOf": "liquipedia-terran-terran-1-rax-fe-one-barracks-fast-expansion",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Terran%29",
@@ -6085,10 +5388,7 @@
       "matchup": "TvT",
       "name": "1 Rax FE - One Barracks Fast Expansion",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Terran%29",
@@ -6123,10 +5423,7 @@
       "matchup": "TvT",
       "name": "1 Rax FE - vs 14 CC",
       "variantOf": "liquipedia-terran-terran-1-rax-fe-one-barracks-fast-expansion",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Terran%29",
@@ -6156,10 +5453,7 @@
       "matchup": "TvT",
       "name": "14 CC",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/14_CC_%28vs._Zerg%29",
@@ -6202,10 +5496,7 @@
       "matchup": "TvT",
       "name": "2 Fact Goliath - 2 Fact Goliath",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Fact_Goliath_%28vs._Terran%29",
@@ -6218,13 +5509,8 @@
       "revisionId": 524157,
       "lastImportedAt": "2026-05-02T22:50:58.305Z",
       "lastCheckedAt": "2026-05-02T22:50:58.305Z",
-      "counters": [
-        "2 Fact Vulture",
-        "1 Port Wraith"
-      ],
-      "counteredBy": [
-        "3 Fact Vulture"
-      ],
+      "counters": ["2 Fact Vulture", "1 Port Wraith"],
+      "counteredBy": ["3 Fact Vulture"],
       "steps": [
         "9/10 - Supply Depot",
         "11/18 - Barracks",
@@ -6256,11 +5542,7 @@
       "matchup": "TvT",
       "name": "2 Fact Vulture - 2 Fact Vults",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Fact_Vulture_%28vs._Terran%29",
@@ -6273,10 +5555,7 @@
       "revisionId": 524151,
       "lastImportedAt": "2026-05-02T22:51:04.130Z",
       "lastCheckedAt": "2026-05-02T22:51:04.130Z",
-      "counters": [
-        "1 Factory Expansion",
-        "13/14 CC with no wall"
-      ],
+      "counters": ["1 Factory Expansion", "13/14 CC with no wall"],
       "counteredBy": [
         "One Port Wraith",
         "Two Port Wraith",
@@ -6305,10 +5584,7 @@
       "matchup": "TvT",
       "name": "2 Rax Academy - 2 Rax Academy",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Rax_Academy_%28vs._Zerg%29",
@@ -6342,10 +5618,7 @@
       "matchup": "TvT",
       "name": "3 Fact Vulture - 3 Factory Vultures",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Fact_Vulture_%28vs._Terran%29",
@@ -6366,9 +5639,7 @@
         "1 Port Wraith",
         "any unorthodox FE"
       ],
-      "counteredBy": [
-        "wall-in at natural or main"
-      ],
+      "counteredBy": ["wall-in at natural or main"],
       "steps": [
         "9/10 - Supply Depot",
         "11/18 - Barracks",
@@ -6393,10 +5664,7 @@
       "matchup": "TvT",
       "name": "8 Rax",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/8_Rax_%28vs._Zerg%29",
@@ -6411,11 +5679,7 @@
       "lastCheckedAt": "2026-05-02T22:53:49.799Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "8/10 - Barracks",
-        "9/10 - Supply Depot",
-        "10/18 - scout two mains"
-      ]
+      "steps": ["8/10 - Barracks", "9/10 - Supply Depot", "10/18 - scout two mains"]
     },
     {
       "id": "liquipedia-terran-terran-fake-fake-double-fake-fake-double-build",
@@ -6424,10 +5688,7 @@
       "matchup": "TvT",
       "name": "Fake Fake Double - Fake Fake Double Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Fake_Fake_Double_%28vs._Protoss%29",
@@ -6474,10 +5735,7 @@
       "matchup": "TvT",
       "name": "Iloveoov Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Iloveoov_Build",
@@ -6509,10 +5767,7 @@
       "matchup": "TvT",
       "name": "Proxy 5 Rax",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Proxy_5_Rax",
@@ -6530,14 +5785,8 @@
         "14 CC",
         "A forward Barracks built to get an early scout"
       ],
-      "counteredBy": [
-        "Proxy Rax (BBS)",
-        "8 Rax",
-        "Good SCV Micro"
-      ],
-      "steps": [
-        "7/10 - Supply Depot"
-      ]
+      "counteredBy": ["Proxy Rax (BBS)", "8 Rax", "Good SCV Micro"],
+      "steps": ["7/10 - Supply Depot"]
     },
     {
       "id": "liquipedia-terran-terran-siege-expand-siege-expand",
@@ -6546,11 +5795,7 @@
       "matchup": "TvT",
       "name": "Siege Expand - Siege Expand",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Siege_Expand_%28vs._Protoss%29",
@@ -6586,10 +5831,7 @@
       "matchup": "TvT",
       "name": "Terran Strategy - Build Orders",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_Strategy",
@@ -6604,11 +5846,7 @@
       "lastCheckedAt": "2026-05-02T22:58:50.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Terran vs. Protoss",
-        "Terran vs. Zerg",
-        "Terran vs. Terran"
-      ]
+      "steps": ["Terran vs. Protoss", "Terran vs. Zerg", "Terran vs. Terran"]
     },
     {
       "id": "liquipedia-terran-terran-terran-strategy-general-information",
@@ -6617,10 +5855,7 @@
       "matchup": "TvT",
       "name": "Terran Strategy - General Information",
       "variantOf": "liquipedia-terran-terran-terran-strategy-build-orders",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_Strategy",
@@ -6635,11 +5870,7 @@
       "lastCheckedAt": "2026-05-02T22:58:50.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Terran Units",
-        "Terran Buildings",
-        "Terran Spells"
-      ]
+      "steps": ["Terran Units", "Terran Buildings", "Terran Spells"]
     },
     {
       "id": "liquipedia-terran-terran-terran-strategy-guides",
@@ -6648,10 +5879,7 @@
       "matchup": "TvT",
       "name": "Terran Strategy - Guides",
       "variantOf": "liquipedia-terran-terran-terran-strategy-build-orders",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_Strategy",
@@ -6666,11 +5894,7 @@
       "lastCheckedAt": "2026-05-02T22:58:50.603Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Terran vs. Protoss",
-        "Terran vs. Zerg",
-        "Terran vs. Terran"
-      ]
+      "steps": ["Terran vs. Protoss", "Terran vs. Zerg", "Terran vs. Terran"]
     },
     {
       "id": "liquipedia-terran-terran-terran-vs-terran-guide",
@@ -6679,10 +5903,7 @@
       "matchup": "TvT",
       "name": "Terran vs. Terran Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_vs._Terran_Guide",
@@ -6738,10 +5959,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Bionic Play",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6756,11 +5974,7 @@
       "lastCheckedAt": "2026-05-02T22:58:33.664Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Barracks Barracks Supply (BBS)",
-        "Deep Six",
-        "Shallow Two"
-      ]
+      "steps": ["Barracks Barracks Supply (BBS)", "Deep Six", "Shallow Two"]
     },
     {
       "id": "liquipedia-terran-terran-tvpbuilds-fast-expansions",
@@ -6769,10 +5983,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Fast Expansions",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6804,10 +6015,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Late Game Strategies",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6822,10 +6030,7 @@
       "lastCheckedAt": "2026-05-02T22:58:33.664Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Double Armory (Flash Build)",
-        "iloveoov Build"
-      ]
+      "steps": ["Double Armory (Flash Build)", "iloveoov Build"]
     },
     {
       "id": "liquipedia-terran-terran-tvpbuilds-mid-game-timings",
@@ -6834,10 +6039,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Mid Game Timings",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6852,10 +6054,7 @@
       "lastCheckedAt": "2026-05-02T22:58:33.664Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Six Factory Timing Push",
-        "Hiya Four Factory"
-      ]
+      "steps": ["Six Factory Timing Push", "Hiya Four Factory"]
     },
     {
       "id": "liquipedia-terran-terran-tvpbuilds-other-strategies",
@@ -6864,10 +6063,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Other Strategies",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6882,9 +6078,7 @@
       "lastCheckedAt": "2026-05-02T22:58:33.664Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Fast Drop"
-      ]
+      "steps": ["Fast Drop"]
     },
     {
       "id": "liquipedia-terran-terran-tvpbuilds-techniques",
@@ -6893,10 +6087,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Techniques",
       "variantOf": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6911,11 +6102,7 @@
       "lastCheckedAt": "2026-05-02T22:58:33.664Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "Terran Counter to Reaver Tech",
-        "Walling as Terran",
-        "Vulture Micro"
-      ]
+      "steps": ["Terran Counter to Reaver Tech", "Walling as Terran", "Vulture Micro"]
     },
     {
       "id": "liquipedia-terran-terran-tvpbuilds-two-factory-openings",
@@ -6924,10 +6111,7 @@
       "matchup": "TvT",
       "name": "TVPBuilds - Two Factory Openings",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TVPBuilds",
@@ -6957,10 +6141,7 @@
       "matchup": "TvZ",
       "name": "1 Factory Starport - Vs 2 Hatch Mutas",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Factory_Starport_%28vs._Zerg%29",
@@ -6995,11 +6176,7 @@
       "matchup": "TvZ",
       "name": "1 Rax FE",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_FE_%28vs._Zerg%29",
@@ -7014,10 +6191,7 @@
       "lastCheckedAt": "2026-05-02T22:49:50.599Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "11/18 - Barracks & scout",
-        "15-18 Command Center (See note)"
-      ]
+      "steps": ["11/18 - Barracks & scout", "15-18 Command Center (See note)"]
     },
     {
       "id": "liquipedia-terran-zerg-1-rax-gas",
@@ -7026,10 +6200,7 @@
       "matchup": "TvZ",
       "name": "1 Rax Gas",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Rax_Gas_%28vs._Zerg%29",
@@ -7058,10 +6229,7 @@
       "matchup": "TvZ",
       "name": "3 Factory Goliaths - 3 Factory Goliaths",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Factory_Goliaths_%28vs._Zerg%29",
@@ -7114,10 +6282,7 @@
       "matchup": "TvZ",
       "name": "4 Barracks Sunken Break Build - If he doesn't:",
       "variantOf": "liquipedia-terran-zerg-4-barracks-sunken-break-build-if-zerg-makes-6-initial-zerglings-and-goes-to-your",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Barracks_Sunken_Break_Build",
@@ -7173,10 +6338,7 @@
       "matchup": "TvZ",
       "name": "4 Barracks Sunken Break Build - If Zerg makes 6 initial Zerglings and goes to your base:",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Barracks_Sunken_Break_Build",
@@ -7231,10 +6393,7 @@
       "matchup": "TvZ",
       "name": "5 Factory Goliaths - 5 Factory Goliaths",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Factory_Goliaths_%28vs._Zerg%29",
@@ -7309,10 +6468,7 @@
       "matchup": "TvZ",
       "name": "5 Rax - Basic transition:",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Rax_%28vs._Zerg%29",
@@ -7355,10 +6511,7 @@
       "matchup": "TvZ",
       "name": "5 Rax - From the most commonly seen 1 Rax FE opener",
       "variantOf": "liquipedia-terran-zerg-5-rax-basic-transition",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Rax_%28vs._Zerg%29",
@@ -7403,10 +6556,7 @@
       "matchup": "TvZ",
       "name": "Ayumi Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Ayumi_Build",
@@ -7441,10 +6591,7 @@
       "matchup": "TvZ",
       "name": "Barracks Barracks Supply - Barracks Barracks Supply",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Barracks_Barracks_Supply_%28vs._Protoss%29",
@@ -7476,11 +6623,7 @@
       "matchup": "TvZ",
       "name": "Bionic Terran vs. Zerg Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bionic_Terran_vs._Zerg_Guide",
@@ -7512,10 +6655,7 @@
       "matchup": "TvZ",
       "name": "Bunker Rush",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Bunker_Rush_%28vs._Zerg%29",
@@ -7544,10 +6684,7 @@
       "matchup": "TvZ",
       "name": "Iloveoov Fake Mech - Fake Mech",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Iloveoov_Fake_Mech",
@@ -7586,10 +6723,7 @@
       "matchup": "TvZ",
       "name": "Proxy Factory",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Proxy_Factory_%28vs._Zerg%29",
@@ -7623,11 +6757,7 @@
       "matchup": "TvZ",
       "name": "Rax CC Rax - 1 Rax FE",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Rax_CC_Rax_%28vs._Zerg%29",
@@ -7658,11 +6788,7 @@
       "matchup": "TvZ",
       "name": "Rax CC Rax - Basic Build",
       "variantOf": "liquipedia-terran-zerg-rax-cc-rax-1-rax-fe",
-      "tags": [
-        "liquipedia",
-        "imported",
-        "beginner"
-      ],
+      "tags": ["liquipedia", "imported", "beginner"],
       "difficulty": "beginner",
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Rax_CC_Rax_%28vs._Zerg%29",
@@ -7697,10 +6823,7 @@
       "matchup": "TvZ",
       "name": "Standard Pre-Hive Timing Attack",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Standard_Pre-Hive_Timing_Attack",
@@ -7745,10 +6868,7 @@
       "matchup": "TvZ",
       "name": "Terran BGH Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Terran_BGH_Build",
@@ -7792,10 +6912,7 @@
       "matchup": "TvZ",
       "name": "TvZ 9 Minute Push",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/TvZ_9_Minute_Push",
@@ -7810,10 +6927,7 @@
       "lastCheckedAt": "2026-05-02T22:59:10.277Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "16-18 Command Center see note",
-        "85-88 Barracks x3"
-      ]
+      "steps": ["16-18 Command Center see note", "85-88 Barracks x3"]
     },
     {
       "id": "liquipedia-zerg-protoss-1-hatch-lurker-9-pool-variation",
@@ -7822,10 +6936,7 @@
       "matchup": "ZvP",
       "name": "1 Hatch Lurker - 9 Pool Variation",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Hatch_Lurker_%28vs._Protoss%29",
@@ -7856,10 +6967,7 @@
       "matchup": "ZvP",
       "name": "1 Hatch Lurker - Early Gas, 10 Pool Variation",
       "variantOf": "liquipedia-zerg-protoss-1-hatch-lurker-9-pool-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Hatch_Lurker_%28vs._Protoss%29",
@@ -7899,10 +7007,7 @@
       "matchup": "ZvP",
       "name": "2 Hatch Hydra",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Hydra_%28vs._Protoss%29",
@@ -7915,16 +7020,12 @@
       "revisionId": 132147,
       "lastImportedAt": "2026-05-02T22:51:37.845Z",
       "lastCheckedAt": "2026-05-02T22:51:37.845Z",
-      "counters": [
-        "Poorly designed Sim-City."
-      ],
+      "counters": ["Poorly designed Sim-City."],
       "counteredBy": [
         "Well designed Sim-City.",
         "1 Gate Tech - You should adjust your build once you realize he's going 1 Gate Tech."
       ],
-      "steps": [
-        "16 - Overlord"
-      ]
+      "steps": ["16 - Overlord"]
     },
     {
       "id": "liquipedia-zerg-protoss-2-hatch-muta",
@@ -7933,10 +7034,7 @@
       "matchup": "ZvP",
       "name": "2 Hatch Muta",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Muta_%28vs._Protoss%29",
@@ -7971,10 +7069,7 @@
       "matchup": "ZvP",
       "name": "3 Base Spire into 5 Hatch Hydra - 3 Hatch Spire into 5 Hatch Hydra",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Base_Spire_into_5_Hatch_Hydra_%28vs._Protoss%29",
@@ -8017,10 +7112,7 @@
       "matchup": "ZvP",
       "name": "3 Hatch Hydralisk - 3 Hatch Hydra",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Hydralisk_%28vs._Protoss%29",
@@ -8059,10 +7151,7 @@
       "matchup": "ZvP",
       "name": "4 Hatch before Gas - 4 Hatch before Gas",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Hatch_before_Gas_%28vs._Protoss%29",
@@ -8099,10 +7188,7 @@
       "matchup": "ZvP",
       "name": "6 hatch",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/6_hatch_%28vs._Protoss%29",
@@ -8117,10 +7203,7 @@
       "lastCheckedAt": "2026-05-02T22:53:44.211Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "44/51-47/51 Air Carapace",
-        "44/51-47/51 +1 Range Attack"
-      ]
+      "steps": ["44/51-47/51 Air Carapace", "44/51-47/51 +1 Range Attack"]
     },
     {
       "id": "liquipedia-zerg-protoss-9-pool-speed",
@@ -8129,10 +7212,7 @@
       "matchup": "ZvP",
       "name": "9 Pool Speed",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Pool_Speed_%28vs._Protoss%29",
@@ -8163,10 +7243,7 @@
       "matchup": "ZvP",
       "name": "Hoejja build - Hoejja Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hoejja_build",
@@ -8199,10 +7276,7 @@
       "matchup": "ZvT",
       "name": "1 Hatch Lurker",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/1_Hatch_Lurker",
@@ -8217,9 +7291,7 @@
       "lastCheckedAt": "2026-05-02T22:49:36.316Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "6-8 Zerglings"
-      ]
+      "steps": ["6-8 Zerglings"]
     },
     {
       "id": "liquipedia-zerg-terran-12-hatch-variant-1-of-12-hatch",
@@ -8228,10 +7300,7 @@
       "matchup": "ZvT",
       "name": "12 Hatch - Variant 1 of 12 Hatch (vs. Terran)",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Hatch_%28vs._Terran%29",
@@ -8259,10 +7328,7 @@
       "matchup": "ZvT",
       "name": "13 Pool Muta",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/13_Pool_Muta_%28vs._Terran%29",
@@ -8298,10 +7364,7 @@
       "matchup": "ZvT",
       "name": "2 Hatch Lurker",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Lurker_%28vs._Terran%29",
@@ -8350,10 +7413,7 @@
       "matchup": "ZvT",
       "name": "2 Hatch Muta - ----",
       "variantOf": "liquipedia-zerg-terran-2-hatch-muta-12-hatch-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Muta_%28vs._Terran%29",
@@ -8391,10 +7451,7 @@
       "matchup": "ZvT",
       "name": "2 Hatch Muta - 12 Hatch Variation",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Muta_%28vs._Terran%29",
@@ -8425,10 +7482,7 @@
       "matchup": "ZvT",
       "name": "2 Hatch Muta - 12 Pool Variation",
       "variantOf": "liquipedia-zerg-terran-2-hatch-muta-12-hatch-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Muta_%28vs._Terran%29",
@@ -8459,10 +7513,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Lurker - 3 Hatch Lurker",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Lurker_%28vs._Terran%29",
@@ -8504,10 +7555,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Lurker - 3 Hatch Lurker w/ Fast Upgrades",
       "variantOf": "liquipedia-zerg-terran-3-hatch-lurker-3-hatch-lurker",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Lurker_%28vs._Terran%29",
@@ -8553,10 +7601,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Lurker - Fake 3 Hatch Muta into Lurker",
       "variantOf": "liquipedia-zerg-terran-3-hatch-lurker-3-hatch-lurker",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Lurker_%28vs._Terran%29",
@@ -8601,10 +7646,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Muta - 3 Base Hive Lurker Defiler",
       "variantOf": "liquipedia-zerg-terran-3-hatch-muta-3-hatch-muta",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Muta_%28vs._Terran%29",
@@ -8633,10 +7675,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Muta - 3 Hatch Muta",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Muta_%28vs._Terran%29",
@@ -8683,10 +7722,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Spire - 3 Hatchery Spire",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Spire_%28vs._Protoss%29",
@@ -8724,10 +7760,7 @@
       "matchup": "ZvT",
       "name": "3 Hatch Zergling",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Zergling",
@@ -8740,14 +7773,8 @@
       "revisionId": 120024,
       "lastImportedAt": "2026-05-02T22:52:50.889Z",
       "lastCheckedAt": "2026-05-02T22:52:50.889Z",
-      "counters": [
-        "Greedy Builds",
-        "Non-walled Terran Builds"
-      ],
-      "counteredBy": [
-        "All fast techs + walling",
-        "Efficient scouting"
-      ],
+      "counters": ["Greedy Builds", "Non-walled Terran Builds"],
+      "counteredBy": ["All fast techs + walling", "Efficient scouting"],
       "steps": [
         "9 - Overlord.",
         "12 - Hatchery (at Natural).",
@@ -8765,10 +7792,7 @@
       "matchup": "ZvT",
       "name": "5 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Pool_%28vs._Terran%29",
@@ -8782,13 +7806,8 @@
       "lastImportedAt": "2026-05-02T22:53:32.956Z",
       "lastCheckedAt": "2026-05-02T22:53:32.956Z",
       "counters": [],
-      "counteredBy": [
-        "8 Barracks (8 Rax) given that Terran scouts the build"
-      ],
-      "steps": [
-        "4 - Drone (at the beginning)",
-        "5 - Spawning Pool"
-      ]
+      "counteredBy": ["8 Barracks (8 Rax) given that Terran scouts the build"],
+      "steps": ["4 - Drone (at the beginning)", "5 - Spawning Pool"]
     },
     {
       "id": "liquipedia-zerg-terran-7-pool",
@@ -8797,10 +7816,7 @@
       "matchup": "ZvT",
       "name": "7 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/7_Pool_%28vs._Terran%29",
@@ -8832,10 +7848,7 @@
       "matchup": "ZvT",
       "name": "9 Pool - 9 Pool with Speed",
       "variantOf": "liquipedia-zerg-terran-9-pool-economic-9-pool",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Pool_%28vs._Terran%29",
@@ -8867,10 +7880,7 @@
       "matchup": "ZvT",
       "name": "9 Pool - Economic\" 9 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Pool_%28vs._Terran%29",
@@ -8903,10 +7913,7 @@
       "matchup": "ZvT",
       "name": "Example Strategy - if attack failed",
       "variantOf": "liquipedia-zerg-terran-example-strategy-if-attack-was-successful",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Example_Strategy",
@@ -8937,10 +7944,7 @@
       "matchup": "ZvT",
       "name": "Example Strategy - if attack was successful",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Example_Strategy",
@@ -8970,10 +7974,7 @@
       "matchup": "ZvT",
       "name": "Hatch Gas Pool - Hatch Gas Pool into 2 Hatch Muta",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hatch_Gas_Pool_%28vs._Terran%29",
@@ -9010,10 +8011,7 @@
       "matchup": "ZvT",
       "name": "Hydra/Lurker",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hydra/Lurker_%28vs._Terran%29",
@@ -9046,10 +8044,7 @@
       "matchup": "ZvT",
       "name": "Zerg vs. Bionic Terran Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Zerg_vs._Bionic_Terran_Guide",
@@ -9095,10 +8090,7 @@
       "matchup": "ZvT",
       "name": "Zerg vs. Mech Terran Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Zerg_vs._Mech_Terran_Guide",
@@ -9113,9 +8105,7 @@
       "lastCheckedAt": "2026-05-02T22:59:24.331Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "11-13 Extractor"
-      ]
+      "steps": ["11-13 Extractor"]
     },
     {
       "id": "liquipedia-zerg-zerg-10-hatch",
@@ -9124,10 +8114,7 @@
       "matchup": "ZvZ",
       "name": "10 Hatch",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/10_Hatch_%28vs._Zerg%29",
@@ -9158,10 +8145,7 @@
       "matchup": "ZvZ",
       "name": "11 Gas 10 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/11_Gas_10_Pool_%28vs._Zerg%29",
@@ -9191,10 +8175,7 @@
       "matchup": "ZvZ",
       "name": "12 Hatch",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Hatch_%28vs._Zerg%29",
@@ -9225,10 +8206,7 @@
       "matchup": "ZvZ",
       "name": "12 Hatch - 12 Hatchery",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Hatch_%28vs._Protoss%29",
@@ -9243,11 +8221,7 @@
       "lastCheckedAt": "2026-05-02T22:50:13.275Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9 - Overlord",
-        "12 - Hatchery @ Natural",
-        "11 - Spawning Pool"
-      ]
+      "steps": ["9 - Overlord", "12 - Hatchery @ Natural", "11 - Spawning Pool"]
     },
     {
       "id": "liquipedia-zerg-zerg-12-pool-12-pool",
@@ -9256,10 +8230,7 @@
       "matchup": "ZvZ",
       "name": "12 Pool - 12 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Pool_%28vs._Zerg%29",
@@ -9292,10 +8263,7 @@
       "matchup": "ZvZ",
       "name": "12 Pool in-base hatch",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/12_Pool_in-base_hatch_%28vs._Zerg%29",
@@ -9308,15 +8276,8 @@
       "revisionId": 209198,
       "lastImportedAt": "2026-05-02T22:50:32.971Z",
       "lastCheckedAt": "2026-05-02T22:50:32.971Z",
-      "counters": [
-        "9 Pool",
-        "Overpool",
-        "Overgas"
-      ],
-      "counteredBy": [
-        "4-7 Pool",
-        "12 Hatch"
-      ],
+      "counters": ["9 Pool", "Overpool", "Overgas"],
+      "counteredBy": ["4-7 Pool", "12 Hatch"],
       "steps": [
         "9 - Overlord",
         "12 - Spawning Pool",
@@ -9333,10 +8294,7 @@
       "matchup": "ZvZ",
       "name": "2 Hatch Lurker Drop - 12 Hatch Opening",
       "variantOf": "liquipedia-zerg-zerg-2-hatch-lurker-drop-9-overpool-opening",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Lurker_Drop_%28vs._Protoss%29",
@@ -9372,10 +8330,7 @@
       "matchup": "ZvZ",
       "name": "2 Hatch Lurker Drop - 9 Overpool Opening",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/2_Hatch_Lurker_Drop_%28vs._Protoss%29",
@@ -9424,10 +8379,7 @@
       "matchup": "ZvZ",
       "name": "3 Hatch Zergling - 10 Hatch",
       "variantOf": "liquipedia-zerg-zerg-3-hatch-zergling-9-pool-speed",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Zergling_%28vs._Protoss%29",
@@ -9446,9 +8398,7 @@
         "Poorly placed Sim-City.",
         "Lazy or ineffective scouting."
       ],
-      "counteredBy": [
-        "Well placed Sim-City."
-      ],
+      "counteredBy": ["Well placed Sim-City."],
       "steps": [
         "9 - Gas Trick",
         "10 - Hatchery @ Natural",
@@ -9467,10 +8417,7 @@
       "matchup": "ZvZ",
       "name": "3 Hatch Zergling - 9 Pool Speed",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Zergling_%28vs._Protoss%29",
@@ -9489,9 +8436,7 @@
         "Poorly placed Sim-City.",
         "Lazy or ineffective scouting."
       ],
-      "counteredBy": [
-        "Well placed Sim-City."
-      ],
+      "counteredBy": ["Well placed Sim-City."],
       "steps": [
         "9 - Spawning Pool",
         "9 - Extractor",
@@ -9509,10 +8454,7 @@
       "matchup": "ZvZ",
       "name": "3 Hatch Zergling - Overpool",
       "variantOf": "liquipedia-zerg-zerg-3-hatch-zergling-9-pool-speed",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatch_Zergling_%28vs._Protoss%29",
@@ -9531,9 +8473,7 @@
         "Poorly placed Sim-City.",
         "Lazy or ineffective scouting."
       ],
-      "counteredBy": [
-        "Well placed Sim-City."
-      ],
+      "counteredBy": ["Well placed Sim-City."],
       "steps": [
         "9 - Overlord",
         "9 - Spawning Pool",
@@ -9550,10 +8490,7 @@
       "matchup": "ZvZ",
       "name": "3 Hatchery Lurkers - 3 Hatchery Lurkers",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/3_Hatchery_Lurkers_%28vs._Protoss%29",
@@ -9595,10 +8532,7 @@
       "matchup": "ZvZ",
       "name": "4 Hatch Lair",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/4_Hatch_Lair_%28vs._Protoss%29",
@@ -9613,9 +8547,7 @@
       "lastCheckedAt": "2026-05-02T22:53:13.338Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "10-12 lings"
-      ]
+      "steps": ["10-12 lings"]
     },
     {
       "id": "liquipedia-zerg-zerg-5-hatch-before-gas-5-hatch-before-gas",
@@ -9624,10 +8556,7 @@
       "matchup": "ZvZ",
       "name": "5 Hatch before Gas - 5 Hatch before Gas",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Hatch_before_Gas_%28vs._Protoss%29",
@@ -9669,10 +8598,7 @@
       "matchup": "ZvZ",
       "name": "5 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/5_Pool_%28vs._Protoss%29",
@@ -9685,14 +8611,8 @@
       "revisionId": 184800,
       "lastImportedAt": "2026-05-02T22:53:30.132Z",
       "lastCheckedAt": "2026-05-02T22:53:30.132Z",
-      "counters": [
-        "14 Nexus",
-        "Fast Expand builds in general"
-      ],
-      "counteredBy": [
-        "2 Gateway",
-        "1 Gate Tech"
-      ],
+      "counters": ["14 Nexus", "Fast Expand builds in general"],
+      "counteredBy": ["2 Gateway", "1 Gate Tech"],
       "steps": [
         "2-3 player maps with no ramps (as this makes the Protoss much less likely to use Gate first builds)"
       ]
@@ -9704,10 +8624,7 @@
       "matchup": "ZvZ",
       "name": "9 Gas, 10 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Gas%2C_10_Pool_%28vs._Zerg%29",
@@ -9738,10 +8655,7 @@
       "matchup": "ZvZ",
       "name": "9 Gas, 9 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Gas%2C_9_Pool_%28vs._Zerg%29",
@@ -9771,10 +8685,7 @@
       "matchup": "ZvZ",
       "name": "9 Hatch",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Hatch_%28vs._Zerg%29",
@@ -9804,10 +8715,7 @@
       "matchup": "ZvZ",
       "name": "9 Pool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Pool_%28vs._Zerg%29",
@@ -9822,12 +8730,7 @@
       "lastCheckedAt": "2026-05-02T22:54:06.605Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9 — Spawning Pool",
-        "8 — Drone",
-        "9 — Extractor (see note)",
-        "8 — Overlord"
-      ]
+      "steps": ["9 — Spawning Pool", "8 — Drone", "9 — Extractor (see note)", "8 — Overlord"]
     },
     {
       "id": "liquipedia-zerg-zerg-9-pool-speed-into-1-hatch-spire",
@@ -9836,10 +8739,7 @@
       "matchup": "ZvZ",
       "name": "9 Pool Speed into 1 Hatch Spire",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/9_Pool_Speed_into_1_Hatch_Spire_%28vs._Zerg%29",
@@ -9869,10 +8769,7 @@
       "matchup": "ZvZ",
       "name": "Hydralisks - 2 base Hydralisk with Lurkers",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hydralisks_%28vs._Zerg%29",
@@ -9921,10 +8818,7 @@
       "matchup": "ZvZ",
       "name": "Hydralisks - 2 base mass hydralisk",
       "variantOf": "liquipedia-zerg-zerg-hydralisks-2-base-hydralisk-with-lurkers",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Hydralisks_%28vs._Zerg%29",
@@ -9970,10 +8864,7 @@
       "matchup": "ZvZ",
       "name": "Overpool",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Overpool_%28vs._Zerg%29",
@@ -10010,10 +8901,7 @@
       "matchup": "ZvZ",
       "name": "Overpool - Overpool's Aggressive Variation",
       "variantOf": "liquipedia-zerg-zerg-overpool-overpool-s-economic-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Overpool_%28vs._Protoss%29",
@@ -10048,10 +8936,7 @@
       "matchup": "ZvZ",
       "name": "Overpool - Overpool's Alternative Economic Variation",
       "variantOf": "liquipedia-zerg-zerg-overpool-overpool-s-economic-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Overpool_%28vs._Protoss%29",
@@ -10084,10 +8969,7 @@
       "matchup": "ZvZ",
       "name": "Overpool - Overpool's Economic Variation",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Overpool_%28vs._Protoss%29",
@@ -10119,10 +9001,7 @@
       "matchup": "ZvZ",
       "name": "Overpool - Overpool's Gas Variation",
       "variantOf": "liquipedia-zerg-zerg-overpool-overpool-s-economic-variation",
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Overpool_%28vs._Protoss%29",
@@ -10151,10 +9030,7 @@
       "matchup": "ZvZ",
       "name": "Zerg BGH Build",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Zerg_BGH_Build",
@@ -10195,10 +9071,7 @@
       "matchup": "ZvZ",
       "name": "Zerg vs. Zerg Guide",
       "variantOf": null,
-      "tags": [
-        "liquipedia",
-        "imported"
-      ],
+      "tags": ["liquipedia", "imported"],
       "difficulty": null,
       "sourceName": "Liquipedia",
       "sourceUrl": "https://liquipedia.net/starcraft/Zerg_vs._Zerg_Guide",
@@ -10213,13 +9086,7 @@
       "lastCheckedAt": "2026-05-02T22:59:35.562Z",
       "counters": [],
       "counteredBy": [],
-      "steps": [
-        "9 - Hatchery",
-        "8 - Drone",
-        "9 - Pool",
-        "9 - Extractor",
-        "8 - Overlord"
-      ]
+      "steps": ["9 - Hatchery", "8 - Drone", "9 - Pool", "9 - Extractor", "8 - Overlord"]
     }
   ]
 }
