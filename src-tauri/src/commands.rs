@@ -20,25 +20,8 @@ fn err_string<E: std::fmt::Display>(err: E) -> String {
     err.to_string()
 }
 
-const UPDATE_ENDPOINT: &str =
-    "https://github.com/Etra-0/starcraft-build-overlay/releases/latest/download/latest.json";
-
-fn updater_pubkey() -> Result<String, String> {
-    std::env::var("BW_UPDATER_PUBKEY")
-        .or_else(|_| std::env::var("TAURI_UPDATER_PUBKEY"))
-        .map_err(|_| {
-            "Missing updater public key. Set BW_UPDATER_PUBKEY (or TAURI_UPDATER_PUBKEY)."
-                .to_string()
-        })
-}
-
 async fn check_update(app: &AppHandle) -> Result<Option<tauri_plugin_updater::Update>, String> {
-    let endpoint = UPDATE_ENDPOINT.parse().map_err(err_string)?;
-    app.updater_builder()
-        .pubkey(updater_pubkey()?)
-        .endpoints(vec![endpoint])
-        .map_err(err_string)?
-        .build()
+    app.updater()
         .map_err(err_string)?
         .check()
         .await
