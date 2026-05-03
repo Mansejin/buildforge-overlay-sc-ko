@@ -120,14 +120,38 @@ button {
 }
 
 .overlay-drag-strip {
-  border: 1px dashed var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 14px;
   border-radius: var(--radius-sm);
-  color: var(--muted);
-  font-size: 10.5px;
-  text-align: center;
-  padding: 3px 8px;
-  background: rgba(var(--surface-rgb), 0.45);
+  color: var(--muted-2);
+  font-size: 10px;
+  background: rgba(var(--surface-rgb), 0.35);
   user-select: none;
+  cursor: grab;
+}
+
+.overlay-drag-strip:active {
+  cursor: grabbing;
+}
+
+.overlay-drag-grip {
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--border-strong);
+}
+
+.overlay-drag-hint {
+  letter-spacing: 0.04em;
+}
+
+body[data-click-through="true"] .overlay-drag-strip {
+  background: rgba(var(--surface-rgb), 0.2);
+  cursor: default;
 }
 
 /* Compact-mode hides things; mirror those rules onto the new

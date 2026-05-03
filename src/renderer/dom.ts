@@ -100,6 +100,8 @@ export interface Dom {
   settingsPageSize: HTMLInputElement;
   settingsDefaultRace: HTMLSelectElement;
   saveSettingsButton: HTMLButtonElement;
+  overlayDragStrip: HTMLElement;
+  overlayDragHint: HTMLElement;
 }
 
 export const dom: Dom = {
@@ -186,5 +188,7 @@ export const dom: Dom = {
   appUpdateStatus: byId("appUpdateStatus"),
   settingsPageSize: byId<HTMLInputElement>("settingsPageSize"),
   settingsDefaultRace: byId<HTMLSelectElement>("settingsDefaultRace"),
-  saveSettingsButton: byId<HTMLButtonElement>("saveSettingsButton")
+  saveSettingsButton: byId<HTMLButtonElement>("saveSettingsButton"),
+  overlayDragStrip: byId("overlayDragStrip"),
+  overlayDragHint: byId("overlayDragHint")
 };

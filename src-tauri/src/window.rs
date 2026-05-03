@@ -120,7 +120,10 @@ pub fn set_mode(window: &WebviewWindow, mode: ViewMode, sizes: ManagerSizes) {
         ViewMode::Overlay => {
             OVERLAY_AOT_DESIRED.store(true, Ordering::Relaxed);
             let _ = window.set_decorations(false);
-            let _ = window.set_resizable(false);
+            // Allow user to resize the overlay; before v2.3 the overlay was
+            // size-locked which made the Liquipedia steps cramp at narrow
+            // widths and gave users no escape from a too-small window.
+            let _ = window.set_resizable(true);
             let _ = window.set_always_on_top(true);
             // Keep the overlay in the taskbar so users can find it; setting
             // skip_taskbar(true) here causes Windows to lose the window

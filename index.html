@@ -271,8 +271,14 @@
          now ONE of two top-level views, not the only one.
          ========================================================= -->
     <main id="viewOverlay" class="view view-overlay">
-      <div class="overlay-drag-strip" data-tauri-drag-region>
-        Drag overlay here (Ctrl+Alt+K toggles reposition mode)
+      <div
+        id="overlayDragStrip"
+        class="overlay-drag-strip"
+        data-tauri-drag-region
+        title="Drag to move (Ctrl+Alt+L toggles click-through, Ctrl+Alt+K toggles reposition)"
+      >
+        <span class="overlay-drag-grip" aria-hidden="true"></span>
+        <span id="overlayDragHint" class="overlay-drag-hint"></span>
       </div>
       <section class="race-tabs" role="tablist" aria-label="Player race">
         <button class="race-tab" data-race="Terran" role="tab">Terran</button>

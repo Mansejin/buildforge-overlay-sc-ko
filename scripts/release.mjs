@@ -6,11 +6,12 @@ const bumpType = args[0];
 const dryRun = args.includes("--dry-run");
 const allowDirty = args.includes("--allow-dirty");
 const scrape = args.includes("--scrape");
+const allowEmptyChangelog = args.includes("--allow-empty-changelog");
 
 const VALID_BUMPS = new Set(["patch", "minor", "major"]);
 if (!VALID_BUMPS.has(bumpType)) {
   console.error(
-    "Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty] [--scrape]"
+    "Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty] [--scrape] [--allow-empty-changelog]"
   );
   process.exit(1);
 }
@@ -76,6 +77,29 @@ if (headingMatches.length === 0) {
   process.exit(1);
 }
 const lastMatch = headingMatches[headingMatches.length - 1];
+// Capture body between the live `## [Unreleased]` heading and the next
+// `## [` heading (or EOF). Used to refuse to release with an empty
+// Unreleased section, so we never ship another v2.2.1-style "No
+// unreleased changes yet." release by accident.
+const unreleasedBodyStart = lastMatch.index + lastMatch[0].length;
+const nextHeadingRegex = /^## \[/m;
+const remainingAfterUnreleased = changelog.slice(unreleasedBodyStart);
+const nextHeadingMatch = remainingAfterUnreleased.match(nextHeadingRegex);
+const unreleasedBody = nextHeadingMatch
+  ? remainingAfterUnreleased.slice(0, nextHeadingMatch.index)
+  : remainingAfterUnreleased;
+const trimmedUnreleasedBody = unreleasedBody.trim();
+const isEmptyUnreleased =
+  trimmedUnreleasedBody.length === 0 ||
+  /^_No unreleased changes yet\._$/i.test(trimmedUnreleasedBody);
+if (isEmptyUnreleased && !allowEmptyChangelog) {
+  console.error(
+    "Refusing to release: CHANGELOG.md `## [Unreleased]` section is empty.\n" +
+      "Add bullets under Added / Changed / Fixed / Removed before releasing,\n" +
+      "or pass --allow-empty-changelog if this is an intentional CI-only patch."
+  );
+  process.exit(1);
+}
 const replacement = `## [Unreleased]\n\n_No unreleased changes yet._\n\n## [${newVersion}] - ${today}`;
 const updatedChangelog =
   changelog.slice(0, lastMatch.index) +

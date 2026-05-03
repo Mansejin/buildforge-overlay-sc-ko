@@ -29,12 +29,17 @@ export function applyModeToDom(mode: ViewMode): void {
   dom.modeOverlayButton.classList.toggle("active", mode === "overlay");
   dom.modeManagerButton.setAttribute("aria-selected", String(mode === "manager"));
   dom.modeOverlayButton.setAttribute("aria-selected", String(mode === "overlay"));
+  const clickThroughActive = mode === "overlay" && store.settings.overlayClickThrough;
+  dom.body.dataset.clickThrough = String(clickThroughActive);
   dom.overlayStatus.textContent =
     mode === "overlay"
-      ? store.settings.overlayClickThrough
+      ? clickThroughActive
         ? "Overlay - mouse passes through"
         : "Overlay - interactive"
       : "Manager";
+  dom.overlayDragHint.textContent = clickThroughActive
+    ? "Click-through on - press Ctrl+Alt+L to interact, Ctrl+Alt+K to reposition"
+    : "Drag here to move - resize from window edges";
 }
 
 /**

@@ -35,11 +35,19 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
-_No unreleased changes yet._
+### Added
+
+- **Resizable overlay window.** Overlay mode is no longer size-locked - the user can drag any edge to resize so longer step lists fit without text wrapping into the supply column.
+- **Smarter overlay drag handle.** Replaced the verbose dashed strip with a thin grip bar at the top of the overlay that says exactly what the user can do right now (drag to move, or - if click-through is on - the hotkey to interact / reposition). No more confusing empty-looking gap above the build card.
+
+### Fixed
+
+- **Overlay drag and resize finally work in Overlay mode.** When click-through is off, dragging the strip now moves the window and the OS edge cursor resizes it. When click-through is on, the strip clearly says how to interact (`Ctrl+Alt+L`) or reposition (`Ctrl+Alt+K`).
+- **Release script refuses to cut a release with an empty `## [Unreleased]` section.** v2.2.1 shipped with `_No unreleased changes yet._` in its release notes because no entries were authored before running `release:patch`. The script now aborts with guidance unless `--allow-empty-changelog` is passed for intentional CI-only patches.
 
 ## [2.2.1] - 2026-05-03
 
-_No unreleased changes yet._
+_No user-visible changes - patch release to land CI / release-workflow fixes (updater signing config, formatting preflight in `scripts/release.mjs`)._
 
 ## [2.2.0] - 2026-05-03
 
