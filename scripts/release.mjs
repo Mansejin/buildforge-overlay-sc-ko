@@ -98,13 +98,8 @@ if (scrape) {
   );
   console.log("Release started with --scrape, so catalog refresh is enabled.");
   console.log("");
-  const scrape = spawnSync(
-    process.platform === "win32" ? "npm.cmd" : "npm",
-    ["run", "scrape", "--silent"],
-    {
-      stdio: "inherit"
-    }
-  );
+  const [scrapeCmd, scrapeArgs] = npmCommandParts(["run", "scrape", "--silent"]);
+  const scrape = spawnSync(scrapeCmd, scrapeArgs, { stdio: "inherit" });
   if (scrape.status !== 0) {
     console.error("Scrape failed. Aborting release.");
     process.exit(1);
@@ -194,6 +189,17 @@ if (prettierTargets.length > 0) {
   const prettier = spawnSync(prettierCmd, prettierArgs, { stdio: "inherit" });
   if (prettier.status !== 0) {
     console.error("prettier --write failed on release-modified files. Aborting release.");
+    process.exit(1);
+  }
+  const [prettierCheckCmd, prettierCheckArgs] = npmCommandParts([
+    "exec",
+    "prettier",
+    "--check",
+    ...prettierTargets
+  ]);
+  const prettierCheck = spawnSync(prettierCheckCmd, prettierCheckArgs, { stdio: "inherit" });
+  if (prettierCheck.status !== 0) {
+    console.error("prettier --check failed after formatting release files. Aborting release.");
     process.exit(1);
   }
 }
