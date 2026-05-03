@@ -36,14 +36,6 @@
       </div>
 
       <div class="topbar-actions">
-        <button
-          id="updatesBadgeButton"
-          class="icon-button"
-          title="Pending Liquipedia updates"
-          hidden
-        >
-          <span class="dot"></span>
-        </button>
         <button id="favoriteButton" class="icon-button" title="Toggle favorite (Ctrl+Alt+F)">
           &#9734;
         </button>
@@ -55,7 +47,7 @@
     </header>
 
     <!-- =========================================================
-         Manager view - full UI for adding/editing/importing builds.
+         Manager view - full UI for adding/editing builds.
          Two-column grid; both columns own their own scroll.
          Every flex/grid child in the chain has min-height: 0 so the
          scrollable regions actually scroll instead of pushing content
@@ -64,7 +56,6 @@
     <main id="viewManager" class="view view-manager">
       <div id="catalogStatusBanner" class="catalog-banner" hidden>
         <span id="catalogStatusText"></span>
-        <button id="catalogResyncButton" class="small-button">Re-sync from Liquipedia</button>
       </div>
 
       <div class="manager-grid">
@@ -103,8 +94,6 @@
         <section class="manager-main">
           <div class="tabs">
             <button id="editTabButton" class="tab active">Edit</button>
-            <button id="importTabButton" class="tab">Import</button>
-            <button id="updatesTabButton" class="tab">Updates</button>
             <button id="settingsTabButton" class="tab">Settings</button>
           </div>
 
@@ -169,12 +158,12 @@
               </div>
 
               <label>
-                Imported notes
+                Catalog notes
                 <textarea id="formNotes" rows="2"></textarea>
               </label>
 
               <label>
-                Your notes (preserved across re-imports)
+                Your notes (preserved across catalog refreshes)
                 <textarea id="formUserNotes" rows="2"></textarea>
               </label>
 
@@ -185,7 +174,7 @@
 
               <label class="checkbox-row">
                 <input id="formCustomEdited" type="checkbox" />
-                Mark as custom edited - bulk imports/refreshes will skip this build
+                Mark as custom edited - bundled catalog refreshes will skip this build
               </label>
               <label class="checkbox-row">
                 <input id="formFavorite" type="checkbox" />
@@ -199,95 +188,7 @@
               </div>
             </div>
 
-            <div id="importTab" class="tab-panel">
-              <div class="import-card">
-                <h3>Import one Liquipedia page</h3>
-                <p>
-                  Paste a Liquipedia URL or page title. The app previews the parsed build(s) in the
-                  editor.
-                </p>
-                <label>
-                  URL or page title
-                  <input
-                    id="importInput"
-                    placeholder="https://liquipedia.net/starcraft/3_Gate_Robo_(vs._Protoss)"
-                  />
-                </label>
-                <div class="button-row">
-                  <button id="previewImportButton">Preview</button>
-                  <button id="importNowButton">Import directly</button>
-                </div>
-              </div>
-
-              <div class="import-card">
-                <h3>Bulk import from Liquipedia</h3>
-                <p>
-                  <strong>Common</strong> imports a curated subset (faster).
-                  <strong>All</strong> walks every build category (slower because of rate limits).
-                </p>
-                <div class="button-row checkbox-row">
-                  <label class="checkbox-row"
-                    ><input type="checkbox" data-race-bulk="Terran" checked /> Terran</label
-                  >
-                  <label class="checkbox-row"
-                    ><input type="checkbox" data-race-bulk="Protoss" checked /> Protoss</label
-                  >
-                  <label class="checkbox-row"
-                    ><input type="checkbox" data-race-bulk="Zerg" checked /> Zerg</label
-                  >
-                </div>
-                <div class="button-row">
-                  <button id="importCommonButton">Import common builds</button>
-                  <button id="importAllButton">Import all builds</button>
-                </div>
-                <label class="checkbox-row">
-                  <input id="updateExistingCheckbox" type="checkbox" />
-                  Also overwrite existing imports (still skips builds you marked custom-edited)
-                </label>
-              </div>
-
-              <div class="log-box" id="importLog"></div>
-            </div>
-
-            <div id="updatesTab" class="tab-panel">
-              <div class="import-card">
-                <h3>Check Liquipedia for updates</h3>
-                <p>
-                  Compare your imported builds against the latest revisions on Liquipedia. The app
-                  also runs a silent check on launch (configurable in Settings).
-                </p>
-                <div class="button-row">
-                  <button id="checkUpdatesButton">Check for updates now</button>
-                  <button id="refreshSelectedUpdatesButton">Refresh selected</button>
-                  <button id="refreshAllUpdatesButton" class="primary-button">
-                    Refresh all outdated
-                  </button>
-                </div>
-                <p class="muted" id="updatesSummary">No check has been run yet.</p>
-              </div>
-              <div id="updatesList" class="updates-list"></div>
-            </div>
-
             <div id="settingsTab" class="tab-panel">
-              <div class="import-card">
-                <h3>Liquipedia API</h3>
-                <label>
-                  User-Agent (please use a contact-able string)
-                  <input id="settingsUserAgent" />
-                </label>
-                <label>
-                  Rate limit (ms between requests, &gt;= 2000)
-                  <input id="settingsRateLimit" type="number" min="2000" step="100" />
-                </label>
-                <label class="checkbox-row">
-                  <input id="settingsAutoCheck" type="checkbox" />
-                  Silently check for updates when the app launches
-                </label>
-                <label>
-                  Auto-scan throttle (hours; minimum gap between automatic launch checks)
-                  <input id="settingsScanInterval" type="number" min="1" max="168" step="1" />
-                </label>
-              </div>
               <div class="import-card">
                 <h3>Overlay</h3>
                 <label class="checkbox-row">
@@ -295,8 +196,15 @@
                   Compact mode (smaller footprint, hides extras)
                 </label>
                 <label>
-                  Window opacity
-                  <input id="settingsOpacity" type="range" min="0.5" max="1" step="0.05" />
+                  <span class="label-row">
+                    Window opacity
+                    <output id="settingsOpacityValue">100%</output>
+                  </span>
+                  <input id="settingsOpacity" type="range" min="0.4" max="1" step="0.05" />
+                </label>
+                <label class="checkbox-row">
+                  <input id="settingsOverlayClickThrough" type="checkbox" />
+                  Game-safe click-through in overlay mode
                 </label>
                 <label>
                   Steps per page
@@ -315,17 +223,11 @@
                 </div>
               </div>
               <div class="import-card">
-                <h3>Build &amp; distribute</h3>
-                <p>
-                  Run <code>npm run tauri:build</code> for a native installer (NSIS/MSI on Windows,
-                  .dmg on macOS, .AppImage/.deb on Linux), or <code>npm run dev</code> to launch a
-                  dev build. Maintainers: <code>npm run scrape</code> regenerates
-                  <code>data/builds.json</code> from Liquipedia.
+                <h3>Catalog</h3>
+                <p class="catalog-date-line">
+                  Last synced: <strong id="settingsCatalogDate">unknown</strong>
                 </p>
-                <p>
-                  Data lives in your OS user-data folder. Use
-                  <strong>Backup builds.json</strong> before risky changes.
-                </p>
+                <p class="muted">Data lives in your OS user-data folder.</p>
               </div>
             </div>
           </div>
@@ -379,7 +281,6 @@
               <span id="matchupChip" class="chip"></span>
               <span id="difficultyChip" class="chip subtle" hidden></span>
               <span id="favoritedChip" class="chip subtle" hidden>&#9733; Favorite</span>
-              <span id="updateChip" class="chip subtle update-chip" hidden>Update available</span>
             </div>
             <div id="buildTags" class="tags"></div>
           </div>
@@ -426,6 +327,7 @@
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PgDn</kbd>/<kbd>PgUp</kbd> page</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> favorite</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd> mode</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> mouse</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hide</div>
         </div>
       </section>

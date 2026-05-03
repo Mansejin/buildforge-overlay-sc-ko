@@ -1,34 +1,19 @@
 // src-tauri/src/commands.rs
 // Tauri command surface that exposes the OverlayAPI contract from
 // src/shared/types.ts to the frontend. Each #[tauri::command] wraps
-// storage / liquipedia / window helpers and returns plain
-// serde-serialisable values to the renderer. Long-running imports emit
-// "liquipedia:progress" events; the global hotkeys live in window.rs
-// and emit "hotkey" events directly.
+// storage / window helpers and returns plain serde-serialisable values
+// to the renderer. Global hotkeys live in window.rs and emit "hotkey"
+// events directly.
 
-use crate::liquipedia::import::{self, ProgressFn};
-use crate::liquipedia::updates;
 use crate::storage::{self, UserPaths};
-use crate::types::{
-    Build, BuildsData, BulkImportOptions, CheckUpdatesResult, ImportOptions,
-    ImportSinglePageResult, RefreshBuildsOptions, RefreshBuildsResult, Settings, UserDataPaths,
-    ViewMode,
-};
-use crate::{liquipedia, window as winmod};
+use crate::types::{BuildsData, Settings, UserDataPaths, ViewMode};
+use crate::window as winmod;
 use serde_json::Value;
-use std::sync::Arc;
-use tauri::{AppHandle, Emitter, State, WebviewWindow};
+use tauri::{AppHandle, State, WebviewWindow};
 use tauri_plugin_opener::OpenerExt;
 
 fn err_string<E: std::fmt::Display>(err: E) -> String {
     err.to_string()
-}
-
-fn make_progress(app: &AppHandle) -> ProgressFn {
-    let app = app.clone();
-    Arc::new(move |message: &str| {
-        let _ = app.emit("liquipedia:progress", message.to_string());
-    })
 }
 
 #[tauri::command]
@@ -61,84 +46,6 @@ pub async fn settings_save(
     settings: Value,
 ) -> Result<Settings, String> {
     storage::save_settings(paths.inner(), settings)
-        .await
-        .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_preview_page(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-    input: String,
-) -> Result<Vec<Build>, String> {
-    let progress = make_progress(&app);
-    import::preview_single_page(paths.inner(), &input, Some(&progress))
-        .await
-        .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_import_page(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-    input: String,
-    options: ImportOptions,
-) -> Result<ImportSinglePageResult, String> {
-    let progress = make_progress(&app);
-    import::import_single_page(
-        paths.inner(),
-        &input,
-        options.update_existing,
-        Some(&progress),
-    )
-    .await
-    .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_bulk_import(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-    options: BulkImportOptions,
-) -> Result<crate::types::BulkImportResult, String> {
-    let progress = make_progress(&app);
-    import::bulk_import(paths.inner(), options, Some(&progress))
-        .await
-        .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_check_updates(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-) -> Result<CheckUpdatesResult, String> {
-    let progress = make_progress(&app);
-    updates::check_for_updates(paths.inner(), Some(&progress))
-        .await
-        .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_refresh_build(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-    build_id: String,
-) -> Result<Build, String> {
-    let progress = make_progress(&app);
-    updates::refresh_build(paths.inner(), &build_id, Some(&progress))
-        .await
-        .map_err(err_string)
-}
-
-#[tauri::command]
-pub async fn liquipedia_refresh_builds(
-    app: AppHandle,
-    paths: State<'_, UserPaths>,
-    build_ids: Vec<String>,
-    options: RefreshBuildsOptions,
-) -> Result<RefreshBuildsResult, String> {
-    let progress = make_progress(&app);
-    updates::refresh_builds(paths.inner(), &build_ids, options, Some(&progress))
         .await
         .map_err(err_string)
 }
@@ -195,6 +102,11 @@ pub fn window_set_opacity(window: WebviewWindow, value: f64) {
 }
 
 #[tauri::command]
+pub fn window_set_click_through(window: WebviewWindow, enabled: bool) -> Result<(), String> {
+    winmod::set_click_through(&window, enabled).map_err(err_string)
+}
+
+#[tauri::command]
 pub fn window_toggle_devtools(window: WebviewWindow) {
     winmod::toggle_devtools(&window);
 }
@@ -217,6 +129,10 @@ pub async fn window_set_mode(
         overlay: settings.overlay_window_size,
     };
     winmod::set_mode(&window, mode, sizes);
+    let _ = winmod::set_click_through(
+        &window,
+        mode == ViewMode::Overlay && settings.overlay_click_through,
+    );
     settings.last_view = mode;
     let payload = serde_json::json!({ "lastView": mode });
     storage::save_settings(paths.inner(), payload)
@@ -230,13 +146,4 @@ pub fn external_open(app: AppHandle, url: String) -> Result<(), String> {
         return Err("only http(s) URLs are allowed".to_string());
     }
     app.opener().open_url(url, None::<&str>).map_err(err_string)
-}
-
-/// Suppress an unused-import warning when the `liquipedia` module is brought
-/// in only for its public command wrappers above (rust-analyzer occasionally
-/// flags this otherwise). The use is real - all import/update commands route
-/// through the `crate::liquipedia` modules.
-#[allow(dead_code)]
-fn _module_anchor() {
-    let _ = liquipedia::parser::strip_wiki_markup("");
 }

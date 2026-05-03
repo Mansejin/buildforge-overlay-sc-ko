@@ -16,7 +16,7 @@ import {
   toggleFavoriteOnCurrent
 } from "./state.js";
 import { cycleBuild, renderOverlay } from "./overlay.js";
-import { toggleMode } from "./mode.js";
+import { applyModeToDom, getMode, toggleMode } from "./mode.js";
 import type { Build, HotkeyAction, Settings } from "../shared/types.js";
 
 export interface HotkeyDeps {
@@ -94,6 +94,12 @@ export function makeHotkeyHandler({
         break;
       case "toggle-mode":
         await toggleMode();
+        break;
+      case "toggle-click-through":
+        store.settings.overlayClickThrough = !store.settings.overlayClickThrough;
+        await persistSettings({ overlayClickThrough: store.settings.overlayClickThrough });
+        api.setClickThrough(getMode() === "overlay" && store.settings.overlayClickThrough);
+        applyModeToDom(getMode());
         break;
       default: {
         const exhaustive: never = action;

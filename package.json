@@ -1,7 +1,7 @@
 {
   "name": "bw-build-overlay-suite",
   "version": "2.0.1",
-  "description": "An always-on-top build-order overlay and Liquipedia importer for StarCraft: Remastered / Brood War. Cross-platform: Windows, macOS, Linux.",
+  "description": "An always-on-top build-order overlay for StarCraft: Remastered / Brood War with a bundled release-time catalog. Cross-platform: Windows, macOS, Linux.",
   "type": "module",
   "author": "Etra-0",
   "license": "MIT",

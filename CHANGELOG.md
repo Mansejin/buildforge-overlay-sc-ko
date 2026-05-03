@@ -35,6 +35,19 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+### Added
+
+- **Game-safe overlay click-through mode.** Overlay mode can now ignore mouse input so clicks and drags pass through to StarCraft. It defaults on, can be changed in Settings, and can be toggled in-game with `Ctrl+Alt+L`.
+- **Bundled catalog date display.** Manager and Settings now show the checked-in catalog's `lastUpdated` date instead of prompting users to sync against Liquipedia.
+
+### Changed
+
+- **Catalog updates are release-time only in the installed app.** A newer bundled `data/builds.json` is merged into each user's local data on launch while preserving favorites, personal notes, recently-used state, and `customEdited` builds. Local build edits no longer mutate the catalog sync date.
+
+### Removed
+
+- **Removed end-user Liquipedia sync surfaces.** The packaged app no longer exposes Import, Updates, Re-sync, manual update checks, automatic launch checks, update badges, or Liquipedia API settings. Maintainers still refresh `data/builds.json` with `npm run scrape` before release.
+
 ### Fixed
 
 - **Release workflow no longer fails on the post-build cache-save step on Windows.** `Swatinem/rust-cache@v2` was tar-gzipping the cargo `target/` after `tauri build`, but on Windows runners the MSVC linker / NSIS bundler / signtool processes still hold file handles long enough to make `tar.exe` exit with a sharing violation — turning every tag release red even though all installers had already uploaded successfully. Set `save-if: false` on the rust-cache step in `release.yml` so the unreliable save phase is skipped on tag builds; restore is still allowed (consuming caches CI populated on `main`).

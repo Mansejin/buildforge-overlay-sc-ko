@@ -78,6 +78,10 @@ pub fn set_opacity(window: &WebviewWindow, value: f64) {
     }
 }
 
+pub fn set_click_through(window: &WebviewWindow, enabled: bool) -> tauri::Result<()> {
+    window.set_ignore_cursor_events(enabled)
+}
+
 /// Apply the per-mode window chrome. Manager mode gets normal decorations,
 /// resizable, and the user's saved manager size. Overlay mode is frameless,
 /// always-on-top, fixed-size, and uses the saved overlay size. Both keep the
@@ -202,6 +206,9 @@ fn shortcut_to_action(shortcut: &Shortcut) -> Option<HotkeyAction> {
     if shortcut.matches(ctrl_alt, Code::KeyM) {
         return Some(HotkeyAction::ToggleMode);
     }
+    if shortcut.matches(ctrl_alt, Code::KeyL) {
+        return Some(HotkeyAction::ToggleClickThrough);
+    }
     None
 }
 
@@ -225,6 +232,7 @@ fn all_shortcuts() -> Vec<Shortcut> {
         Shortcut::new(Some(ctrl_alt), Code::KeyC),
         Shortcut::new(Some(ctrl_alt), Code::KeyH),
         Shortcut::new(Some(ctrl_alt), Code::KeyM),
+        Shortcut::new(Some(ctrl_alt), Code::KeyL),
     ]
 }
 

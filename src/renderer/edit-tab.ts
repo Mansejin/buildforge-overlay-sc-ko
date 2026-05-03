@@ -2,7 +2,7 @@
  * src/renderer/edit-tab.ts
  * Manager > Edit tab: load a build into the form, build a fresh blank
  * build, and save the form back into the store (always marking the result
- * as `customEdited` so subsequent imports won't clobber the user's tweaks).
+ * as `customEdited` so bundled catalog refreshes won't clobber user tweaks).
  */
 import { dom } from "./dom.js";
 import { store } from "./state.js";

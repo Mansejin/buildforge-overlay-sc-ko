@@ -12,7 +12,6 @@ import { dom } from "./dom.js";
 import { store } from "./state.js";
 import { renderOverlay } from "./overlay.js";
 import { renderManagerList } from "./manager.js";
-import { renderUpdatesList } from "./updates-tab.js";
 import { invoke } from "@tauri-apps/api/core";
 import type { Settings, ViewMode } from "../shared/types.js";
 
@@ -30,7 +29,12 @@ export function applyModeToDom(mode: ViewMode): void {
   dom.modeOverlayButton.classList.toggle("active", mode === "overlay");
   dom.modeManagerButton.setAttribute("aria-selected", String(mode === "manager"));
   dom.modeOverlayButton.setAttribute("aria-selected", String(mode === "overlay"));
-  dom.overlayStatus.textContent = mode === "overlay" ? "Always on top" : "Manager";
+  dom.overlayStatus.textContent =
+    mode === "overlay"
+      ? store.settings.overlayClickThrough
+        ? "Overlay - mouse passes through"
+        : "Overlay - interactive"
+      : "Manager";
 }
 
 /**
@@ -44,7 +48,6 @@ export async function setMode(mode: ViewMode): Promise<void> {
   applyModeToDom(mode);
   if (mode === "manager") {
     renderManagerList();
-    renderUpdatesList();
   } else {
     renderOverlay();
   }

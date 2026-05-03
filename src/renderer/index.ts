@@ -12,13 +12,11 @@ import { currentBuild, loadLocalState, setOpponent, setRace, store } from "./sta
 import { bindOverlayEvents, renderOverlay } from "./overlay.js";
 import { bindManagerListEvents, renderManagerList } from "./manager.js";
 import { bindEditTabEvents, loadBuildIntoForm } from "./edit-tab.js";
-import { bindImportTabEvents } from "./import-tab.js";
-import { bindUpdatesTabEvents, renderUpdatesList } from "./updates-tab.js";
 import { bindSettingsTabEvents, loadSettingsIntoForm } from "./settings-tab.js";
 import { makeHotkeyHandler } from "./hotkeys.js";
 import { applyModeToDom, bindModeToggle, setMode } from "./mode.js";
-import { bindCatalogStatusEvents, refreshCatalogStatusBanner } from "./catalog-status.js";
-import { toast, toastError } from "./toast.js";
+import { refreshCatalogStatusBanner } from "./catalog-status.js";
+import { toastError } from "./toast.js";
 import type { Build, Settings } from "../shared/types.js";
 
 console.info("[bw-overlay] renderer booted");
@@ -33,10 +31,6 @@ function showFatal(message: string): void {
     document.body.appendChild(banner);
   }
   banner.innerHTML = `<strong>Renderer error:</strong> ${String(message)}<br><small>Press F12 to open DevTools for details.</small>`;
-}
-
-async function reloadBuilds(): Promise<void> {
-  store.data = await api.getBuilds();
 }
 
 async function saveData(): Promise<void> {
@@ -76,7 +70,6 @@ function openManager(): void {
   loadBuildIntoForm(currentBuild());
   loadSettingsIntoForm();
   renderManagerList();
-  renderUpdatesList();
   void setMode("manager");
 }
 
@@ -130,69 +123,23 @@ async function boot(): Promise<void> {
 
   bindManagerListEvents(saveData);
   bindEditTabEvents(saveData, openExternal);
-  bindImportTabEvents(reloadBuilds);
-  bindUpdatesTabEvents();
   bindSettingsTabEvents();
   bindModeToggle();
-  bindCatalogStatusEvents();
   dom.manageButton.addEventListener("click", openManager);
   bindGlobalKeys();
   api.onHotkey(makeHotkeyHandler({ persistSettings, persistFavorite }));
   api.setOpacity(Number(store.settings.overlayOpacity) || 1);
-  loadSettingsIntoForm();
-  // Hydrate the in-memory pendingUpdates.lastChecked from the persisted
-  // settings so the Manager catalog banner shows the right "last checked"
-  // text on boot (even before any actual scan runs).
-  if (store.settings.lastUpdateCheckAt) {
-    store.pendingUpdates.lastChecked = store.settings.lastUpdateCheckAt;
-  }
   // Apply the mode the Rust side booted us into. This is local state only;
   // the actual window chrome was already configured by lib.rs::set_mode.
   applyModeToDom(store.settings.lastView ?? "manager");
+  api.setClickThrough(
+    (store.settings.lastView ?? "manager") === "overlay" && !!store.settings.overlayClickThrough
+  );
+  loadSettingsIntoForm();
   loadBuildIntoForm(currentBuild());
   renderManagerList();
   renderOverlay();
   refreshCatalogStatusBanner();
-
-  // Silent on-launch update scan, throttled by scanIntervalHours. Stays
-  // quiet on success ("everything is up to date" doesn't earn a toast);
-  // only nags via toast + badge when Liquipedia actually has newer
-  // revisions. The lastUpdateCheckAt timestamp is persisted so the
-  // throttle survives restarts.
-  if (store.settings.autoCheckUpdatesOnLaunch && shouldRunSilentScan()) {
-    setTimeout(() => {
-      void runSilentScan();
-    }, 1500);
-  }
-}
-
-function shouldRunSilentScan(): boolean {
-  const last = store.settings.lastUpdateCheckAt;
-  if (!last) return true;
-  const lastMs = new Date(last).getTime();
-  if (Number.isNaN(lastMs)) return true;
-  const intervalMs = Math.max(1, store.settings.scanIntervalHours || 24) * 60 * 60 * 1000;
-  return Date.now() - lastMs >= intervalMs;
-}
-
-async function runSilentScan(): Promise<void> {
-  try {
-    const result = await api.checkForUpdates();
-    store.pendingUpdates.all = result.all;
-    store.pendingUpdates.outdated = result.outdated;
-    store.pendingUpdates.unknown = result.unknown ?? [];
-    const now = new Date().toISOString();
-    store.pendingUpdates.lastChecked = now;
-    await persistSettings({ lastUpdateCheckAt: now });
-    renderUpdatesList();
-    renderOverlay();
-    refreshCatalogStatusBanner();
-    if (result.outdated.length) {
-      toast(`${result.outdated.length} build update(s) available on Liquipedia.`, "warn", 5000);
-    }
-  } catch (err) {
-    console.warn("Auto update check failed:", err);
-  }
 }
 
 boot().catch((err: unknown) => {

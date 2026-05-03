@@ -47,8 +47,8 @@
         "type": "embedBootstrapper"
       }
     },
-    "shortDescription": "Always-on-top StarCraft: Brood War / Remastered build-order overlay with Liquipedia importer.",
-    "longDescription": "An always-on-top desktop overlay that shows StarCraft: Brood War / Remastered build orders for all races and matchups, with a built-in Liquipedia importer and update scanner.",
+    "shortDescription": "Always-on-top StarCraft: Brood War / Remastered build-order overlay with bundled catalog.",
+    "longDescription": "An always-on-top desktop overlay that shows StarCraft: Brood War / Remastered build orders for all races and matchups from a bundled release-time catalog.",
     "homepage": "https://github.com/Etra-0/starcraft-build-overlay",
     "category": "Utility",
     "copyright": "Copyright (c) 2024-2026 Etra-0"

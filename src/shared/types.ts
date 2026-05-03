@@ -56,7 +56,7 @@ export interface Settings {
   rateLimitMs: number;
   compactOverlay: boolean;
   overlayOpacity: number;
-  autoCheckUpdatesOnLaunch: boolean;
+  overlayClickThrough: boolean;
   pageSize: number;
   defaultRace: Race;
   /** v2.0+: which view the app booted into / should re-open with. */
@@ -64,86 +64,6 @@ export interface Settings {
   /** v2.0+: remembered window dimensions per mode. */
   managerWindowSize: WindowSize;
   overlayWindowSize: WindowSize;
-  /** v2.0+: minimum hours between automatic on-launch Liquipedia scans. */
-  scanIntervalHours: number;
-  /** v2.0+: ISO timestamp of the last successful update check. The throttle
-   * compares this against scanIntervalHours on boot to decide whether to
-   * actually hit Liquipedia. */
-  lastUpdateCheckAt?: string | null;
-}
-
-export interface ImportOptions {
-  updateExisting?: boolean;
-}
-
-export type ImportMergeResult = "added" | "updated" | "skipped" | "skipped-custom";
-
-export interface ImportSinglePageResult {
-  pageTitle: string;
-  addedOrUpdated: Build[];
-  results: ImportMergeResult[];
-  totalVariants: number;
-}
-
-export type BulkImportMode = "common" | "all";
-
-export interface BulkImportOptions {
-  races?: Race[];
-  mode?: BulkImportMode;
-  updateExisting?: boolean;
-}
-
-export interface BulkImportResult {
-  mode: BulkImportMode;
-  races: Race[];
-  selected: number;
-  totalDiscovered: number;
-  added: number;
-  updated: number;
-  skipped: number;
-  failed: number;
-  variantsTotal: number;
-}
-
-export type UpdateReason = "newer-revision" | "no-stored-rev" | "missing-on-server" | "up-to-date";
-
-export interface UpdateInfo {
-  buildId: string;
-  name: string;
-  matchup: Matchup;
-  sourcePageTitle: string;
-  sourceUrl: string;
-  currentRevId: number | null;
-  latestRevId: number | null;
-  latestTimestamp: string | null;
-  outdated: boolean;
-  reason: UpdateReason;
-  customEdited: boolean;
-}
-
-export interface CheckUpdatesResult {
-  checked: number;
-  outdated: UpdateInfo[];
-  /** Builds with no stored revisionId (imported before tracking landed). The
-   * Manager surfaces these so the user can refresh once to enable diffing,
-   * but they NEVER light up the overlay's update-available badge. */
-  unknown: UpdateInfo[];
-  all: UpdateInfo[];
-}
-
-export interface RefreshBuildsOptions {
-  force?: boolean;
-}
-
-export interface RefreshBuildsFailure {
-  buildId: string;
-  error: string;
-}
-
-export interface RefreshBuildsResult {
-  refreshed: string[];
-  failed: RefreshBuildsFailure[];
-  skippedCustom: string[];
 }
 
 export interface UserDataPaths {
@@ -168,50 +88,21 @@ export type HotkeyAction =
   | "toggle-favorite"
   | "toggle-compact"
   | "toggle-window"
-  | "toggle-mode";
-
-export interface ParsedVariant {
-  variantName: string;
-  heading: string | null;
-  steps: string[];
-}
-
-export interface ParsedInfobox {
-  name?: string;
-  race?: Race | null;
-  matchups?: string[];
-  creator?: string;
-  popularized?: string;
-}
-
-export interface ParsedLiquipediaPage {
-  infobox: ParsedInfobox | null;
-  playerRace: Race | null;
-  opponent: Opponent | null;
-  difficulty: Difficulty;
-  counters: string[];
-  counteredBy: string[];
-  variants: ParsedVariant[];
-}
+  | "toggle-mode"
+  | "toggle-click-through";
 
 export interface OverlayAPI {
   getBuilds(): Promise<BuildsData>;
   saveBuilds(builds: BuildsData): Promise<BuildsData>;
   getSettings(): Promise<Settings>;
   saveSettings(settings: Partial<Settings>): Promise<Settings>;
-  previewLiquipediaPage(input: string): Promise<Build[]>;
-  importLiquipediaPage(input: string, options: ImportOptions): Promise<ImportSinglePageResult>;
-  bulkImport(options: BulkImportOptions): Promise<BulkImportResult>;
-  checkForUpdates(): Promise<CheckUpdatesResult>;
-  refreshBuild(buildId: string): Promise<Build>;
-  refreshBuilds(buildIds: string[], options: RefreshBuildsOptions): Promise<RefreshBuildsResult>;
   backupData(): Promise<string>;
   openDataFolder(): void;
   getUserPaths(): Promise<UserDataPaths>;
   close(): void;
   toggleWindow(): void;
   setOpacity(value: number): void;
+  setClickThrough(enabled: boolean): void;
   openExternal(url: string): void;
   onHotkey(callback: (action: HotkeyAction) => void): void;
-  onLiquipediaProgress(callback: (message: string) => void): void;
 }

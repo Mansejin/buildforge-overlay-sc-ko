@@ -1,12 +1,12 @@
 /**
  * src/renderer/state.ts
- * In-memory store for builds, settings, transient UI state, and pending
- * Liquipedia updates. Persists the lightweight UI slice (race / opponent /
+ * In-memory store for builds, settings, and transient UI state. Persists
+ * the lightweight UI slice (race / opponent /
  * buildId / page / search) to localStorage; everything else is owned by
  * the main process and reloaded via IPC.
  */
 import { ALL_OPPONENTS, ALL_RACES, clamp } from "../shared/utils.js";
-import type { Build, BuildsData, Opponent, Race, Settings, UpdateInfo } from "../shared/types.js";
+import type { Build, BuildsData, Opponent, Race, Settings } from "../shared/types.js";
 
 const STORAGE_KEY = "bw-build-overlay-state-v4";
 
@@ -18,19 +18,11 @@ interface UIState {
   search: string;
 }
 
-interface PendingUpdates {
-  outdated: UpdateInfo[];
-  unknown: UpdateInfo[];
-  all: UpdateInfo[];
-  lastChecked: string | null;
-}
-
 export interface Store {
   data: BuildsData;
   settings: Settings;
   state: UIState;
   selectedManagerBuildId: string | null;
-  pendingUpdates: PendingUpdates;
 }
 
 export const store: Store = {
@@ -40,17 +32,15 @@ export const store: Store = {
     rateLimitMs: 2300,
     compactOverlay: false,
     overlayOpacity: 1,
-    autoCheckUpdatesOnLaunch: true,
+    overlayClickThrough: true,
     pageSize: 25,
     defaultRace: "Protoss",
     lastView: "manager",
     managerWindowSize: { width: 1080, height: 760 },
-    overlayWindowSize: { width: 420, height: 640 },
-    scanIntervalHours: 24
+    overlayWindowSize: { width: 420, height: 640 }
   },
   state: { race: "Protoss", opponent: "Terran", buildId: null, page: 0, search: "" },
-  selectedManagerBuildId: null,
-  pendingUpdates: { outdated: [], unknown: [], all: [], lastChecked: null }
+  selectedManagerBuildId: null
 };
 
 function isRace(value: unknown): value is Race {

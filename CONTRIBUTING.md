@@ -111,7 +111,7 @@ npm run clean   # deletes dist-frontend/ and src-tauri/target/
   # macOS / Linux
   BW_DEVTOOLS=1 "BW Build Overlay"
   ```
-- The Console tab shows logs. The Network tab shows Liquipedia requests. The Sources tab lets you set breakpoints in the bundled renderer (a source map is emitted next to `dist-frontend/renderer.js`).
+- The Console tab shows logs. The Sources tab lets you set breakpoints in the bundled renderer (a source map is emitted next to `dist-frontend/renderer.js`).
 
 If the renderer fails to boot at all, a red banner appears at the top of the window with the error message. The DevTools console will have the full stack.
 

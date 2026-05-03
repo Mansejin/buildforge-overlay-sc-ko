@@ -11,11 +11,11 @@ use thiserror::Error;
 use tokio::fs;
 
 pub const SCHEMA_VERSION: u32 = 4;
-/// Settings file format version. Bumped to 2 in v2.0 with the addition of
-/// last_view, manager_window_size, overlay_window_size, scan_interval_hours.
+/// Settings file format version. Bumped to 3 with the addition of
+/// overlay_click_through and the removal of end-user Liquipedia checks.
 /// `read_settings` rewrites older settings files in place by re-serialising
 /// through the typed Settings (defaults fill in missing fields).
-pub const SETTINGS_VERSION: u32 = 2;
+pub const SETTINGS_VERSION: u32 = 3;
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 2300;
 pub const DEFAULT_USER_AGENT: &str = concat!(
     "BWBuildOverlay/",
@@ -199,6 +199,52 @@ pub fn migrate_data(data: Value) -> BuildsData {
     }
 }
 
+fn merge_seed_catalog(mut user_data: BuildsData, seed_data: BuildsData) -> BuildsData {
+    if seed_data.builds.is_empty() || seed_data.last_updated == user_data.last_updated {
+        return user_data;
+    }
+
+    for seed_build in seed_data.builds {
+        if let Some(existing) = user_data
+            .builds
+            .iter_mut()
+            .find(|build| build.id == seed_build.id)
+        {
+            if existing.custom_edited {
+                continue;
+            }
+            let user_notes = existing.user_notes.clone();
+            let favorite = existing.favorite;
+            let recently_used_at = existing.recently_used_at.clone();
+            *existing = seed_build;
+            existing.user_notes = user_notes;
+            existing.favorite = favorite;
+            existing.recently_used_at = recently_used_at;
+        } else {
+            user_data.builds.push(seed_build);
+        }
+    }
+
+    user_data.version = SCHEMA_VERSION;
+    user_data.last_updated = seed_data.last_updated;
+    user_data
+}
+
+async fn merge_newer_seed_catalog(paths: &UserPaths) -> StorageResult<()> {
+    if !file_exists(&paths.seed_builds_path).await {
+        return Ok(());
+    }
+
+    let seed = migrate_data(read_json_value(&paths.seed_builds_path).await?);
+    let user = migrate_data(read_json_value(&paths.user_builds_path).await?);
+    if seed.builds.is_empty() || seed.last_updated == user.last_updated {
+        return Ok(());
+    }
+    let merged = merge_seed_catalog(user, seed);
+    write_json_pretty(&paths.user_builds_path, &merged).await?;
+    Ok(())
+}
+
 async fn file_exists(path: &Path) -> bool {
     fs::metadata(path).await.is_ok()
 }
@@ -256,6 +302,8 @@ pub async fn ensure_user_files(paths: &UserPaths) -> StorageResult<()> {
         write_json_pretty(&paths.user_builds_path, &migrated).await?;
     }
 
+    merge_newer_seed_catalog(paths).await?;
+
     Ok(())
 }
 
@@ -265,9 +313,8 @@ pub async fn read_builds(paths: &UserPaths) -> StorageResult<BuildsData> {
     Ok(migrate_data(raw))
 }
 
-pub async fn save_builds(paths: &UserPaths, mut builds: BuildsData) -> StorageResult<BuildsData> {
+pub async fn save_builds(paths: &UserPaths, builds: BuildsData) -> StorageResult<BuildsData> {
     ensure_user_files(paths).await?;
-    builds.last_updated = today();
     let migrated = migrate_data(serde_json::to_value(&builds)?);
     write_json_pretty(&paths.user_builds_path, &migrated).await?;
     Ok(migrated)
@@ -348,7 +395,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn save_builds_roundtrip_preserves_builds_and_bumps_last_updated() {
+    async fn save_builds_roundtrip_preserves_builds_and_catalog_date() {
         let user_data_tmp = tempfile::tempdir().unwrap();
         let seed_tmp = tempfile::tempdir().unwrap();
         let seed_path = seed_tmp.path().join("builds.json");
@@ -388,7 +435,7 @@ mod tests {
         data.builds.push(sample);
 
         let saved = save_builds(&paths, data).await.unwrap();
-        assert_eq!(saved.last_updated, today());
+        assert_eq!(saved.last_updated, "2024-01-01");
 
         let reloaded = read_builds(&paths).await.unwrap();
         let round = reloaded
@@ -398,6 +445,119 @@ mod tests {
             .expect("saved build should be readable on next load");
         assert_eq!(round.matchup, "TvZ");
         assert_eq!(round.steps.len(), 2);
+    }
+
+    #[test]
+    fn merge_seed_catalog_preserves_user_owned_fields() {
+        let existing: Build = serde_json::from_value(json!({
+            "id": "seed-build",
+            "race": "Protoss",
+            "opponent": "Terran",
+            "matchup": "PvT",
+            "name": "Old Name",
+            "variantOf": null,
+            "tags": ["old"],
+            "difficulty": "beginner",
+            "sourceName": "Liquipedia",
+            "sourceUrl": "https://example.test/old",
+            "sourcePageTitle": "Old",
+            "notes": "old notes",
+            "userNotes": "my note",
+            "customEdited": false,
+            "favorite": true,
+            "recentlyUsedAt": "2026-05-01T00:00:00.000Z",
+            "revisionId": 1,
+            "lastImportedAt": "2026-05-01T00:00:00.000Z",
+            "lastCheckedAt": "2026-05-01T00:00:00.000Z",
+            "counters": [],
+            "counteredBy": [],
+            "steps": ["8 - Pylon"]
+        }))
+        .unwrap();
+        let custom: Build = serde_json::from_value(json!({
+            "id": "custom-seed-build",
+            "race": "Terran",
+            "opponent": "Zerg",
+            "matchup": "TvZ",
+            "name": "Personal 14 CC",
+            "variantOf": null,
+            "tags": ["custom"],
+            "difficulty": null,
+            "sourceName": "Manual",
+            "sourceUrl": "",
+            "sourcePageTitle": null,
+            "notes": "do not overwrite",
+            "userNotes": "",
+            "customEdited": true,
+            "favorite": false,
+            "recentlyUsedAt": null,
+            "revisionId": null,
+            "lastImportedAt": null,
+            "lastCheckedAt": null,
+            "counters": [],
+            "counteredBy": [],
+            "steps": ["9 - Supply Depot"]
+        }))
+        .unwrap();
+        let updated_seed: Build = serde_json::from_value(json!({
+            "id": "seed-build",
+            "race": "Protoss",
+            "opponent": "Terran",
+            "matchup": "PvT",
+            "name": "Updated Name",
+            "variantOf": null,
+            "tags": ["liquipedia"],
+            "difficulty": "intermediate",
+            "sourceName": "Liquipedia",
+            "sourceUrl": "https://example.test/new",
+            "sourcePageTitle": "New",
+            "notes": "new notes",
+            "userNotes": "",
+            "customEdited": false,
+            "favorite": false,
+            "recentlyUsedAt": null,
+            "revisionId": 2,
+            "lastImportedAt": "2026-05-02T00:00:00.000Z",
+            "lastCheckedAt": "2026-05-02T00:00:00.000Z",
+            "counters": [],
+            "counteredBy": [],
+            "steps": ["8 - Pylon", "10 - Gateway"]
+        }))
+        .unwrap();
+
+        let merged = merge_seed_catalog(
+            BuildsData {
+                version: SCHEMA_VERSION,
+                last_updated: "2026-05-01".to_string(),
+                builds: vec![existing, custom],
+            },
+            BuildsData {
+                version: SCHEMA_VERSION,
+                last_updated: "2026-05-02".to_string(),
+                builds: vec![updated_seed],
+            },
+        );
+
+        assert_eq!(merged.last_updated, "2026-05-02");
+        let updated = merged
+            .builds
+            .iter()
+            .find(|build| build.id == "seed-build")
+            .unwrap();
+        assert_eq!(updated.name, "Updated Name");
+        assert_eq!(updated.user_notes, "my note");
+        assert!(updated.favorite);
+        assert_eq!(
+            updated.recently_used_at.as_deref(),
+            Some("2026-05-01T00:00:00.000Z")
+        );
+        let preserved_custom = merged
+            .builds
+            .iter()
+            .find(|build| build.id == "custom-seed-build")
+            .unwrap();
+        assert_eq!(preserved_custom.name, "Personal 14 CC");
+        assert!(preserved_custom.custom_edited);
     }
 
     #[tokio::test]

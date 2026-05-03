@@ -169,8 +169,11 @@ pub struct Settings {
     pub compact_overlay: bool,
     #[serde(rename = "overlayOpacity")]
     pub overlay_opacity: f64,
-    #[serde(rename = "autoCheckUpdatesOnLaunch")]
-    pub auto_check_updates_on_launch: bool,
+    #[serde(
+        default = "default_overlay_click_through",
+        rename = "overlayClickThrough"
+    )]
+    pub overlay_click_through: bool,
     #[serde(rename = "pageSize")]
     pub page_size: u32,
     #[serde(rename = "defaultRace")]
@@ -185,17 +188,6 @@ pub struct Settings {
     pub manager_window_size: WindowSize,
     #[serde(default = "default_overlay_size", rename = "overlayWindowSize")]
     pub overlay_window_size: WindowSize,
-    /// v2.0+: minimum hours between automatic Liquipedia scans on launch.
-    /// Caps the network footprint for users who launch the app multiple
-    /// times a day. Range 1-168 (1 hour to 1 week).
-    #[serde(default = "default_scan_interval_hours", rename = "scanIntervalHours")]
-    pub scan_interval_hours: u32,
-    /// v2.0+: ISO8601 timestamp of the last successful update check.
-    /// Renderer reads this on boot to decide whether the throttled
-    /// silent scan should run; written by save_settings after every
-    /// successful check_for_updates.
-    #[serde(default, rename = "lastUpdateCheckAt")]
-    pub last_update_check_at: Option<String>,
 }
 
 fn default_settings_version() -> u32 {
@@ -220,8 +212,8 @@ fn default_overlay_size() -> WindowSize {
     }
 }
 
-fn default_scan_interval_hours() -> u32 {
-    24
+fn default_overlay_click_through() -> bool {
+    true
 }
 
 impl Default for Settings {
@@ -232,17 +224,12 @@ impl Default for Settings {
             rate_limit_ms: crate::storage::DEFAULT_RATE_LIMIT_MS,
             compact_overlay: false,
             overlay_opacity: 1.0,
-            // v2.0: silent on-launch scan is default-on. Liquipedia builds
-            // change rarely so the throttle (scan_interval_hours) keeps the
-            // network noise low; users who don't want it can opt out.
-            auto_check_updates_on_launch: true,
+            overlay_click_through: true,
             page_size: 25,
             default_race: Race::Protoss,
             last_view: ViewMode::Manager,
             manager_window_size: default_manager_size(),
             overlay_window_size: default_overlay_size(),
-            scan_interval_hours: 24,
-            last_update_check_at: None,
         }
     }
 }
@@ -444,4 +431,7 @@ pub enum HotkeyAction {
     /// v2.0+: Ctrl+Alt+M cycles between Manager and Overlay view modes
     /// without relying on the Manager being visible.
     ToggleMode,
+    /// Ctrl+Alt+L toggles whether the overlay ignores mouse input in
+    /// Overlay mode, letting StarCraft receive clicks underneath it.
+    ToggleClickThrough,
 }

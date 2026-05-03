@@ -80,6 +80,11 @@ pub fn run() {
                         overlay: settings.overlay_window_size,
                     };
                     crate::window::set_mode(&window, settings.last_view, sizes);
+                    let _ = crate::window::set_click_through(
+                        &window,
+                        settings.last_view == crate::types::ViewMode::Overlay
+                            && settings.overlay_click_through,
+                    );
                     let _ = window.show();
                     let _ = window.set_focus();
                     if should_open_devtools_on_launch() {
@@ -103,18 +108,13 @@ pub fn run() {
             commands::builds_save,
             commands::settings_get,
             commands::settings_save,
-            commands::liquipedia_preview_page,
-            commands::liquipedia_import_page,
-            commands::liquipedia_bulk_import,
-            commands::liquipedia_check_updates,
-            commands::liquipedia_refresh_build,
-            commands::liquipedia_refresh_builds,
             commands::data_backup,
             commands::data_user_paths,
             commands::data_open_folder,
             commands::window_close,
             commands::window_toggle,
             commands::window_set_opacity,
+            commands::window_set_click_through,
             commands::window_toggle_devtools,
             commands::window_set_mode,
             commands::external_open,

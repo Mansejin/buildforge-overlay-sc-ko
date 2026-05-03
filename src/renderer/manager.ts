@@ -14,13 +14,11 @@ import { blankBuild, loadBuildIntoForm } from "./edit-tab.js";
 import type { Build } from "../shared/types.js";
 import type { SaveDataFn } from "./edit-tab.js";
 
-export type TabName = "edit" | "import" | "updates" | "settings";
+export type TabName = "edit" | "settings";
 
 export function setTab(name: TabName): void {
   const tabs: Array<[TabName, HTMLButtonElement, HTMLElement]> = [
     ["edit", dom.editTabButton, dom.editTab],
-    ["import", dom.importTabButton, dom.importTab],
-    ["updates", dom.updatesTabButton, dom.updatesTab],
     ["settings", dom.settingsTabButton, dom.settingsTab]
   ];
   for (const [id, button, panel] of tabs) {
@@ -56,7 +54,7 @@ function syncMatchupFilter(): void {
  * renderManagerList so the same row markup is shared between
  * top-level standalone builds and child variants.
  */
-function renderBuildRow(build: Build, pendingIds: Set<string>): HTMLButtonElement {
+function renderBuildRow(build: Build): HTMLButtonElement {
   const wrapper = document.createElement("button");
   wrapper.className = `build-list-item ${
     build.id === store.selectedManagerBuildId ? "active" : ""
@@ -74,13 +72,6 @@ function renderBuildRow(build: Build, pendingIds: Set<string>): HTMLButtonElemen
     star.textContent = "\u2605";
     star.style.color = "var(--update)";
     titleRow.appendChild(star);
-  }
-  if (pendingIds.has(build.id)) {
-    const upd = document.createElement("span");
-    upd.textContent = "\u21bb";
-    upd.style.color = "var(--update)";
-    upd.title = "Update available on Liquipedia";
-    titleRow.appendChild(upd);
   }
   if (build.customEdited) {
     const ce = document.createElement("span");
@@ -193,12 +184,10 @@ export function renderManagerList(): void {
 
   dom.managerBuildList.innerHTML = "";
   dom.managerEmptyState.hidden = builds.length > 0;
-  const pendingIds = new Set(store.pendingUpdates.outdated.map((u) => u.buildId));
-
   const { standalone, clusters } = clusterByVariantOf(builds);
 
   for (const b of standalone) {
-    dom.managerBuildList.appendChild(renderBuildRow(b, pendingIds));
+    dom.managerBuildList.appendChild(renderBuildRow(b));
   }
 
   for (const cluster of clusters) {
@@ -207,8 +196,7 @@ export function renderManagerList(): void {
     // Auto-expand when there's a search query (the user is hunting); also
     // expand when the selected build is inside this cluster.
     const containsSelected = cluster.variants.some((v) => v.id === store.selectedManagerBuildId);
-    const containsPending = cluster.variants.some((v) => pendingIds.has(v.id));
-    details.open = hasSearch || containsSelected || containsPending;
+    details.open = hasSearch || containsSelected;
     const summary = document.createElement("summary");
     summary.className = "variant-cluster-summary";
     const name = document.createElement("span");
@@ -221,9 +209,9 @@ export function renderManagerList(): void {
     details.appendChild(summary);
     const list = document.createElement("div");
     list.className = "variant-cluster-list";
-    list.appendChild(renderBuildRow(cluster.parent, pendingIds));
+    list.appendChild(renderBuildRow(cluster.parent));
     for (const v of cluster.variants) {
-      list.appendChild(renderBuildRow(v, pendingIds));
+      list.appendChild(renderBuildRow(v));
     }
     details.appendChild(list);
     dom.managerBuildList.appendChild(details);
@@ -325,8 +313,6 @@ export function bindManagerListEvents(saveData: SaveDataFn): void {
   });
   dom.openDataFolderButton.addEventListener("click", () => api.openDataFolder());
   dom.editTabButton.addEventListener("click", () => setTab("edit"));
-  dom.importTabButton.addEventListener("click", () => setTab("import"));
-  dom.updatesTabButton.addEventListener("click", () => setTab("updates"));
   dom.settingsTabButton.addEventListener("click", () => setTab("settings"));
   // The pre-2.0 manager close button lived on a <dialog>; the v2.0 layout
   // dismisses the manager by switching to overlay mode via the header

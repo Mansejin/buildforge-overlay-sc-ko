@@ -165,8 +165,6 @@ function renderBuildHead(build: Build): void {
     dom.difficultyChip.textContent = build.difficulty;
   } else dom.difficultyChip.hidden = true;
   dom.favoritedChip.hidden = !build.favorite;
-  const isOutdated = store.pendingUpdates.outdated.some((u) => u.buildId === build.id);
-  dom.updateChip.hidden = !isOutdated;
   dom.buildTags.innerHTML = "";
   for (const tag of build.tags || []) {
     if (tag === "imported" || tag === "needs-review" || tag === "liquipedia") continue;
@@ -234,14 +232,12 @@ export function renderOverlay(): void {
   if (!build) {
     dom.buildName.textContent = "No builds for this matchup";
     dom.buildNotes.hidden = false;
-    dom.buildNotes.textContent =
-      "Open Manage > Import to add builds, or use the New manual build button.";
+    dom.buildNotes.textContent = "Open Manager and use New manual build to add one.";
     dom.steps.innerHTML = "";
     dom.countersBlock.hidden = true;
     dom.matchupChip.textContent = deriveMatchup(store.state.race, store.state.opponent);
     dom.difficultyChip.hidden = true;
     dom.favoritedChip.hidden = true;
-    dom.updateChip.hidden = true;
     dom.buildTags.innerHTML = "";
     dom.pageIndicator.textContent = store.settings.compactOverlay ? "0 / 0" : "Page 0 / 0";
     return;

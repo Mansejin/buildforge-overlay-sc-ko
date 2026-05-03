@@ -23,7 +23,6 @@ export interface Dom {
   manageButton: HTMLButtonElement;
   favoriteButton: HTMLButtonElement;
   compactButton: HTMLButtonElement;
-  updatesBadgeButton: HTMLButtonElement;
   raceTabs: HTMLElement[];
   oppChips: HTMLElement[];
   buildSearch: HTMLInputElement;
@@ -35,7 +34,6 @@ export interface Dom {
   matchupChip: HTMLElement;
   difficultyChip: HTMLElement;
   favoritedChip: HTMLElement;
-  updateChip: HTMLElement;
   buildTags: HTMLElement;
   sourceButton: HTMLButtonElement;
   buildNotes: HTMLElement;
@@ -52,7 +50,7 @@ export interface Dom {
   modeOverlayButton: HTMLButtonElement;
   catalogStatusBanner: HTMLElement;
   catalogStatusText: HTMLElement;
-  catalogResyncButton: HTMLButtonElement;
+  settingsCatalogDate: HTMLElement;
   managerDialog: HTMLDialogElement;
   managerCloseButton: HTMLButtonElement;
   managerRaceFilter: HTMLSelectElement;
@@ -66,12 +64,8 @@ export interface Dom {
   backupButton: HTMLButtonElement;
   openDataFolderButton: HTMLButtonElement;
   editTabButton: HTMLButtonElement;
-  importTabButton: HTMLButtonElement;
-  updatesTabButton: HTMLButtonElement;
   settingsTabButton: HTMLButtonElement;
   editTab: HTMLElement;
-  importTab: HTMLElement;
-  updatesTab: HTMLElement;
   settingsTab: HTMLElement;
   formId: HTMLInputElement;
   formName: HTMLInputElement;
@@ -89,25 +83,10 @@ export interface Dom {
   saveBuildButton: HTMLButtonElement;
   useBuildButton: HTMLButtonElement;
   openSourceFromFormButton: HTMLButtonElement;
-  importInput: HTMLInputElement;
-  previewImportButton: HTMLButtonElement;
-  importNowButton: HTMLButtonElement;
-  importCommonButton: HTMLButtonElement;
-  importAllButton: HTMLButtonElement;
-  updateExistingCheckbox: HTMLInputElement;
-  importLog: HTMLElement;
-  bulkRaceCheckboxes: HTMLInputElement[];
-  checkUpdatesButton: HTMLButtonElement;
-  refreshSelectedUpdatesButton: HTMLButtonElement;
-  refreshAllUpdatesButton: HTMLButtonElement;
-  updatesSummary: HTMLElement;
-  updatesList: HTMLElement;
-  settingsUserAgent: HTMLInputElement;
-  settingsRateLimit: HTMLInputElement;
-  settingsAutoCheck: HTMLInputElement;
-  settingsScanInterval: HTMLInputElement;
   settingsCompactOverlay: HTMLInputElement;
   settingsOpacity: HTMLInputElement;
+  settingsOpacityValue: HTMLElement;
+  settingsOverlayClickThrough: HTMLInputElement;
   settingsPageSize: HTMLInputElement;
   settingsDefaultRace: HTMLSelectElement;
   saveSettingsButton: HTMLButtonElement;
@@ -119,7 +98,6 @@ export const dom: Dom = {
   manageButton: byId<HTMLButtonElement>("manageButton"),
   favoriteButton: byId<HTMLButtonElement>("favoriteButton"),
   compactButton: byId<HTMLButtonElement>("compactButton"),
-  updatesBadgeButton: byId<HTMLButtonElement>("updatesBadgeButton"),
   raceTabs: queryAll(".race-tab"),
   oppChips: queryAll(".opp-chip"),
   buildSearch: byId<HTMLInputElement>("buildSearch"),
@@ -131,7 +109,6 @@ export const dom: Dom = {
   matchupChip: byId("matchupChip"),
   difficultyChip: byId("difficultyChip"),
   favoritedChip: byId("favoritedChip"),
-  updateChip: byId("updateChip"),
   buildTags: byId("buildTags"),
   sourceButton: byId<HTMLButtonElement>("sourceButton"),
   buildNotes: byId("buildNotes"),
@@ -148,7 +125,7 @@ export const dom: Dom = {
   modeOverlayButton: byId<HTMLButtonElement>("modeOverlayButton"),
   catalogStatusBanner: byId("catalogStatusBanner"),
   catalogStatusText: byId("catalogStatusText"),
-  catalogResyncButton: byId<HTMLButtonElement>("catalogResyncButton"),
+  settingsCatalogDate: byId("settingsCatalogDate"),
   managerDialog: byId<HTMLDialogElement>("managerDialog"),
   managerCloseButton: byId<HTMLButtonElement>("managerCloseButton"),
   managerRaceFilter: byId<HTMLSelectElement>("managerRaceFilter"),
@@ -162,12 +139,8 @@ export const dom: Dom = {
   backupButton: byId<HTMLButtonElement>("backupButton"),
   openDataFolderButton: byId<HTMLButtonElement>("openDataFolderButton"),
   editTabButton: byId<HTMLButtonElement>("editTabButton"),
-  importTabButton: byId<HTMLButtonElement>("importTabButton"),
-  updatesTabButton: byId<HTMLButtonElement>("updatesTabButton"),
   settingsTabButton: byId<HTMLButtonElement>("settingsTabButton"),
   editTab: byId("editTab"),
-  importTab: byId("importTab"),
-  updatesTab: byId("updatesTab"),
   settingsTab: byId("settingsTab"),
   formId: byId<HTMLInputElement>("formId"),
   formName: byId<HTMLInputElement>("formName"),
@@ -185,25 +158,10 @@ export const dom: Dom = {
   saveBuildButton: byId<HTMLButtonElement>("saveBuildButton"),
   useBuildButton: byId<HTMLButtonElement>("useBuildButton"),
   openSourceFromFormButton: byId<HTMLButtonElement>("openSourceFromFormButton"),
-  importInput: byId<HTMLInputElement>("importInput"),
-  previewImportButton: byId<HTMLButtonElement>("previewImportButton"),
-  importNowButton: byId<HTMLButtonElement>("importNowButton"),
-  importCommonButton: byId<HTMLButtonElement>("importCommonButton"),
-  importAllButton: byId<HTMLButtonElement>("importAllButton"),
-  updateExistingCheckbox: byId<HTMLInputElement>("updateExistingCheckbox"),
-  importLog: byId("importLog"),
-  bulkRaceCheckboxes: queryAll<HTMLInputElement>("[data-race-bulk]"),
-  checkUpdatesButton: byId<HTMLButtonElement>("checkUpdatesButton"),
-  refreshSelectedUpdatesButton: byId<HTMLButtonElement>("refreshSelectedUpdatesButton"),
-  refreshAllUpdatesButton: byId<HTMLButtonElement>("refreshAllUpdatesButton"),
-  updatesSummary: byId("updatesSummary"),
-  updatesList: byId("updatesList"),
-  settingsUserAgent: byId<HTMLInputElement>("settingsUserAgent"),
-  settingsRateLimit: byId<HTMLInputElement>("settingsRateLimit"),
-  settingsAutoCheck: byId<HTMLInputElement>("settingsAutoCheck"),
-  settingsScanInterval: byId<HTMLInputElement>("settingsScanInterval"),
   settingsCompactOverlay: byId<HTMLInputElement>("settingsCompactOverlay"),
   settingsOpacity: byId<HTMLInputElement>("settingsOpacity"),
+  settingsOpacityValue: byId("settingsOpacityValue"),
+  settingsOverlayClickThrough: byId<HTMLInputElement>("settingsOverlayClickThrough"),
   settingsPageSize: byId<HTMLInputElement>("settingsPageSize"),
   settingsDefaultRace: byId<HTMLSelectElement>("settingsDefaultRace"),
   saveSettingsButton: byId<HTMLButtonElement>("saveSettingsButton")
