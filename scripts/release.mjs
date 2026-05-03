@@ -182,6 +182,7 @@ const prettierTargets = releaseFiles.filter((p) => /\.(json|md)$/i.test(p));
 if (prettierTargets.length > 0) {
   const [prettierCmd, prettierArgs] = npmCommandParts([
     "exec",
+    "--",
     "prettier",
     "--write",
     ...prettierTargets
@@ -193,6 +194,7 @@ if (prettierTargets.length > 0) {
   }
   const [prettierCheckCmd, prettierCheckArgs] = npmCommandParts([
     "exec",
+    "--",
     "prettier",
     "--check",
     ...prettierTargets

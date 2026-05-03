@@ -38,6 +38,7 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 _No unreleased changes yet._
 
 ## [2.2.1] - 2026-05-03
+
 _No unreleased changes yet._
 
 ## [2.2.0] - 2026-05-03
