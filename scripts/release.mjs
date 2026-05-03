@@ -185,11 +185,13 @@ if (scrape) {
 // required Quality check.
 const prettierTargets = releaseFiles.filter((p) => /\.(json|md)$/i.test(p));
 if (prettierTargets.length > 0) {
-  const prettier = spawnSync(
-    process.platform === "win32" ? "npx.cmd" : "npx",
-    ["prettier", "--write", ...prettierTargets],
-    { stdio: "inherit" }
-  );
+  const [prettierCmd, prettierArgs] = npmCommandParts([
+    "exec",
+    "prettier",
+    "--write",
+    ...prettierTargets
+  ]);
+  const prettier = spawnSync(prettierCmd, prettierArgs, { stdio: "inherit" });
   if (prettier.status !== 0) {
     console.error("prettier --write failed on release-modified files. Aborting release.");
     process.exit(1);
