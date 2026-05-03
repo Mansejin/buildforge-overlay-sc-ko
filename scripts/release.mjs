@@ -19,6 +19,16 @@ function git(args, options = {}) {
   return execSync(`git ${args}`, { encoding: "utf8", ...options }).trim();
 }
 
+function npmCommandParts(extraArgs) {
+  // When invoked via `npm run ...`, npm exposes its JS entry path. Running
+  // through `node <npm-cli.js>` avoids PATH quirks on Windows runners/shells.
+  if (process.env.npm_execpath) {
+    return [process.execPath, [process.env.npm_execpath, ...extraArgs]];
+  }
+  const cmd = process.platform === "win32" ? "npm.cmd" : "npm";
+  return [cmd, extraArgs];
+}
+
 const branch = git("rev-parse --abbrev-ref HEAD");
 if (branch !== "main" && !allowDirty) {
   console.error(`Refusing to release: current branch is "${branch}", expected "main".`);
@@ -143,16 +153,14 @@ if (cargoCheck.status !== 0) {
 // — v1.0.0 → v2.0.1 all kept "version": "1.0.0" in package-lock.json
 // because the post-commit `npm install` was never re-committed.
 const lockfilePath = "package-lock.json";
-const npmCheck = spawnSync(process.platform === "win32" ? "npm.cmd" : "npm", ["--version"]);
+const [npmCmd, npmVersionArgs] = npmCommandParts(["--version"]);
+const npmCheck = spawnSync(npmCmd, npmVersionArgs);
 if (npmCheck.status !== 0) {
   console.error("npm is not on PATH; cannot refresh package-lock.json. Aborting release.");
   process.exit(1);
 }
-const npmLock = spawnSync(
-  process.platform === "win32" ? "npm.cmd" : "npm",
-  ["install", "--package-lock-only"],
-  { stdio: "inherit" }
-);
+const [npmLockCmd, npmLockArgs] = npmCommandParts(["install", "--package-lock-only"]);
+const npmLock = spawnSync(npmLockCmd, npmLockArgs, { stdio: "inherit" });
 if (npmLock.status !== 0) {
   console.error("npm install --package-lock-only failed. Aborting release.");
   process.exit(1);
