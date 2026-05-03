@@ -1,6 +1,6 @@
 [package]
 name = "bw-build-overlay"
-version = "2.0.1"
+version = "2.1.0"
 description = "Always-on-top StarCraft: Brood War / Remastered build-order overlay with bundled catalog."
 authors = ["Etra-0"]
 license = "MIT"

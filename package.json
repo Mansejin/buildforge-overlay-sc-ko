@@ -1,6 +1,6 @@
 {
   "name": "bw-build-overlay-suite",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "An always-on-top build-order overlay for StarCraft: Remastered / Brood War with a bundled release-time catalog. Cross-platform: Windows, macOS, Linux.",
   "type": "module",
   "author": "Etra-0",

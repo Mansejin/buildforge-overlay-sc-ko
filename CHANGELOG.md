@@ -35,6 +35,10 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+## [2.1.0] - 2026-05-03
+
 ### Added
 
 - **Game-safe overlay click-through mode.** Overlay mode can now ignore mouse input so clicks and drags pass through to StarCraft. It defaults on, can be changed in Settings, and can be toggled in-game with `Ctrl+Alt+L`.
