@@ -132,7 +132,36 @@ if (cargoCheck.status !== 0) {
   console.warn("cargo update failed; you'll need to refresh src-tauri/Cargo.lock manually.");
 }
 
-const releaseFiles = [pkgPath, changelogPath, tauriConfPath, cargoTomlPath, "src-tauri/Cargo.lock"];
+// Refresh package-lock.json so its top-level `version` field tracks
+// the bumped package.json. Done BEFORE the commit so the lockfile bump
+// is included in the release commit; doing it after the commit (the
+// previous behavior) leaves the lockfile drifting behind every release
+// — v1.0.0 → v2.0.1 all kept "version": "1.0.0" in package-lock.json
+// because the post-commit `npm install` was never re-committed.
+const lockfilePath = "package-lock.json";
+const npmCheck = spawnSync(process.platform === "win32" ? "npm.cmd" : "npm", ["--version"]);
+if (npmCheck.status !== 0) {
+  console.error("npm is not on PATH; cannot refresh package-lock.json. Aborting release.");
+  process.exit(1);
+}
+const npmLock = spawnSync(
+  process.platform === "win32" ? "npm.cmd" : "npm",
+  ["install", "--package-lock-only"],
+  { stdio: "inherit" }
+);
+if (npmLock.status !== 0) {
+  console.error("npm install --package-lock-only failed. Aborting release.");
+  process.exit(1);
+}
+
+const releaseFiles = [
+  pkgPath,
+  lockfilePath,
+  changelogPath,
+  tauriConfPath,
+  cargoTomlPath,
+  "src-tauri/Cargo.lock"
+];
 if (!skipScrape) {
   releaseFiles.push("data/builds.json", "data/scrape-coverage.json");
 }
@@ -165,12 +194,3 @@ console.log("Push to publish a GitHub Release (CI will build the EXEs):");
 console.log("");
 console.log("  git push origin main --follow-tags");
 console.log("");
-
-const npmCheck = spawnSync(process.platform === "win32" ? "npm.cmd" : "npm", ["--version"]);
-if (npmCheck.status !== 0) {
-  console.warn("npm is not on PATH; skipping npm install of the new version metadata.");
-} else {
-  spawnSync(process.platform === "win32" ? "npm.cmd" : "npm", ["install", "--package-lock-only"], {
-    stdio: "inherit"
-  });
-}
