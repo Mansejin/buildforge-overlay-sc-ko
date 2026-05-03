@@ -35,6 +35,9 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+## [2.2.0] - 2026-05-03
 ### Added
 
 - **Overlay reposition controls.** Overlay mode now supports a dedicated drag strip, quick snap buttons (top-left, top-right, bottom-left, bottom-right, center), and a `Ctrl+Alt+K` reposition hotkey that temporarily disables click-through so users can move the window safely in-game.
