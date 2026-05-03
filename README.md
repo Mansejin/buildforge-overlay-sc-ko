@@ -263,7 +263,7 @@ The installed app does not contact Liquipedia. Maintainers refresh the bundled c
 npm run scrape
 ```
 
-That command updates `data/builds.json` and `data/scrape-coverage.json`. `npm run release:patch|minor|major` runs it automatically unless `--skip-scrape` is passed. On app launch, a newer bundled catalog is merged into the user's local `builds.json` while preserving favorites, personal notes, recently-used state, and builds marked `customEdited`.
+That command updates `data/builds.json` and `data/scrape-coverage.json`. Releases now skip scraping by default; run `npm run release:patch|minor|major -- --scrape` when you intentionally want a fresh Liquipedia snapshot in that release. On app launch, a newer bundled catalog is merged into the user's local `builds.json` while preserving favorites, personal notes, recently-used state, and builds marked `customEdited`.
 
 CI runs in two stages on every PR and push to `main` ([ci.yml](.github/workflows/ci.yml)):
 

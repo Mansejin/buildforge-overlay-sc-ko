@@ -5,12 +5,12 @@ const args = process.argv.slice(2);
 const bumpType = args[0];
 const dryRun = args.includes("--dry-run");
 const allowDirty = args.includes("--allow-dirty");
-const skipScrape = args.includes("--skip-scrape");
+const scrape = args.includes("--scrape");
 
 const VALID_BUMPS = new Set(["patch", "minor", "major"]);
 if (!VALID_BUMPS.has(bumpType)) {
   console.error(
-    "Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty] [--skip-scrape]"
+    "Usage: node scripts/release.mjs <patch|minor|major> [--dry-run] [--allow-dirty] [--scrape]"
   );
   process.exit(1);
 }
@@ -81,12 +81,12 @@ if (dryRun) {
   process.exit(0);
 }
 
-if (!skipScrape) {
+if (scrape) {
   console.log("");
   console.log(
     "Refreshing data/builds.json from Liquipedia. This takes a few minutes (rate-limited)."
   );
-  console.log("Pass --skip-scrape to bypass for emergency releases that don't touch the catalog.");
+  console.log("Release started with --scrape, so catalog refresh is enabled.");
   console.log("");
   const scrape = spawnSync(
     process.platform === "win32" ? "npm.cmd" : "npm",
@@ -96,11 +96,15 @@ if (!skipScrape) {
     }
   );
   if (scrape.status !== 0) {
-    console.error(
-      "Scrape failed. Aborting release. Re-run with --skip-scrape if the catalog should stay as-is."
-    );
+    console.error("Scrape failed. Aborting release.");
     process.exit(1);
   }
+} else {
+  console.log("");
+  console.log(
+    "Skipping Liquipedia scrape by default. Pass --scrape when you want to refresh the catalog."
+  );
+  console.log("");
 }
 
 pkg.version = newVersion;
@@ -162,7 +166,7 @@ const releaseFiles = [
   cargoTomlPath,
   "src-tauri/Cargo.lock"
 ];
-if (!skipScrape) {
+if (scrape) {
   releaseFiles.push("data/builds.json", "data/scrape-coverage.json");
 }
 
