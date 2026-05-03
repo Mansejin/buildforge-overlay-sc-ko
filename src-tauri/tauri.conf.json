@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "BW Build Overlay",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "identifier": "com.local.bwbuildoverlay",
   "build": {
     "frontendDist": "../dist-frontend",
@@ -40,7 +40,14 @@
   "bundle": {
     "active": true,
     "createUpdaterArtifacts": true,
-    "targets": ["nsis", "msi", "app", "dmg", "appimage", "deb"],
+    "targets": [
+      "nsis",
+      "msi",
+      "app",
+      "dmg",
+      "appimage",
+      "deb"
+    ],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
