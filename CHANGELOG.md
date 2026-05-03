@@ -35,7 +35,9 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
-_No unreleased changes yet._
+### Fixed
+
+- **Release workflow no longer fails on the post-build cache-save step on Windows.** `Swatinem/rust-cache@v2` was tar-gzipping the cargo `target/` after `tauri build`, but on Windows runners the MSVC linker / NSIS bundler / signtool processes still hold file handles long enough to make `tar.exe` exit with a sharing violation — turning every tag release red even though all installers had already uploaded successfully. Set `save-if: false` on the rust-cache step in `release.yml` so the unreliable save phase is skipped on tag builds; restore is still allowed (consuming caches CI populated on `main`).
 
 ## [2.0.1] - 2026-05-02
 

@@ -35,9 +35,20 @@ jobs:
         with:
           targets: ${{ matrix.os == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
+      # Restore-only on tag releases. The cache *save* phase tar-gz's the
+      # cargo target/ on the Windows runner, where the MSVC linker / NSIS
+      # bundler / signtool processes still hold file handles after the
+      # tauri-action build returns; tar.exe hits a sharing violation and
+      # fails the post-step (artifacts already uploaded fine — but the
+      # whole run goes red). Tag releases are infrequent and runners are
+      # ephemeral, so skipping the save loses ~3 min on the next tag while
+      # eliminating the guaranteed periodic failure. CI (ci.yml) still
+      # saves on every main push, so this Release workflow can still
+      # restore from a CI-populated cache when keys match.
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: src-tauri
+          save-if: false
 
       - name: Install Linux build deps
         if: matrix.os == 'ubuntu-latest'
