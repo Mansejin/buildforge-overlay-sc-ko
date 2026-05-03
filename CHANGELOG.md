@@ -35,6 +35,10 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+## [2.3.0] - 2026-05-03
+
 ### Added
 
 - **Resizable overlay window.** Overlay mode is no longer size-locked - the user can drag any edge to resize so longer step lists fit without text wrapping into the supply column.
