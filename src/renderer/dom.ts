@@ -87,6 +87,16 @@ export interface Dom {
   settingsOpacity: HTMLInputElement;
   settingsOpacityValue: HTMLElement;
   settingsOverlayClickThrough: HTMLInputElement;
+  settingsSnapTopLeft: HTMLButtonElement;
+  settingsSnapTopRight: HTMLButtonElement;
+  settingsSnapBottomLeft: HTMLButtonElement;
+  settingsSnapBottomRight: HTMLButtonElement;
+  settingsSnapCenter: HTMLButtonElement;
+  settingsCheckAppUpdatesOnLaunch: HTMLInputElement;
+  settingsAppUpdateCheckIntervalHours: HTMLInputElement;
+  checkAppUpdateButton: HTMLButtonElement;
+  installAppUpdateButton: HTMLButtonElement;
+  appUpdateStatus: HTMLElement;
   settingsPageSize: HTMLInputElement;
   settingsDefaultRace: HTMLSelectElement;
   saveSettingsButton: HTMLButtonElement;
@@ -162,6 +172,18 @@ export const dom: Dom = {
   settingsOpacity: byId<HTMLInputElement>("settingsOpacity"),
   settingsOpacityValue: byId("settingsOpacityValue"),
   settingsOverlayClickThrough: byId<HTMLInputElement>("settingsOverlayClickThrough"),
+  settingsSnapTopLeft: byId<HTMLButtonElement>("settingsSnapTopLeft"),
+  settingsSnapTopRight: byId<HTMLButtonElement>("settingsSnapTopRight"),
+  settingsSnapBottomLeft: byId<HTMLButtonElement>("settingsSnapBottomLeft"),
+  settingsSnapBottomRight: byId<HTMLButtonElement>("settingsSnapBottomRight"),
+  settingsSnapCenter: byId<HTMLButtonElement>("settingsSnapCenter"),
+  settingsCheckAppUpdatesOnLaunch: byId<HTMLInputElement>("settingsCheckAppUpdatesOnLaunch"),
+  settingsAppUpdateCheckIntervalHours: byId<HTMLInputElement>(
+    "settingsAppUpdateCheckIntervalHours"
+  ),
+  checkAppUpdateButton: byId<HTMLButtonElement>("checkAppUpdateButton"),
+  installAppUpdateButton: byId<HTMLButtonElement>("installAppUpdateButton"),
+  appUpdateStatus: byId("appUpdateStatus"),
   settingsPageSize: byId<HTMLInputElement>("settingsPageSize"),
   settingsDefaultRace: byId<HTMLSelectElement>("settingsDefaultRace"),
   saveSettingsButton: byId<HTMLButtonElement>("saveSettingsButton")

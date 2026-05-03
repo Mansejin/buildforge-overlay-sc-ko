@@ -76,6 +76,7 @@ Launch the app. The overlay window stays on top of StarCraft and ships with a bu
 | Ctrl+Alt+F             | Toggle favorite on current build           |
 | Ctrl+Alt+C             | Toggle compact mode                        |
 | Ctrl+Alt+L             | Toggle overlay mouse click-through         |
+| Ctrl+Alt+K             | Toggle overlay reposition mode             |
 | Ctrl+Alt+H             | Hide / show overlay                        |
 | `/` (in overlay)       | Focus the build search                     |
 | F12 / Ctrl+Shift+I     | Toggle DevTools (debug log)                |
@@ -85,7 +86,7 @@ Launch the app. The overlay window stays on top of StarCraft and ships with a bu
 Click **Manager** to edit the catalog and app behavior. Tabs:
 
 - **Edit** - manually create or edit a build (id, race, opponent, difficulty, tags, steps, notes). Saving marks edited builds as `customEdited` so future bundled catalog refreshes won't overwrite your changes.
-- **Settings** - compact mode, window opacity, game-safe click-through, page size, default race, and the bundled catalog's last sync date.
+- **Settings** - compact mode, window opacity, game-safe click-through, overlay snap-to-corner controls, app update checks/install, page size, default race, and the bundled catalog's last sync date.
 
 ### Debug mode
 
@@ -122,6 +123,8 @@ Each folder contains:
 - `builds.json` — your build library.
 - `settings.json` — overlay opacity, rate limit, default race, etc.
 - `builds-backup-*.json` — timestamped backups produced by **Manage > Backup builds.json**.
+
+App updates replace the application binaries but keep this user-data directory intact. Your manual builds, `customEdited` entries, favorites, and personal notes remain in place across updates.
 
 Use **Manage > Open data folder** to open the directory in your file manager.
 
@@ -246,7 +249,11 @@ The single source of truth is the `version` field in [package.json](package.json
    ```bash
    git push origin main --follow-tags
    ```
-4. The [Release workflow](.github/workflows/release.yml) is a `windows-latest` × `macos-latest` × `ubuntu-latest` matrix that runs [`tauri-apps/tauri-action@v0`](https://github.com/tauri-apps/tauri-action). Each runner produces its native bundles (NSIS/MSI on Windows, universal DMG on macOS, AppImage/.deb on Linux) and uploads them to a draft GitHub Release named `BW Build Overlay <tag>`. Edit the body and publish when ready.
+4. Ensure updater signing secrets are configured in GitHub Actions:
+   - `TAURI_SIGNING_PRIVATE_KEY`
+   - `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` (optional when key has no password)
+   - `BW_UPDATER_PUBKEY` (public key content used by runtime updater checks)
+5. The [Release workflow](.github/workflows/release.yml) is a `windows-latest` × `macos-latest` × `ubuntu-latest` matrix that runs [`tauri-apps/tauri-action@v0`](https://github.com/tauri-apps/tauri-action). Each runner produces its native bundles (NSIS/MSI on Windows, universal DMG on macOS, AppImage/.deb on Linux) and uploads them to a draft GitHub Release named `BW Build Overlay <tag>`. Edit the body and publish when ready.
 
 ### Catalog refresh
 

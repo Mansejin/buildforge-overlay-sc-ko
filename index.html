@@ -206,6 +206,14 @@
                   <input id="settingsOverlayClickThrough" type="checkbox" />
                   Game-safe click-through in overlay mode
                 </label>
+                <div class="snap-grid-label">Window snap</div>
+                <div class="snap-grid">
+                  <button id="settingsSnapTopLeft" type="button">Top left</button>
+                  <button id="settingsSnapTopRight" type="button">Top right</button>
+                  <button id="settingsSnapBottomLeft" type="button">Bottom left</button>
+                  <button id="settingsSnapBottomRight" type="button">Bottom right</button>
+                  <button id="settingsSnapCenter" type="button">Center</button>
+                </div>
                 <label>
                   Steps per page
                   <input id="settingsPageSize" type="number" min="6" max="60" step="1" />
@@ -221,6 +229,28 @@
                 <div class="editor-actions">
                   <button id="saveSettingsButton" class="primary-button">Save settings</button>
                 </div>
+              </div>
+              <div class="import-card">
+                <h3>App updates</h3>
+                <label class="checkbox-row">
+                  <input id="settingsCheckAppUpdatesOnLaunch" type="checkbox" />
+                  Check for app updates on launch
+                </label>
+                <label>
+                  Launch check interval (hours)
+                  <input
+                    id="settingsAppUpdateCheckIntervalHours"
+                    type="number"
+                    min="1"
+                    max="168"
+                    step="1"
+                  />
+                </label>
+                <div class="editor-actions">
+                  <button id="checkAppUpdateButton" type="button">Check now</button>
+                  <button id="installAppUpdateButton" type="button" hidden>Install update</button>
+                </div>
+                <p id="appUpdateStatus" class="muted">No update check run this session.</p>
               </div>
               <div class="import-card">
                 <h3>Catalog</h3>
@@ -241,6 +271,9 @@
          now ONE of two top-level views, not the only one.
          ========================================================= -->
     <main id="viewOverlay" class="view view-overlay">
+      <div class="overlay-drag-strip" data-tauri-drag-region>
+        Drag overlay here (Ctrl+Alt+K toggles reposition mode)
+      </div>
       <section class="race-tabs" role="tablist" aria-label="Player race">
         <button class="race-tab" data-race="Terran" role="tab">Terran</button>
         <button class="race-tab" data-race="Protoss" role="tab">Protoss</button>
@@ -328,6 +361,7 @@
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> favorite</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd> mode</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> mouse</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>K</kbd> move window</div>
           <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hide</div>
         </div>
       </section>

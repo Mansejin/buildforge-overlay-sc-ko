@@ -49,6 +49,7 @@ pub fn run() {
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_global_shortcut::Builder::new().build())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .setup(|app| {
             let user_data =
                 resolve_user_data(app.handle()).expect("could not resolve app data dir");
@@ -78,6 +79,8 @@ pub fn run() {
                     let sizes = crate::window::ManagerSizes {
                         manager: settings.manager_window_size,
                         overlay: settings.overlay_window_size,
+                        manager_position: settings.manager_window_position,
+                        overlay_position: settings.overlay_window_position,
                     };
                     crate::window::set_mode(&window, settings.last_view, sizes);
                     let _ = crate::window::set_click_through(
@@ -95,6 +98,7 @@ pub fn run() {
 
             if let Some(window) = crate::window::main_window(app.handle()) {
                 crate::window::install_always_on_top_keeper(&window);
+                crate::window::install_bounds_persistor(&window, paths.clone());
             }
 
             if let Err(err) = crate::window::register_shortcuts(app.handle()) {
@@ -115,8 +119,12 @@ pub fn run() {
             commands::window_toggle,
             commands::window_set_opacity,
             commands::window_set_click_through,
+            commands::window_snap,
+            commands::window_toggle_reposition,
             commands::window_toggle_devtools,
             commands::window_set_mode,
+            commands::app_update_check,
+            commands::app_update_install,
             commands::external_open,
         ])
         .build(tauri::generate_context!())

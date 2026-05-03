@@ -157,6 +157,23 @@ pub struct WindowSize {
     pub height: u32,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct WindowPosition {
+    pub x: i32,
+    pub y: i32,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub enum WindowSnapPreset {
+    TopLeft,
+    TopRight,
+    BottomLeft,
+    BottomRight,
+    Center,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Settings {
     #[serde(default = "default_settings_version")]
@@ -174,6 +191,18 @@ pub struct Settings {
         rename = "overlayClickThrough"
     )]
     pub overlay_click_through: bool,
+    #[serde(
+        default = "default_check_app_updates_on_launch",
+        rename = "checkAppUpdatesOnLaunch"
+    )]
+    pub check_app_updates_on_launch: bool,
+    #[serde(
+        default = "default_app_update_check_interval_hours",
+        rename = "appUpdateCheckIntervalHours"
+    )]
+    pub app_update_check_interval_hours: u32,
+    #[serde(default, rename = "lastAppUpdateCheckAt")]
+    pub last_app_update_check_at: Option<String>,
     #[serde(rename = "pageSize")]
     pub page_size: u32,
     #[serde(rename = "defaultRace")]
@@ -188,6 +217,11 @@ pub struct Settings {
     pub manager_window_size: WindowSize,
     #[serde(default = "default_overlay_size", rename = "overlayWindowSize")]
     pub overlay_window_size: WindowSize,
+    /// v2.2+: remembered window position for each mode.
+    #[serde(default, rename = "managerWindowPosition")]
+    pub manager_window_position: Option<WindowPosition>,
+    #[serde(default, rename = "overlayWindowPosition")]
+    pub overlay_window_position: Option<WindowPosition>,
 }
 
 fn default_settings_version() -> u32 {
@@ -216,6 +250,14 @@ fn default_overlay_click_through() -> bool {
     true
 }
 
+fn default_check_app_updates_on_launch() -> bool {
+    true
+}
+
+fn default_app_update_check_interval_hours() -> u32 {
+    24
+}
+
 impl Default for Settings {
     fn default() -> Self {
         Settings {
@@ -225,11 +267,16 @@ impl Default for Settings {
             compact_overlay: false,
             overlay_opacity: 1.0,
             overlay_click_through: true,
+            check_app_updates_on_launch: true,
+            app_update_check_interval_hours: 24,
+            last_app_update_check_at: None,
             page_size: 25,
             default_race: Race::Protoss,
             last_view: ViewMode::Manager,
             manager_window_size: default_manager_size(),
             overlay_window_size: default_overlay_size(),
+            manager_window_position: None,
+            overlay_window_position: None,
         }
     }
 }
@@ -240,6 +287,29 @@ pub struct UserDataPaths {
     pub user_builds_path: String,
     pub settings_path: String,
     pub user_data: String,
+}
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct RepositionModeResult {
+    pub active: bool,
+    pub click_through_enabled: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AppUpdateInfo {
+    pub version: String,
+    pub current_version: String,
+    pub date: Option<String>,
+    pub body: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AppUpdateCheckResult {
+    pub available: bool,
+    pub update: Option<AppUpdateInfo>,
 }
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
@@ -434,4 +504,7 @@ pub enum HotkeyAction {
     /// Ctrl+Alt+L toggles whether the overlay ignores mouse input in
     /// Overlay mode, letting StarCraft receive clicks underneath it.
     ToggleClickThrough,
+    /// Ctrl+Alt+K temporarily disables click-through so the overlay can be
+    /// dragged, then restores click-through on the next press.
+    ToggleReposition,
 }

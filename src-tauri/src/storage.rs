@@ -11,11 +11,11 @@ use thiserror::Error;
 use tokio::fs;
 
 pub const SCHEMA_VERSION: u32 = 4;
-/// Settings file format version. Bumped to 3 with the addition of
-/// overlay_click_through and the removal of end-user Liquipedia checks.
+/// Settings file format version. Bumped to 5 with the addition of
+/// app-update launch-check settings.
 /// `read_settings` rewrites older settings files in place by re-serialising
 /// through the typed Settings (defaults fill in missing fields).
-pub const SETTINGS_VERSION: u32 = 3;
+pub const SETTINGS_VERSION: u32 = 5;
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 2300;
 pub const DEFAULT_USER_AGENT: &str = concat!(
     "BWBuildOverlay/",

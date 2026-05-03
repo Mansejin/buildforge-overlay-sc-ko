@@ -35,7 +35,19 @@ When `npm run release:patch|minor|major` is run, the last `## [Unreleased]` head
 
 ## [Unreleased]
 
-_No unreleased changes yet._
+### Added
+
+- **Overlay reposition controls.** Overlay mode now supports a dedicated drag strip, quick snap buttons (top-left, top-right, bottom-left, bottom-right, center), and a `Ctrl+Alt+K` reposition hotkey that temporarily disables click-through so users can move the window safely in-game.
+- **Per-mode window position persistence.** Manager and Overlay now each remember both size and position and restore those bounds across mode switches and relaunches.
+- **In-app app-update flow.** Settings now includes launch update checks, check interval controls, and manual `Check now` / `Install update` actions wired to the Tauri updater.
+
+### Changed
+
+- **Settings schema bumped to v5.** Added app-update launch-check settings and window-position fields while keeping forward migration behavior.
+
+### Fixed
+
+- **Overlay move regression after v2.1.0.** Users can once again reposition the overlay when not in click-through mode, and can explicitly toggle repositioning even while click-through is enabled.
 
 ## [2.1.0] - 2026-05-03
 

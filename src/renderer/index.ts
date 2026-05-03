@@ -16,7 +16,7 @@ import { bindSettingsTabEvents, loadSettingsIntoForm } from "./settings-tab.js";
 import { makeHotkeyHandler } from "./hotkeys.js";
 import { applyModeToDom, bindModeToggle, setMode } from "./mode.js";
 import { refreshCatalogStatusBanner } from "./catalog-status.js";
-import { toastError } from "./toast.js";
+import { toastError, toastWarn } from "./toast.js";
 import type { Build, Settings } from "../shared/types.js";
 
 console.info("[bw-overlay] renderer booted");
@@ -85,6 +85,39 @@ function bindGlobalKeys(): void {
   });
 }
 
+function shouldRunLaunchUpdateCheck(settings: Settings): boolean {
+  if (!settings.checkAppUpdatesOnLaunch) return false;
+  const hours = Math.max(1, Math.min(168, Number(settings.appUpdateCheckIntervalHours) || 24));
+  const intervalMs = hours * 60 * 60 * 1000;
+  const last = settings.lastAppUpdateCheckAt ? Date.parse(settings.lastAppUpdateCheckAt) : NaN;
+  if (!Number.isFinite(last)) return true;
+  return Date.now() - last >= intervalMs;
+}
+
+async function maybeCheckForAppUpdates(
+  persistSettingsFn: (partial: Partial<Settings>) => Promise<void>
+): Promise<void> {
+  if (!shouldRunLaunchUpdateCheck(store.settings)) return;
+  const nowIso = new Date().toISOString();
+  await persistSettingsFn({ lastAppUpdateCheckAt: nowIso });
+  try {
+    const result = await api.checkForAppUpdate();
+    if (!result.available || !result.update) return;
+    toastWarn(`App update ${result.update.version} is available.`);
+    const shouldInstall = window.confirm(
+      `Update ${result.update.version} is available. Install now?`
+    );
+    if (!shouldInstall) return;
+    await api.installAppUpdate();
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.warn("app update check failed:", message);
+    if (message.toLowerCase().includes("pubkey")) {
+      toastWarn("Update check unavailable (updater key missing).");
+    }
+  }
+}
+
 async function boot(): Promise<void> {
   loadLocalState();
   try {
@@ -140,6 +173,7 @@ async function boot(): Promise<void> {
   renderManagerList();
   renderOverlay();
   refreshCatalogStatusBanner();
+  void maybeCheckForAppUpdates(persistSettings);
 }
 
 boot().catch((err: unknown) => {

@@ -17,6 +17,7 @@ import {
 } from "./state.js";
 import { cycleBuild, renderOverlay } from "./overlay.js";
 import { applyModeToDom, getMode, toggleMode } from "./mode.js";
+import { toastOk, toastWarn } from "./toast.js";
 import type { Build, HotkeyAction, Settings } from "../shared/types.js";
 
 export interface HotkeyDeps {
@@ -100,6 +101,25 @@ export function makeHotkeyHandler({
         await persistSettings({ overlayClickThrough: store.settings.overlayClickThrough });
         api.setClickThrough(getMode() === "overlay" && store.settings.overlayClickThrough);
         applyModeToDom(getMode());
+        break;
+      case "toggle-reposition":
+        if (getMode() !== "overlay") {
+          toastWarn("Switch to Overlay mode first (Ctrl+Alt+M).");
+          break;
+        }
+        try {
+          const result = await api.toggleOverlayRepositionMode();
+          if (result.active) {
+            toastWarn("Reposition mode on. Drag the top strip, then press Ctrl+Alt+K again.");
+          } else if (result.clickThroughEnabled) {
+            toastOk("Reposition mode off. Click-through restored.");
+          } else {
+            toastOk("Reposition mode off.");
+          }
+          applyModeToDom(getMode());
+        } catch (err) {
+          toastWarn(err instanceof Error ? err.message : String(err));
+        }
         break;
       default: {
         const exhaustive: never = action;

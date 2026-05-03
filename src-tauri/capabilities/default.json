@@ -8,6 +8,7 @@
     "shell:default",
     "opener:default",
     "opener:allow-open-url",
-    "global-shortcut:default"
+    "global-shortcut:default",
+    "updater:default"
   ]
 }

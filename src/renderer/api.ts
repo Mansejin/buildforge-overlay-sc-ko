@@ -12,7 +12,8 @@ import type {
   HotkeyAction,
   OverlayAPI,
   Settings,
-  UserDataPaths
+  UserDataPaths,
+  WindowSnapPreset
 } from "../shared/types.js";
 
 function fireAndForget<T>(promise: Promise<T>): void {
@@ -28,6 +29,8 @@ export const api: OverlayAPI = {
 
   getSettings: () => invoke<Settings>("settings_get"),
   saveSettings: (settings: Partial<Settings>) => invoke<Settings>("settings_save", { settings }),
+  checkForAppUpdate: () => invoke("app_update_check"),
+  installAppUpdate: () => invoke("app_update_install"),
 
   backupData: () => invoke<string>("data_backup"),
   openDataFolder: () => fireAndForget(invoke<void>("data_open_folder")),
@@ -38,6 +41,9 @@ export const api: OverlayAPI = {
   setOpacity: (value: number) => fireAndForget(invoke<void>("window_set_opacity", { value })),
   setClickThrough: (enabled: boolean) =>
     fireAndForget(invoke<void>("window_set_click_through", { enabled })),
+  snapWindow: (preset: WindowSnapPreset) => invoke<Settings>("window_snap", { preset }),
+  toggleOverlayRepositionMode: () =>
+    invoke<{ active: boolean; clickThroughEnabled: boolean }>("window_toggle_reposition"),
   openExternal: (url: string) => fireAndForget(invoke<void>("external_open", { url })),
 
   onHotkey: (callback: (action: HotkeyAction) => void) => {

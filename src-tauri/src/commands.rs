@@ -6,14 +6,43 @@
 // events directly.
 
 use crate::storage::{self, UserPaths};
-use crate::types::{BuildsData, Settings, UserDataPaths, ViewMode};
+use crate::types::{
+    AppUpdateCheckResult, AppUpdateInfo, BuildsData, RepositionModeResult, Settings, UserDataPaths,
+    ViewMode, WindowSnapPreset,
+};
 use crate::window as winmod;
 use serde_json::Value;
 use tauri::{AppHandle, State, WebviewWindow};
 use tauri_plugin_opener::OpenerExt;
+use tauri_plugin_updater::UpdaterExt;
 
 fn err_string<E: std::fmt::Display>(err: E) -> String {
     err.to_string()
+}
+
+const UPDATE_ENDPOINT: &str =
+    "https://github.com/Etra-0/starcraft-build-overlay/releases/latest/download/latest.json";
+
+fn updater_pubkey() -> Result<String, String> {
+    std::env::var("BW_UPDATER_PUBKEY")
+        .or_else(|_| std::env::var("TAURI_UPDATER_PUBKEY"))
+        .map_err(|_| {
+            "Missing updater public key. Set BW_UPDATER_PUBKEY (or TAURI_UPDATER_PUBKEY)."
+                .to_string()
+        })
+}
+
+async fn check_update(app: &AppHandle) -> Result<Option<tauri_plugin_updater::Update>, String> {
+    let endpoint = UPDATE_ENDPOINT.parse().map_err(err_string)?;
+    app.updater_builder()
+        .pubkey(updater_pubkey()?)
+        .endpoints(vec![endpoint])
+        .map_err(err_string)?
+        .build()
+        .map_err(err_string)?
+        .check()
+        .await
+        .map_err(err_string)
 }
 
 #[tauri::command]
@@ -107,8 +136,70 @@ pub fn window_set_click_through(window: WebviewWindow, enabled: bool) -> Result<
 }
 
 #[tauri::command]
+pub async fn window_snap(
+    window: WebviewWindow,
+    paths: State<'_, UserPaths>,
+    preset: WindowSnapPreset,
+) -> Result<Settings, String> {
+    winmod::snap_to_preset(&window, preset, 12).map_err(err_string)?;
+    let settings = storage::read_settings(paths.inner())
+        .await
+        .map_err(err_string)?;
+    winmod::save_bounds_for_mode(paths.inner(), settings.last_view, &window).await;
+    storage::read_settings(paths.inner())
+        .await
+        .map_err(err_string)
+}
+
+#[tauri::command]
+pub async fn window_toggle_reposition(
+    window: WebviewWindow,
+    paths: State<'_, UserPaths>,
+) -> Result<RepositionModeResult, String> {
+    let settings = storage::read_settings(paths.inner())
+        .await
+        .map_err(err_string)?;
+    if settings.last_view != ViewMode::Overlay {
+        return Err("Switch to Overlay mode first.".to_string());
+    }
+    winmod::toggle_reposition_mode(&window, settings.overlay_click_through).map_err(err_string)
+}
+
+#[tauri::command]
 pub fn window_toggle_devtools(window: WebviewWindow) {
     winmod::toggle_devtools(&window);
+}
+
+#[tauri::command]
+pub async fn app_update_check(app: AppHandle) -> Result<AppUpdateCheckResult, String> {
+    let update = check_update(&app).await?;
+    Ok(match update {
+        Some(update) => AppUpdateCheckResult {
+            available: true,
+            update: Some(AppUpdateInfo {
+                version: update.version.clone(),
+                current_version: update.current_version.clone(),
+                date: update.date.map(|date| date.to_string()),
+                body: update.body.clone(),
+            }),
+        },
+        None => AppUpdateCheckResult {
+            available: false,
+            update: None,
+        },
+    })
+}
+
+#[tauri::command]
+pub async fn app_update_install(app: AppHandle) -> Result<bool, String> {
+    let Some(update) = check_update(&app).await? else {
+        return Ok(false);
+    };
+    update
+        .download_and_install(|_, _| {}, || {})
+        .await
+        .map_err(err_string)?;
+    app.restart()
 }
 
 /// Switch the single window between Manager and Overlay modes. Reads the
@@ -121,19 +212,23 @@ pub async fn window_set_mode(
     paths: State<'_, UserPaths>,
     mode: ViewMode,
 ) -> Result<Settings, String> {
-    let mut settings = storage::read_settings(paths.inner())
+    let settings = storage::read_settings(paths.inner())
         .await
         .map_err(err_string)?;
+    // Persist the current mode's latest bounds before flipping modes so each
+    // mode resumes where the user last left it.
+    winmod::save_bounds_for_mode(paths.inner(), settings.last_view, &window).await;
     let sizes = winmod::ManagerSizes {
         manager: settings.manager_window_size,
         overlay: settings.overlay_window_size,
+        manager_position: settings.manager_window_position,
+        overlay_position: settings.overlay_window_position,
     };
     winmod::set_mode(&window, mode, sizes);
     let _ = winmod::set_click_through(
         &window,
         mode == ViewMode::Overlay && settings.overlay_click_through,
     );
-    settings.last_view = mode;
     let payload = serde_json::json!({ "lastView": mode });
     storage::save_settings(paths.inner(), payload)
         .await

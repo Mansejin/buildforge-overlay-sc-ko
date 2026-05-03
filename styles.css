@@ -119,6 +119,17 @@ button {
   gap: 6px;
 }
 
+.overlay-drag-strip {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 10.5px;
+  text-align: center;
+  padding: 3px 8px;
+  background: rgba(var(--surface-rgb), 0.45);
+  user-select: none;
+}
+
 /* Compact-mode hides things; mirror those rules onto the new
    view-overlay container so Ctrl+Alt+C keeps working. */
 body.compact .view-overlay {
@@ -1121,6 +1132,17 @@ body[data-mode="overlay"] .mode-tab {
 
 .import-card h3 {
   font-size: 13px;
+}
+
+.snap-grid-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.snap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
 }
 
 .log-box {

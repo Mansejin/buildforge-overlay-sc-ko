@@ -44,10 +44,28 @@ export interface BuildsData {
 }
 
 export type ViewMode = "manager" | "overlay";
+export type WindowSnapPreset = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
+
+export interface AppUpdateInfo {
+  version: string;
+  currentVersion: string;
+  date: string | null;
+  body: string | null;
+}
+
+export interface AppUpdateCheckResult {
+  available: boolean;
+  update: AppUpdateInfo | null;
+}
 
 export interface WindowSize {
   width: number;
   height: number;
+}
+
+export interface WindowPosition {
+  x: number;
+  y: number;
 }
 
 export interface Settings {
@@ -57,6 +75,9 @@ export interface Settings {
   compactOverlay: boolean;
   overlayOpacity: number;
   overlayClickThrough: boolean;
+  checkAppUpdatesOnLaunch: boolean;
+  appUpdateCheckIntervalHours: number;
+  lastAppUpdateCheckAt: string | null;
   pageSize: number;
   defaultRace: Race;
   /** v2.0+: which view the app booted into / should re-open with. */
@@ -64,6 +85,9 @@ export interface Settings {
   /** v2.0+: remembered window dimensions per mode. */
   managerWindowSize: WindowSize;
   overlayWindowSize: WindowSize;
+  /** v2.2+: remembered window position per mode. */
+  managerWindowPosition: WindowPosition | null;
+  overlayWindowPosition: WindowPosition | null;
 }
 
 export interface UserDataPaths {
@@ -89,7 +113,8 @@ export type HotkeyAction =
   | "toggle-compact"
   | "toggle-window"
   | "toggle-mode"
-  | "toggle-click-through";
+  | "toggle-click-through"
+  | "toggle-reposition";
 
 export interface OverlayAPI {
   getBuilds(): Promise<BuildsData>;
@@ -103,6 +128,13 @@ export interface OverlayAPI {
   toggleWindow(): void;
   setOpacity(value: number): void;
   setClickThrough(enabled: boolean): void;
+  snapWindow(preset: WindowSnapPreset): Promise<Settings>;
+  toggleOverlayRepositionMode(): Promise<{
+    active: boolean;
+    clickThroughEnabled: boolean;
+  }>;
+  checkForAppUpdate(): Promise<AppUpdateCheckResult>;
+  installAppUpdate(): Promise<boolean>;
   openExternal(url: string): void;
   onHotkey(callback: (action: HotkeyAction) => void): void;
 }

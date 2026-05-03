@@ -5,15 +5,20 @@
 // toggle, and registers all Ctrl+Alt-* global shortcuts that the overlay
 // relies on. Mirrors src/main/window.ts.
 
-use crate::types::{HotkeyAction, ViewMode, WindowSize};
+use crate::storage::{self, UserPaths};
+use crate::types::{
+    HotkeyAction, RepositionModeResult, ViewMode, WindowPosition, WindowSize, WindowSnapPreset,
+};
+use serde_json::json;
 use std::sync::atomic::{AtomicBool, Ordering};
-use tauri::{AppHandle, Emitter, LogicalSize, Manager, WebviewWindow};
+use tauri::{AppHandle, Emitter, LogicalPosition, LogicalSize, Manager, WebviewWindow};
 
 /// Shared "should this window stay always-on-top?" flag. The focus-loss
 /// keeper consults this; `set_mode` flips it when the user toggles between
 /// Manager (false) and Overlay (true). Without this, focus changes in
 /// Manager mode kept yanking the window back on top of every other app.
 static OVERLAY_AOT_DESIRED: AtomicBool = AtomicBool::new(true);
+static OVERLAY_REPOSITION_ACTIVE: AtomicBool = AtomicBool::new(false);
 use tauri_plugin_global_shortcut::{
     Code, GlobalShortcutExt, Modifiers, Shortcut, ShortcutEvent, ShortcutState,
 };
@@ -79,6 +84,9 @@ pub fn set_opacity(window: &WebviewWindow, value: f64) {
 }
 
 pub fn set_click_through(window: &WebviewWindow, enabled: bool) -> tauri::Result<()> {
+    if enabled {
+        OVERLAY_REPOSITION_ACTIVE.store(false, Ordering::Relaxed);
+    }
     window.set_ignore_cursor_events(enabled)
 }
 
@@ -87,21 +95,27 @@ pub fn set_click_through(window: &WebviewWindow, enabled: bool) -> tauri::Result
 /// always-on-top, fixed-size, and uses the saved overlay size. Both keep the
 /// existing visibility / opacity state.
 pub fn set_mode(window: &WebviewWindow, mode: ViewMode, sizes: ManagerSizes) {
-    let size = match mode {
-        ViewMode::Manager => sizes.manager,
-        ViewMode::Overlay => sizes.overlay,
+    let (size, position) = match mode {
+        ViewMode::Manager => (sizes.manager, sizes.manager_position),
+        ViewMode::Overlay => (sizes.overlay, sizes.overlay_position),
     };
     let _ = window.set_size(LogicalSize::new(size.width as f64, size.height as f64));
+    if let Some(position) = position {
+        let _ = window.set_position(LogicalPosition::new(position.x as f64, position.y as f64));
+    }
     match mode {
         ViewMode::Manager => {
             OVERLAY_AOT_DESIRED.store(false, Ordering::Relaxed);
+            OVERLAY_REPOSITION_ACTIVE.store(false, Ordering::Relaxed);
             let _ = window.set_decorations(true);
             let _ = window.set_resizable(true);
             let _ = window.set_always_on_top(false);
             let _ = window.set_skip_taskbar(false);
-            // Manager is the "main program" surface; let the user pull it
-            // up like any other window.
-            let _ = window.center();
+            if position.is_none() {
+                // On first launch with no saved position yet, center Manager
+                // so the full UI appears predictably.
+                let _ = window.center();
+            }
         }
         ViewMode::Overlay => {
             OVERLAY_AOT_DESIRED.store(true, Ordering::Relaxed);
@@ -116,10 +130,103 @@ pub fn set_mode(window: &WebviewWindow, mode: ViewMode, sizes: ManagerSizes) {
     }
 }
 
+pub fn snap_to_preset(
+    window: &WebviewWindow,
+    preset: WindowSnapPreset,
+    padding: i32,
+) -> tauri::Result<()> {
+    let monitor = match window.current_monitor()? {
+        Some(monitor) => monitor,
+        None => return Ok(()),
+    };
+    let monitor_pos = monitor.position();
+    let monitor_size = monitor.size();
+    let window_size = window.outer_size()?;
+    let mon_x = monitor_pos.x;
+    let mon_y = monitor_pos.y;
+    let mon_w = monitor_size.width as i32;
+    let mon_h = monitor_size.height as i32;
+    let win_w = window_size.width as i32;
+    let win_h = window_size.height as i32;
+    let x = match preset {
+        WindowSnapPreset::TopLeft | WindowSnapPreset::BottomLeft => mon_x + padding,
+        WindowSnapPreset::TopRight | WindowSnapPreset::BottomRight => {
+            mon_x + mon_w - win_w - padding
+        }
+        WindowSnapPreset::Center => mon_x + ((mon_w - win_w) / 2),
+    };
+    let y = match preset {
+        WindowSnapPreset::TopLeft | WindowSnapPreset::TopRight => mon_y + padding,
+        WindowSnapPreset::BottomLeft | WindowSnapPreset::BottomRight => {
+            mon_y + mon_h - win_h - padding
+        }
+        WindowSnapPreset::Center => mon_y + ((mon_h - win_h) / 2),
+    };
+    window.set_position(LogicalPosition::new(x as f64, y as f64))
+}
+
+pub fn read_window_bounds(window: &WebviewWindow) -> Option<(WindowSize, WindowPosition)> {
+    let size = window.outer_size().ok()?;
+    let position = window.outer_position().ok()?;
+    Some((
+        WindowSize {
+            width: size.width,
+            height: size.height,
+        },
+        WindowPosition {
+            x: position.x,
+            y: position.y,
+        },
+    ))
+}
+
+pub async fn save_bounds_for_mode(paths: &UserPaths, mode: ViewMode, window: &WebviewWindow) {
+    let Some((size, position)) = read_window_bounds(window) else {
+        return;
+    };
+    let payload = match mode {
+        ViewMode::Manager => json!({
+            "managerWindowSize": size,
+            "managerWindowPosition": position,
+        }),
+        ViewMode::Overlay => json!({
+            "overlayWindowSize": size,
+            "overlayWindowPosition": position,
+        }),
+    };
+    if let Err(err) = storage::save_settings(paths, payload).await {
+        log::warn!("save_bounds_for_mode failed: {err}");
+    }
+}
+
+pub fn toggle_reposition_mode(
+    window: &WebviewWindow,
+    overlay_click_through_enabled: bool,
+) -> tauri::Result<RepositionModeResult> {
+    let next_active = !OVERLAY_REPOSITION_ACTIVE.load(Ordering::Relaxed);
+    OVERLAY_REPOSITION_ACTIVE.store(next_active, Ordering::Relaxed);
+    let click_through_enabled = if next_active {
+        false
+    } else {
+        overlay_click_through_enabled
+    };
+    window.set_ignore_cursor_events(click_through_enabled)?;
+    if next_active {
+        let _ = window.show();
+        let _ = window.set_focus();
+    }
+    Ok(RepositionModeResult {
+        active: next_active,
+        click_through_enabled,
+    })
+}
+
 #[derive(Debug, Clone, Copy)]
 pub struct ManagerSizes {
     pub manager: WindowSize,
     pub overlay: WindowSize,
+    pub manager_position: Option<WindowPosition>,
+    pub overlay_position: Option<WindowPosition>,
 }
 
 pub fn toggle_visible(window: &WebviewWindow) {
@@ -152,6 +259,27 @@ pub fn install_always_on_top_keeper(window: &WebviewWindow) {
                 let _ = cloned.set_always_on_top(true);
             }
         }
+    });
+}
+
+pub fn install_bounds_persistor(window: &WebviewWindow, paths: UserPaths) {
+    let cloned = window.clone();
+    window.on_window_event(move |event| match event {
+        tauri::WindowEvent::Moved(_) | tauri::WindowEvent::Resized(_) => {
+            let paths_for_task = paths.clone();
+            let window_for_task = cloned.clone();
+            tauri::async_runtime::spawn(async move {
+                let settings = match storage::read_settings(&paths_for_task).await {
+                    Ok(settings) => settings,
+                    Err(err) => {
+                        log::warn!("install_bounds_persistor/read_settings failed: {err}");
+                        return;
+                    }
+                };
+                save_bounds_for_mode(&paths_for_task, settings.last_view, &window_for_task).await;
+            });
+        }
+        _ => {}
     });
 }
 
@@ -209,6 +337,9 @@ fn shortcut_to_action(shortcut: &Shortcut) -> Option<HotkeyAction> {
     if shortcut.matches(ctrl_alt, Code::KeyL) {
         return Some(HotkeyAction::ToggleClickThrough);
     }
+    if shortcut.matches(ctrl_alt, Code::KeyK) {
+        return Some(HotkeyAction::ToggleReposition);
+    }
     None
 }
 
@@ -233,6 +364,7 @@ fn all_shortcuts() -> Vec<Shortcut> {
         Shortcut::new(Some(ctrl_alt), Code::KeyH),
         Shortcut::new(Some(ctrl_alt), Code::KeyM),
         Shortcut::new(Some(ctrl_alt), Code::KeyL),
+        Shortcut::new(Some(ctrl_alt), Code::KeyK),
     ]
 }
 

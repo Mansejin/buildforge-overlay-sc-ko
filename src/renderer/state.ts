@@ -33,11 +33,16 @@ export const store: Store = {
     compactOverlay: false,
     overlayOpacity: 1,
     overlayClickThrough: true,
+    checkAppUpdatesOnLaunch: true,
+    appUpdateCheckIntervalHours: 24,
+    lastAppUpdateCheckAt: null,
     pageSize: 25,
     defaultRace: "Protoss",
     lastView: "manager",
     managerWindowSize: { width: 1080, height: 760 },
-    overlayWindowSize: { width: 420, height: 640 }
+    overlayWindowSize: { width: 420, height: 640 },
+    managerWindowPosition: null,
+    overlayWindowPosition: null
   },
   state: { race: "Protoss", opponent: "Terran", buildId: null, page: 0, search: "" },
   selectedManagerBuildId: null
