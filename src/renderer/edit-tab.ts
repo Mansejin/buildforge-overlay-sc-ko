@@ -26,7 +26,7 @@ export function blankBuild({ id, race, opponent }: BlankBuildInputs): Build {
     race: r,
     opponent: o,
     matchup: deriveMatchup(r, o),
-    name: "New Build",
+    name: "새 빌드",
     variantOf: null,
     tags: ["custom"],
     difficulty: null,
@@ -87,7 +87,7 @@ function isRace(value: string): value is Race {
 }
 
 function buildFromForm(): FormBuildPayload {
-  const name = dom.formName.value.trim() || "Untitled Build";
+  const name = dom.formName.value.trim() || "이름 없는 빌드";
   const race: Race = isRace(dom.formRace.value) ? dom.formRace.value : "Protoss";
   const opponent: Opponent = (dom.formOpponent.value as Opponent) || "Terran";
   const id =
@@ -154,9 +154,9 @@ export function bindEditTabEvents(saveData: SaveDataFn, openExternal: OpenExtern
       loadBuildIntoForm(selected);
       renderManagerList();
       renderOverlay();
-      toastOk("Build saved.");
+      toastOk("빌드를 저장했습니다.");
     } catch (err) {
-      toastError(`Save failed: ${err instanceof Error ? err.message : String(err)}`);
+      toastError(`저장 실패: ${err instanceof Error ? err.message : String(err)}`);
     }
   });
   dom.useBuildButton.addEventListener("click", () => useBuildInOverlay());

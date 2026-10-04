@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BW Build Overlay</title>
+    <title>BW 빌드 오버레이</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <!--
@@ -21,28 +21,28 @@
           <img src="./assets/icon.png" alt="" />
         </div>
         <div>
-          <div class="eyebrow">BW Build Overlay</div>
-          <div id="overlayStatus" class="status-line">Manager</div>
+          <div class="eyebrow">BW 빌드 오버레이</div>
+          <div id="overlayStatus" class="status-line">관리자</div>
         </div>
       </div>
 
-      <div class="mode-toggle" role="tablist" aria-label="View">
+      <div class="mode-toggle" role="tablist" aria-label="화면">
         <button id="modeManagerButton" class="mode-tab" data-target-mode="manager" role="tab">
-          Manager
+          관리자
         </button>
         <button id="modeOverlayButton" class="mode-tab" data-target-mode="overlay" role="tab">
-          Overlay
+          오버레이
         </button>
       </div>
 
       <div class="topbar-actions">
-        <button id="favoriteButton" class="icon-button" title="Toggle favorite (Ctrl+Alt+F)">
+        <button id="favoriteButton" class="icon-button" title="즐겨찾기 전환 (Ctrl+Alt+F)">
           &#9734;
         </button>
-        <button id="compactButton" class="icon-button" title="Toggle compact mode (Ctrl+Alt+C)">
+        <button id="compactButton" class="icon-button" title="간단히 보기 전환 (Ctrl+Alt+C)">
           &#9633;
         </button>
-        <button id="manageButton" class="small-button" hidden>Manage</button>
+        <button id="manageButton" class="small-button" hidden>관리</button>
       </div>
     </header>
 
@@ -61,76 +61,74 @@
       <div class="manager-grid">
         <aside class="manager-side">
           <div class="manager-side-head">
-            <h2>Builds</h2>
+            <h2>빌드 목록</h2>
             <div class="filter-row">
-              <select id="managerRaceFilter" title="Player race">
-                <option value="All">All races</option>
-                <option value="Terran">Terran</option>
-                <option value="Protoss">Protoss</option>
-                <option value="Zerg">Zerg</option>
+              <select id="managerRaceFilter" title="내 종족">
+                <option value="All">모든 종족</option>
+                <option value="Terran">테란</option>
+                <option value="Protoss">프로토스</option>
+                <option value="Zerg">저그</option>
               </select>
-              <select id="managerMatchupFilter" title="Matchup">
-                <option value="All">All matchups</option>
+              <select id="managerMatchupFilter" title="종족전">
+                <option value="All">모든 종족전</option>
               </select>
             </div>
-            <input id="managerSearch" type="search" placeholder="Search by name, tag" />
+            <input id="managerSearch" type="search" placeholder="이름, 태그로 검색" />
           </div>
 
           <div id="managerBuildList" class="manager-build-list"></div>
-          <div id="managerEmptyState" class="empty-state" hidden>
-            No builds match these filters.
-          </div>
+          <div id="managerEmptyState" class="empty-state" hidden>조건에 맞는 빌드가 없습니다.</div>
 
           <div class="manager-side-actions stack">
-            <button id="newBuildButton">New manual build</button>
-            <button id="duplicateBuildButton">Duplicate selected</button>
-            <button id="deleteBuildButton" class="danger-button">Delete selected</button>
+            <button id="newBuildButton">새 빌드 만들기</button>
+            <button id="duplicateBuildButton">선택한 빌드 복제</button>
+            <button id="deleteBuildButton" class="danger-button">선택한 빌드 삭제</button>
             <div class="action-divider"></div>
-            <button id="backupButton">Backup builds.json</button>
-            <button id="openDataFolderButton">Open data folder</button>
+            <button id="backupButton">builds.json 백업</button>
+            <button id="openDataFolderButton">데이터 폴더 열기</button>
           </div>
         </aside>
 
         <section class="manager-main">
           <div class="tabs">
-            <button id="editTabButton" class="tab active">Edit</button>
-            <button id="settingsTabButton" class="tab">Settings</button>
+            <button id="editTabButton" class="tab active">편집</button>
+            <button id="settingsTabButton" class="tab">설정</button>
           </div>
 
           <div class="tab-scroll">
             <div id="editTab" class="tab-panel active">
               <div class="form-grid two">
                 <label>
-                  Name
+                  이름
                   <input id="formName" />
                 </label>
                 <label>
-                  Difficulty
+                  난이도
                   <select id="formDifficulty">
-                    <option value="">Unspecified</option>
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
+                    <option value="">미지정</option>
+                    <option value="beginner">초급</option>
+                    <option value="intermediate">중급</option>
+                    <option value="advanced">고급</option>
                   </select>
                 </label>
               </div>
 
               <div class="form-grid two">
                 <label>
-                  Player race
+                  내 종족
                   <select id="formRace">
-                    <option value="Terran">Terran</option>
-                    <option value="Protoss">Protoss</option>
-                    <option value="Zerg">Zerg</option>
+                    <option value="Terran">테란</option>
+                    <option value="Protoss">프로토스</option>
+                    <option value="Zerg">저그</option>
                   </select>
                 </label>
                 <label>
-                  Opponent
+                  상대 종족
                   <select id="formOpponent">
-                    <option value="Terran">Terran</option>
-                    <option value="Zerg">Zerg</option>
-                    <option value="Protoss">Protoss</option>
-                    <option value="Random">Random</option>
+                    <option value="Terran">테란</option>
+                    <option value="Zerg">저그</option>
+                    <option value="Protoss">프로토스</option>
+                    <option value="Random">랜덤</option>
                   </select>
                 </label>
               </div>
@@ -141,103 +139,103 @@
                   <input id="formId" />
                 </label>
                 <label>
-                  Tags (comma separated)
+                  태그 (쉼표로 구분)
                   <input id="formTags" />
                 </label>
               </div>
 
               <div class="form-grid two">
                 <label>
-                  Source name
+                  출처 이름
                   <input id="formSourceName" />
                 </label>
                 <label>
-                  Source URL
+                  출처 URL
                   <input id="formSourceUrl" />
                 </label>
               </div>
 
               <label>
-                Catalog notes
+                카탈로그 설명
                 <textarea id="formNotes" rows="2"></textarea>
               </label>
 
               <label>
-                Your notes (preserved across catalog refreshes)
+                내 메모 (카탈로그를 갱신해도 유지됨)
                 <textarea id="formUserNotes" rows="2"></textarea>
               </label>
 
               <label>
-                Steps (one per line, e.g. "8 - Pylon")
+                빌드 순서 (한 줄에 하나씩, 예: "9 - 해처리")
                 <textarea id="formSteps" rows="14"></textarea>
               </label>
 
               <label class="checkbox-row">
                 <input id="formCustomEdited" type="checkbox" />
-                Mark as custom edited - bundled catalog refreshes will skip this build
+                직접 수정한 빌드로 표시 - 기본 카탈로그를 갱신해도 덮어쓰지 않음
               </label>
               <label class="checkbox-row">
                 <input id="formFavorite" type="checkbox" />
-                Favorite this build
+                즐겨찾기에 추가
               </label>
 
               <div class="editor-actions">
-                <button id="saveBuildButton" class="primary-button">Save build</button>
-                <button id="useBuildButton">Use in overlay</button>
-                <button id="openSourceFromFormButton">Open source</button>
+                <button id="saveBuildButton" class="primary-button">빌드 저장</button>
+                <button id="useBuildButton">오버레이에 표시</button>
+                <button id="openSourceFromFormButton">출처 열기</button>
               </div>
             </div>
 
             <div id="settingsTab" class="tab-panel">
               <div class="import-card">
-                <h3>Overlay</h3>
+                <h3>오버레이</h3>
                 <label class="checkbox-row">
                   <input id="settingsCompactOverlay" type="checkbox" />
-                  Compact mode (smaller footprint, hides extras)
+                  간단히 보기 (작게 표시하고 부가 정보 숨김)
                 </label>
                 <label>
                   <span class="label-row">
-                    Window opacity
+                    창 불투명도
                     <output id="settingsOpacityValue">100%</output>
                   </span>
                   <input id="settingsOpacity" type="range" min="0.4" max="1" step="0.05" />
                 </label>
                 <label class="checkbox-row">
                   <input id="settingsOverlayClickThrough" type="checkbox" />
-                  Game-safe click-through in overlay mode
+                  오버레이 모드에서 마우스 클릭 통과 (게임 조작 방해 안 함)
                 </label>
-                <div class="snap-grid-label">Window snap</div>
+                <div class="snap-grid-label">창 위치 맞추기</div>
                 <div class="snap-grid">
-                  <button id="settingsSnapTopLeft" type="button">Top left</button>
-                  <button id="settingsSnapTopRight" type="button">Top right</button>
-                  <button id="settingsSnapBottomLeft" type="button">Bottom left</button>
-                  <button id="settingsSnapBottomRight" type="button">Bottom right</button>
-                  <button id="settingsSnapCenter" type="button">Center</button>
+                  <button id="settingsSnapTopLeft" type="button">왼쪽 위</button>
+                  <button id="settingsSnapTopRight" type="button">오른쪽 위</button>
+                  <button id="settingsSnapBottomLeft" type="button">왼쪽 아래</button>
+                  <button id="settingsSnapBottomRight" type="button">오른쪽 아래</button>
+                  <button id="settingsSnapCenter" type="button">가운데</button>
                 </div>
                 <label>
-                  Steps per page
+                  페이지당 단계 수
                   <input id="settingsPageSize" type="number" min="6" max="60" step="1" />
                 </label>
                 <label>
-                  Default player race
+                  기본 종족
                   <select id="settingsDefaultRace">
-                    <option value="Terran">Terran</option>
-                    <option value="Protoss">Protoss</option>
-                    <option value="Zerg">Zerg</option>
+                    <option value="Terran">테란</option>
+                    <option value="Protoss">프로토스</option>
+                    <option value="Zerg">저그</option>
                   </select>
                 </label>
                 <div class="editor-actions">
-                  <button id="saveSettingsButton" class="primary-button">Save settings</button>
+                  <button id="saveSettingsButton" class="primary-button">설정 저장</button>
                 </div>
               </div>
               <div class="import-card">
-                <h3>App updates</h3>
+                <h3>앱 업데이트</h3>
                 <label class="checkbox-row">
                   <input id="settingsCheckAppUpdatesOnLaunch" type="checkbox" />
-                  Check for app updates on launch
+                  실행할 때 업데이트 확인
                 </label>
                 <label>
-                  Launch check interval (hours)
+                  실행 시 확인 간격 (시간)
                   <input
                     id="settingsAppUpdateCheckIntervalHours"
                     type="number"
@@ -247,17 +245,19 @@
                   />
                 </label>
                 <div class="editor-actions">
-                  <button id="checkAppUpdateButton" type="button">Check now</button>
-                  <button id="installAppUpdateButton" type="button" hidden>Install update</button>
+                  <button id="checkAppUpdateButton" type="button">지금 확인</button>
+                  <button id="installAppUpdateButton" type="button" hidden>업데이트 설치</button>
                 </div>
-                <p id="appUpdateStatus" class="muted">No update check run this session.</p>
+                <p id="appUpdateStatus" class="muted">
+                  이번 실행에서는 아직 업데이트를 확인하지 않았습니다.
+                </p>
               </div>
               <div class="import-card">
-                <h3>Catalog</h3>
+                <h3>카탈로그</h3>
                 <p class="catalog-date-line">
-                  Last synced: <strong id="settingsCatalogDate">unknown</strong>
+                  마지막 동기화: <strong id="settingsCatalogDate">알 수 없음</strong>
                 </p>
-                <p class="muted">Data lives in your OS user-data folder.</p>
+                <p class="muted">데이터는 OS 사용자 데이터 폴더에 저장됩니다.</p>
               </div>
             </div>
           </div>
@@ -275,38 +275,34 @@
         id="overlayDragStrip"
         class="overlay-drag-strip"
         data-tauri-drag-region
-        title="Drag to move (Ctrl+Alt+L toggles click-through, Ctrl+Alt+K toggles reposition)"
+        title="드래그해서 이동 (Ctrl+Alt+L: 클릭 통과 전환, Ctrl+Alt+K: 위치 이동 모드)"
       >
         <span class="overlay-drag-grip" aria-hidden="true"></span>
         <span id="overlayDragHint" class="overlay-drag-hint"></span>
       </div>
-      <section class="race-tabs" role="tablist" aria-label="Player race">
-        <button class="race-tab" data-race="Terran" role="tab">Terran</button>
-        <button class="race-tab" data-race="Protoss" role="tab">Protoss</button>
-        <button class="race-tab" data-race="Zerg" role="tab">Zerg</button>
+      <section class="race-tabs" role="tablist" aria-label="내 종족">
+        <button class="race-tab" data-race="Terran" role="tab">테란</button>
+        <button class="race-tab" data-race="Protoss" role="tab">프로토스</button>
+        <button class="race-tab" data-race="Zerg" role="tab">저그</button>
       </section>
 
-      <section class="opponent-chips" role="tablist" aria-label="Opponent">
-        <button class="opp-chip" data-opp="Terran" role="tab">vT</button>
-        <button class="opp-chip" data-opp="Zerg" role="tab">vZ</button>
-        <button class="opp-chip" data-opp="Protoss" role="tab">vP</button>
-        <button class="opp-chip" data-opp="Random" role="tab">vR</button>
+      <section class="opponent-chips" role="tablist" aria-label="상대 종족">
+        <button class="opp-chip" data-opp="Terran" role="tab">vs 테</button>
+        <button class="opp-chip" data-opp="Zerg" role="tab">vs 저</button>
+        <button class="opp-chip" data-opp="Protoss" role="tab">vs 토</button>
+        <button class="opp-chip" data-opp="Random" role="tab">vs 랜덤</button>
       </section>
 
       <section class="build-picker">
         <div class="search-row">
-          <input id="buildSearch" type="search" placeholder="Search builds (press / to focus)" />
+          <input id="buildSearch" type="search" placeholder="빌드 검색 (/ 키로 바로 입력)" />
         </div>
         <div class="build-row">
           <select id="buildSelect"></select>
-          <button
-            id="prevBuildButton"
-            class="icon-button"
-            title="Previous build (Ctrl+Alt+Shift+B)"
-          >
+          <button id="prevBuildButton" class="icon-button" title="이전 빌드 (Ctrl+Alt+Shift+B)">
             &#8592;
           </button>
-          <button id="nextBuildButton" class="icon-button" title="Next build (Ctrl+Alt+B)">
+          <button id="nextBuildButton" class="icon-button" title="다음 빌드 (Ctrl+Alt+B)">
             &#8594;
           </button>
         </div>
@@ -315,16 +311,16 @@
       <section class="build-card" id="buildCard">
         <div class="build-head">
           <div class="build-head-text">
-            <h1 id="buildName">Loading...</h1>
+            <h1 id="buildName">불러오는 중...</h1>
             <div class="meta-row">
               <span id="matchupChip" class="chip"></span>
               <span id="difficultyChip" class="chip subtle" hidden></span>
-              <span id="favoritedChip" class="chip subtle" hidden>&#9733; Favorite</span>
+              <span id="favoritedChip" class="chip subtle" hidden>&#9733; 즐겨찾기</span>
             </div>
             <div id="buildTags" class="tags"></div>
           </div>
           <div class="head-actions">
-            <button id="sourceButton" class="small-button">Source</button>
+            <button id="sourceButton" class="small-button">출처</button>
           </div>
         </div>
 
@@ -335,21 +331,21 @@
 
         <div class="counters" id="countersBlock" hidden>
           <div class="counter-row">
-            <span class="counter-label">Counters:</span>
+            <span class="counter-label">유리한 상대:</span>
             <span id="countersList"></span>
           </div>
           <div class="counter-row">
-            <span class="counter-label">Countered by:</span>
+            <span class="counter-label">불리한 상대:</span>
             <span id="counteredByList"></span>
           </div>
         </div>
 
         <div class="footer">
-          <button id="prevPageButton" class="icon-button" title="Previous page (Ctrl+Alt+PgUp)">
+          <button id="prevPageButton" class="icon-button" title="이전 페이지 (Ctrl+Alt+PgUp)">
             &#8592;
           </button>
-          <span id="pageIndicator" class="page-indicator">Page 1 / 1</span>
-          <button id="nextPageButton" class="icon-button" title="Next page (Ctrl+Alt+PgDn)">
+          <span id="pageIndicator" class="page-indicator">1 / 1 페이지</span>
+          <button id="nextPageButton" class="icon-button" title="다음 페이지 (Ctrl+Alt+PgDn)">
             &#8594;
           </button>
         </div>
@@ -357,18 +353,18 @@
 
       <section class="hotkeys" id="hotkeysHelp">
         <div class="hk-grid">
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> race</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> 내 종족</div>
           <div>
             <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Q</kbd>/<kbd>W</kbd>/<kbd>E</kbd>/<kbd>R</kbd>
-            opponent
+            상대 종족
           </div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> next build</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PgDn</kbd>/<kbd>PgUp</kbd> page</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> favorite</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd> mode</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> mouse</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>K</kbd> move window</div>
-          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hide</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> 다음 빌드</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PgDn</kbd>/<kbd>PgUp</kbd> 페이지</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> 즐겨찾기</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd> 모드 전환</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> 클릭 통과</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>K</kbd> 창 이동</div>
+          <div><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> 숨기기</div>
         </div>
       </section>
     </main>

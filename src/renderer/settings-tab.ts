@@ -19,25 +19,25 @@ function setAppUpdateStatus(text: string, canInstall = false): void {
 }
 
 async function checkAppUpdateNow(): Promise<void> {
-  setAppUpdateStatus("Checking for updates...");
+  setAppUpdateStatus("업데이트 확인 중...");
   try {
     const result = await api.checkForAppUpdate();
     if (result.available && result.update) {
       pendingAppUpdate = result.update;
       setAppUpdateStatus(
-        `Update ${result.update.version} available (current ${result.update.currentVersion}).`,
+        `${result.update.version} 업데이트가 있습니다 (현재 ${result.update.currentVersion}).`,
         true
       );
-      toastWarn(`Update ${result.update.version} is available.`);
+      toastWarn(`${result.update.version} 업데이트가 있습니다.`);
       return;
     }
     pendingAppUpdate = null;
-    setAppUpdateStatus("You are on the latest version.");
-    toastOk("No app update available.");
+    setAppUpdateStatus("최신 버전을 사용 중입니다.");
+    toastOk("새 업데이트가 없습니다.");
   } catch (err) {
     pendingAppUpdate = null;
     const message = err instanceof Error ? err.message : String(err);
-    setAppUpdateStatus(`Update check failed: ${message}`);
+    setAppUpdateStatus(`업데이트 확인 실패: ${message}`);
     toastError(message);
   }
 }
@@ -85,7 +85,7 @@ export function bindSettingsTabEvents(): void {
       api.setOpacity(store.settings.overlayOpacity);
       applyClickThroughSetting();
       renderOverlay();
-      toastOk("Settings saved.");
+      toastOk("설정을 저장했습니다.");
     } catch (err) {
       toastError(err instanceof Error ? err.message : String(err));
     }
@@ -100,7 +100,7 @@ export function bindSettingsTabEvents(): void {
     button.addEventListener("click", async () => {
       try {
         store.settings = await api.snapWindow(preset);
-        toastOk("Window snapped.");
+        toastOk("창 위치를 맞췄습니다.");
       } catch (err) {
         toastError(err instanceof Error ? err.message : String(err));
       }
@@ -121,21 +121,21 @@ export function bindSettingsTabEvents(): void {
       if (!pendingAppUpdate) return;
     }
     const ok = window.confirm(
-      `Install update ${pendingAppUpdate.version} now? The app may close and relaunch.`
+      `${pendingAppUpdate.version} 업데이트를 지금 설치할까요? 앱이 종료된 뒤 다시 실행될 수 있습니다.`
     );
     if (!ok) return;
     try {
       const installed = await api.installAppUpdate();
       if (!installed) {
-        setAppUpdateStatus("No installable update found.");
-        toastOk("Already up to date.");
+        setAppUpdateStatus("설치할 업데이트가 없습니다.");
+        toastOk("이미 최신 버전입니다.");
         return;
       }
-      setAppUpdateStatus("Update installed. Restarting...");
+      setAppUpdateStatus("업데이트를 설치했습니다. 다시 시작하는 중...");
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      setAppUpdateStatus(`Update install failed: ${message}`);
-      toastError(`Install failed: ${message}`);
+      setAppUpdateStatus(`업데이트 설치 실패: ${message}`);
+      toastError(`설치 실패: ${message}`);
     }
   });
 }

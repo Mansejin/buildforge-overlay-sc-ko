@@ -34,12 +34,12 @@ export function applyModeToDom(mode: ViewMode): void {
   dom.overlayStatus.textContent =
     mode === "overlay"
       ? clickThroughActive
-        ? "Overlay - mouse passes through"
-        : "Overlay - interactive"
-      : "Manager";
+        ? "오버레이 - 마우스 클릭 통과"
+        : "오버레이 - 조작 가능"
+      : "관리자";
   dom.overlayDragHint.textContent = clickThroughActive
-    ? "Click-through on - press Ctrl+Alt+L to interact, Ctrl+Alt+K to reposition"
-    : "Drag here to move - resize from window edges";
+    ? "클릭 통과 켜짐 - Ctrl+Alt+L로 조작, Ctrl+Alt+K로 위치 이동"
+    : "여기를 드래그해서 이동 - 창 가장자리로 크기 조절";
 }
 
 /**

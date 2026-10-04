@@ -7,7 +7,7 @@
 import { api } from "./api.js";
 import { dom } from "./dom.js";
 import { selectedManagerBuild, setBuildId, setOpponent, setRace, store } from "./state.js";
-import { deriveMatchup, matchesQuery, uniqueId } from "../shared/utils.js";
+import { deriveMatchup, difficultyLabel, matchesQuery, uniqueId } from "../shared/utils.js";
 import { renderOverlay } from "./overlay.js";
 import { toastError, toastOk } from "./toast.js";
 import { blankBuild, loadBuildIntoForm } from "./edit-tab.js";
@@ -38,7 +38,7 @@ function syncMatchupFilter(): void {
   dom.managerMatchupFilter.innerHTML = "";
   const all = document.createElement("option");
   all.value = "All";
-  all.textContent = "All matchups";
+  all.textContent = "모든 종족전";
   dom.managerMatchupFilter.appendChild(all);
   for (const m of buildMatchups()) {
     const opt = document.createElement("option");
@@ -77,7 +77,7 @@ function renderBuildRow(build: Build): HTMLButtonElement {
     const ce = document.createElement("span");
     ce.textContent = "\u270e";
     ce.style.color = "var(--muted)";
-    ce.title = "Custom edited - protected from refresh";
+    ce.title = "직접 수정함 - 카탈로그 갱신 시 덮어쓰지 않음";
     titleRow.appendChild(ce);
   }
 
@@ -93,7 +93,7 @@ function renderBuildRow(build: Build): HTMLButtonElement {
   if (build.difficulty) {
     const diff = document.createElement("span");
     diff.className = "chip subtle";
-    diff.textContent = build.difficulty;
+    diff.textContent = difficultyLabel(build.difficulty);
     subtitle.appendChild(diff);
   }
   if (build.sourceName === "Liquipedia") {
@@ -204,7 +204,7 @@ export function renderManagerList(): void {
     name.textContent = cluster.parent.name;
     const count = document.createElement("span");
     count.className = "variant-cluster-count chip subtle";
-    count.textContent = `${cluster.variants.length + 1} variants`;
+    count.textContent = `변형 ${cluster.variants.length + 1}개`;
     summary.append(name, count);
     details.appendChild(summary);
     const list = document.createElement("div");
@@ -233,7 +233,7 @@ export async function newManualBuild(saveData: SaveDataFn): Promise<void> {
   await saveData();
   renderManagerList();
   renderOverlay();
-  toastOk("New build created.");
+  toastOk("새 빌드를 만들었습니다.");
 }
 
 export async function duplicateSelectedBuild(saveData: SaveDataFn): Promise<void> {
@@ -244,7 +244,7 @@ export async function duplicateSelectedBuild(saveData: SaveDataFn): Promise<void
     `${copy.id}-copy`,
     store.data.builds.map((b) => b.id)
   );
-  copy.name = `${copy.name} (Copy)`;
+  copy.name = `${copy.name} (복사본)`;
   copy.tags = [...(copy.tags || []).filter((t) => t !== "imported"), "custom"];
   copy.customEdited = true;
   copy.revisionId = null;
@@ -256,13 +256,13 @@ export async function duplicateSelectedBuild(saveData: SaveDataFn): Promise<void
   await saveData();
   loadBuildIntoForm(copy);
   renderManagerList();
-  toastOk("Duplicated.");
+  toastOk("복제했습니다.");
 }
 
 export async function deleteSelectedBuild(saveData: SaveDataFn): Promise<void> {
   const build = selectedManagerBuild();
   if (!build) return;
-  if (!confirm(`Delete "${build.name}"?`)) return;
+  if (!confirm(`"${build.name}" 빌드를 삭제할까요?`)) return;
   store.data.builds = store.data.builds.filter((b) => b.id !== build.id);
   if (store.state.buildId === build.id) {
     store.state.buildId = null;
@@ -273,7 +273,7 @@ export async function deleteSelectedBuild(saveData: SaveDataFn): Promise<void> {
   loadBuildIntoForm(selectedManagerBuild());
   renderManagerList();
   renderOverlay();
-  toastOk("Deleted.");
+  toastOk("삭제했습니다.");
 }
 
 export function useBuildInOverlay(): void {
@@ -283,7 +283,7 @@ export function useBuildInOverlay(): void {
   setOpponent(build.opponent);
   setBuildId(build.id);
   renderOverlay();
-  toastOk(`Switched overlay to ${build.name}.`);
+  toastOk(`오버레이에 "${build.name}" 빌드를 표시합니다.`);
 }
 
 export function bindManagerListEvents(saveData: SaveDataFn): void {
@@ -306,9 +306,9 @@ export function bindManagerListEvents(saveData: SaveDataFn): void {
   dom.backupButton.addEventListener("click", async () => {
     try {
       await api.backupData();
-      toastOk("Backup created.");
+      toastOk("백업을 만들었습니다.");
     } catch (err) {
-      toastError(`Backup failed: ${err instanceof Error ? err.message : String(err)}`);
+      toastError(`백업 실패: ${err instanceof Error ? err.message : String(err)}`);
     }
   });
   dom.openDataFolderButton.addEventListener("click", () => api.openDataFolder());

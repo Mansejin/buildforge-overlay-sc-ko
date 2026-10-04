@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "BW Build Overlay",
+  "productName": "BW Build Overlay KO",
   "version": "2.3.0",
   "identifier": "com.local.bwbuildoverlay",
   "build": {
@@ -11,7 +11,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "BW Build Overlay",
+        "title": "BW 빌드 오버레이",
         "width": 480,
         "height": 760,
         "minWidth": 380,
@@ -33,13 +33,13 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQwRDUyOUI3NUQ1NzMxQ0YKUldUUE1WZGR0eW5WME1kQ1hQaDJFMjhXZ0J4aDE4V2VCdU5HdUQyUDlEcys0VFQrVjdQcTQrYlUK",
       "endpoints": [
-        "https://github.com/Etra-0/starcraft-build-overlay/releases/latest/download/latest.json"
+        "https://github.com/Mansejin/buildforge-overlay-sc-ko/releases/latest/download/latest.json"
       ]
     }
   },
   "bundle": {
     "active": true,
-    "createUpdaterArtifacts": true,
+    "createUpdaterArtifacts": false,
     "targets": ["nsis", "msi", "app", "dmg", "appimage", "deb"],
     "icon": [
       "icons/32x32.png",
@@ -54,11 +54,14 @@
     "windows": {
       "webviewInstallMode": {
         "type": "embedBootstrapper"
+      },
+      "nsis": {
+        "languages": ["Korean"]
       }
     },
-    "shortDescription": "Always-on-top StarCraft: Brood War / Remastered build-order overlay with bundled catalog.",
-    "longDescription": "An always-on-top desktop overlay that shows StarCraft: Brood War / Remastered build orders for all races and matchups from a bundled release-time catalog.",
-    "homepage": "https://github.com/Etra-0/starcraft-build-overlay",
+    "shortDescription": "스타크래프트: 브루드 워 / 리마스터 빌드 오더 오버레이 (한글판)",
+    "longDescription": "스타크래프트: 브루드 워 / 리마스터 게임 화면 위에 빌드 오더를 띄워 주는 오버레이의 한국어 번역판입니다. 빨무 저그 빌드가 기본 포함되어 있습니다.",
+    "homepage": "https://github.com/Mansejin/buildforge-overlay-sc-ko",
     "category": "Utility",
     "copyright": "Copyright (c) 2024-2026 Etra-0"
   }

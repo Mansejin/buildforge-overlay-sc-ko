@@ -104,17 +104,17 @@ export function makeHotkeyHandler({
         break;
       case "toggle-reposition":
         if (getMode() !== "overlay") {
-          toastWarn("Switch to Overlay mode first (Ctrl+Alt+M).");
+          toastWarn("먼저 오버레이 모드로 바꾸세요 (Ctrl+Alt+M).");
           break;
         }
         try {
           const result = await api.toggleOverlayRepositionMode();
           if (result.active) {
-            toastWarn("Reposition mode on. Drag the top strip, then press Ctrl+Alt+K again.");
+            toastWarn("위치 이동 모드 켜짐. 위쪽 띠를 드래그한 뒤 Ctrl+Alt+K를 다시 누르세요.");
           } else if (result.clickThroughEnabled) {
-            toastOk("Reposition mode off. Click-through restored.");
+            toastOk("위치 이동 모드 꺼짐. 클릭 통과를 다시 켰습니다.");
           } else {
-            toastOk("Reposition mode off.");
+            toastOk("위치 이동 모드 꺼짐.");
           }
           applyModeToDom(getMode());
         } catch (err) {

@@ -30,7 +30,7 @@ function showFatal(message: string): void {
       "position:fixed;top:0;left:0;right:0;z-index:9999;background:#7a1f1f;color:#fff;padding:12px 16px;font:14px Segoe UI,sans-serif;line-height:1.4;box-shadow:0 4px 12px rgba(0,0,0,.5);";
     document.body.appendChild(banner);
   }
-  banner.innerHTML = `<strong>Renderer error:</strong> ${String(message)}<br><small>Press F12 to open DevTools for details.</small>`;
+  banner.innerHTML = `<strong>화면 오류:</strong> ${String(message)}<br><small>자세한 내용은 F12로 개발자 도구를 열어 확인하세요.</small>`;
 }
 
 async function saveData(): Promise<void> {
@@ -38,7 +38,7 @@ async function saveData(): Promise<void> {
     store.data = await api.saveBuilds(store.data);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    toastError(`Save failed: ${message}`);
+    toastError(`저장 실패: ${message}`);
     throw err;
   }
 }
@@ -48,7 +48,7 @@ async function persistFavorite(_build: Build): Promise<void> {
     store.data = await api.saveBuilds(store.data);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    toastError(`Could not save favorite: ${message}`);
+    toastError(`즐겨찾기를 저장하지 못했습니다: ${message}`);
   }
 }
 
@@ -57,7 +57,7 @@ async function persistSettings(partial: Partial<Settings>): Promise<void> {
     store.settings = await api.saveSettings({ ...store.settings, ...partial });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    toastError(`Settings save failed: ${message}`);
+    toastError(`설정 저장 실패: ${message}`);
   }
 }
 
@@ -103,9 +103,9 @@ async function maybeCheckForAppUpdates(
   try {
     const result = await api.checkForAppUpdate();
     if (!result.available || !result.update) return;
-    toastWarn(`App update ${result.update.version} is available.`);
+    toastWarn(`앱 업데이트 ${result.update.version}이(가) 있습니다.`);
     const shouldInstall = window.confirm(
-      `Update ${result.update.version} is available. Install now?`
+      `${result.update.version} 업데이트가 있습니다. 지금 설치할까요?`
     );
     if (!shouldInstall) return;
     await api.installAppUpdate();
@@ -113,7 +113,7 @@ async function maybeCheckForAppUpdates(
     const message = err instanceof Error ? err.message : String(err);
     console.warn("app update check failed:", message);
     if (message.toLowerCase().includes("pubkey")) {
-      toastWarn("Update check unavailable (updater key missing).");
+      toastWarn("업데이트를 확인할 수 없습니다 (업데이트 키 없음).");
     }
   }
 }
@@ -125,10 +125,10 @@ async function boot(): Promise<void> {
     store.settings = await api.getSettings();
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    dom.buildName.textContent = "Error loading data";
+    dom.buildName.textContent = "데이터를 불러오지 못했습니다";
     dom.buildNotes.hidden = false;
     dom.buildNotes.textContent = message;
-    showFatal(`Failed to load data from main process: ${message}`);
+    showFatal(`메인 프로세스에서 데이터를 불러오지 못했습니다: ${message}`);
     return;
   }
 
@@ -180,9 +180,9 @@ boot().catch((err: unknown) => {
   console.error(err);
   const message = err instanceof Error ? err.message : String(err);
   if (dom.buildName) {
-    dom.buildName.textContent = "Error loading overlay";
+    dom.buildName.textContent = "오버레이를 불러오지 못했습니다";
     dom.buildNotes.hidden = false;
     dom.buildNotes.textContent = message;
   }
-  showFatal(`Boot failed: ${message}`);
+  showFatal(`시작 실패: ${message}`);
 });

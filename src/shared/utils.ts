@@ -15,6 +15,27 @@ export const RACE_INITIAL: Record<Race | "Random", string> = {
   Random: "R"
 };
 
+export const RACE_LABEL: Record<Race | "Random", string> = {
+  Terran: "테란",
+  Protoss: "프로토스",
+  Zerg: "저그",
+  Random: "랜덤"
+};
+
+export const DIFFICULTY_LABEL: Record<string, string> = {
+  beginner: "초급",
+  intermediate: "중급",
+  advanced: "고급"
+};
+
+export function raceLabel(race: string): string {
+  return (RACE_LABEL as Record<string, string>)[race] ?? race;
+}
+
+export function difficultyLabel(difficulty: string): string {
+  return DIFFICULTY_LABEL[difficulty] ?? difficulty;
+}
+
 export const ALL_RACES: readonly Race[] = ["Terran", "Protoss", "Zerg"];
 export const ALL_OPPONENTS: readonly Opponent[] = ["Terran", "Zerg", "Protoss", "Random"];
 
@@ -73,18 +94,18 @@ export function matchesQuery(haystack: string, query: string): boolean {
 }
 
 export function formatRelative(timestamp: string | null | undefined): string {
-  if (!timestamp) return "never";
+  if (!timestamp) return "없음";
   const t = new Date(timestamp).getTime();
-  if (!Number.isFinite(t)) return "unknown";
+  if (!Number.isFinite(t)) return "알 수 없음";
   const diff = Date.now() - t;
   const sec = Math.round(diff / 1000);
-  if (sec < 60) return `${sec}s ago`;
+  if (sec < 60) return `${sec}초 전`;
   const min = Math.round(sec / 60);
-  if (min < 60) return `${min}m ago`;
+  if (min < 60) return `${min}분 전`;
   const hr = Math.round(min / 60);
-  if (hr < 24) return `${hr}h ago`;
+  if (hr < 24) return `${hr}시간 전`;
   const day = Math.round(hr / 24);
-  if (day < 30) return `${day}d ago`;
+  if (day < 30) return `${day}일 전`;
   return new Date(timestamp).toISOString().slice(0, 10);
 }
 

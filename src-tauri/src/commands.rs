@@ -143,7 +143,7 @@ pub async fn window_toggle_reposition(
         .await
         .map_err(err_string)?;
     if settings.last_view != ViewMode::Overlay {
-        return Err("Switch to Overlay mode first.".to_string());
+        return Err("먼저 오버레이 모드로 바꾸세요.".to_string());
     }
     winmod::toggle_reposition_mode(&window, settings.overlay_click_through).map_err(err_string)
 }

@@ -20,7 +20,13 @@ import {
   toggleFavoriteOnCurrent,
   totalPages
 } from "./state.js";
-import { deriveMatchup, matchesQuery, splitStep } from "../shared/utils.js";
+import {
+  deriveMatchup,
+  difficultyLabel,
+  matchesQuery,
+  raceLabel,
+  splitStep
+} from "../shared/utils.js";
 import type { Build, Opponent, Race } from "../shared/types.js";
 
 const onChangeHandlers: Array<() => void> = [];
@@ -60,7 +66,9 @@ function populateOpponentChips(): void {
     if (!opp) continue;
     chip.classList.toggle("active", opp === store.state.opponent);
     chip.classList.toggle("disabled", !races.has(opp));
-    chip.title = races.has(opp) ? `vs ${opp}` : `No ${store.state.race} vs ${opp} builds yet`;
+    chip.title = races.has(opp)
+      ? `vs ${raceLabel(opp)}`
+      : `${raceLabel(store.state.race)} vs ${raceLabel(opp)} 빌드가 아직 없습니다`;
   }
 }
 
@@ -140,7 +148,7 @@ function displayGroupName(parentId: string, cluster: Build[], byId: Map<string, 
       prefix = prefix.slice(0, -1);
     }
   }
-  return prefix.replace(/\s*-\s*$/, "").trim() || "Variants";
+  return prefix.replace(/\s*-\s*$/, "").trim() || "변형 빌드";
 }
 
 function renderBuildOption(b: Build, opts?: { trimPrefix?: string }): HTMLOptionElement {
@@ -162,7 +170,7 @@ function renderBuildHead(build: Build): void {
   dom.matchupChip.style.color = "var(--accent)";
   if (build.difficulty) {
     dom.difficultyChip.hidden = false;
-    dom.difficultyChip.textContent = build.difficulty;
+    dom.difficultyChip.textContent = difficultyLabel(build.difficulty);
   } else dom.difficultyChip.hidden = true;
   dom.favoritedChip.hidden = !build.favorite;
   dom.buildTags.innerHTML = "";
@@ -215,7 +223,7 @@ function renderPageIndicator(): void {
   const total = totalPages();
   const cur = Math.min(store.state.page + 1, total);
   const compact = !!store.settings.compactOverlay;
-  dom.pageIndicator.textContent = compact ? `${cur} / ${total}` : `Page ${cur} / ${total}`;
+  dom.pageIndicator.textContent = compact ? `${cur} / ${total}` : `${cur} / ${total} 페이지`;
   dom.prevPageButton.disabled = store.state.page <= 0;
   dom.nextPageButton.disabled = store.state.page >= total - 1;
   dom.prevPageButton.style.visibility = total > 1 ? "visible" : "hidden";
@@ -230,16 +238,16 @@ export function renderOverlay(): void {
   populateBuildSelect();
   const build = currentBuild();
   if (!build) {
-    dom.buildName.textContent = "No builds for this matchup";
+    dom.buildName.textContent = "이 종족전에는 빌드가 없습니다";
     dom.buildNotes.hidden = false;
-    dom.buildNotes.textContent = "Open Manager and use New manual build to add one.";
+    dom.buildNotes.textContent = "관리자 화면에서 '새 빌드 만들기'로 추가하세요.";
     dom.steps.innerHTML = "";
     dom.countersBlock.hidden = true;
     dom.matchupChip.textContent = deriveMatchup(store.state.race, store.state.opponent);
     dom.difficultyChip.hidden = true;
     dom.favoritedChip.hidden = true;
     dom.buildTags.innerHTML = "";
-    dom.pageIndicator.textContent = store.settings.compactOverlay ? "0 / 0" : "Page 0 / 0";
+    dom.pageIndicator.textContent = store.settings.compactOverlay ? "0 / 0" : "0 / 0 페이지";
     return;
   }
   renderBuildHead(build);
